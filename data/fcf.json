@@ -1,8 +1,22 @@
 {
-  "updated_at": "",
+  "updated_at": "2026-10-08T16:20:56.064466+00:00",
   "club": {
     "name": "C.F. Vilamajor",
-    "fcf_id": "1096"
+    "fcf_id": "1096",
+    "source": "https://www.fcf.cat/ca/clubs/1096/categories/39706"
   },
-  "teams": []
+  "teams": [
+    {
+      "name": "VILAMAJOR, C.F.",
+      "category": "VILAMAJOR, C.F.",
+      "competition": "",
+      "venue": "",
+      "url": "https://www.fcf.cat/ca/clubs/1096",
+      "next": null,
+      "last": null,
+      "upcoming": [],
+      "results": [],
+      "standing": {}
+    }
+  ]
 }
