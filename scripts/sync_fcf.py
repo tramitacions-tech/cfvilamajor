@@ -3,139 +3,102 @@ import json
 import re
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urljoin
 
 from playwright.async_api import async_playwright
 
 
 BASE_URL = "https://www.fcf.cat"
 CLUB_ID = "1096"
-CLUB_URL = f"{BASE_URL}/ca/clubs/{CLUB_ID}/categories/39706"
+
+CLUB_URLS = [
+    f"{BASE_URL}/ca/clubs/{CLUB_ID}",
+    f"{BASE_URL}/ca/clubs/{CLUB_ID}/categories/39706",
+]
 
 OUTPUT = Path("data/fcf.json")
 
 
-TEAM_WORDS = [
-    "VILAMAJOR",
-    "JUVENIL",
-    "CADET",
-    "INFANTIL",
-    "ALEV",
-    "BENJ",
-    "PREBENJ",
-    "FEMEN",
-]
-
-
 def clean(value):
-    if not value:
-        return ""
-    return re.sub(r"\s+", " ", str(value)).strip()
+    return re.sub(r"\s+", " ", value or "").strip()
 
 
 def absolute(url):
     return urljoin(BASE_URL, url)
 
 
-def is_fcf(url):
-    return "fcf.cat" in url
+def valid_fcf(url):
+    return url.startswith(BASE_URL)
 
 
-def looks_like_team(text):
-    text = clean(text).upper()
-
-    if not text:
+def valid_score(value):
+    """
+    SOLO acepta marcadores de 0-0 a 30-30.
+    Esto elimina basura como teléfonos/direcciones.
+    """
+    if not value:
         return False
 
-    if len(text) > 120:
+    m = re.fullmatch(r"\s*(\d{1,2})\s*[-–:]\s*(\d{1,2})\s*", value)
+
+    if not m:
         return False
 
-    return any(word in text for word in TEAM_WORDS)
+    a = int(m.group(1))
+    b = int(m.group(2))
+
+    return 0 <= a <= 30 and 0 <= b <= 30
 
 
-def score_from_text(text):
-    patterns = [
-        r"\b(\d{1,2})\s*[-–:]\s*(\d{1,2})\b",
-    ]
-
-    for pattern in patterns:
-        match = re.search(pattern, text)
-
-        if match:
-            return f"{match.group(1)}-{match.group(2)}"
-
+def score(value):
+    if valid_score(value):
+        return re.sub(r"\s+", "", value).replace(":", "-").replace("–", "-")
     return ""
 
 
-def date_from_text(text):
-    patterns = [
-        r"\b\d{1,2}/\d{1,2}/\d{4}\b",
-        r"\b\d{1,2}-\d{1,2}-\d{4}\b",
-        r"\b\d{1,2}\.\d{1,2}\.\d{4}\b",
-    ]
-
-    for pattern in patterns:
-        match = re.search(pattern, text)
-
-        if match:
-            return match.group(0)
-
-    return ""
-
-
-def time_from_text(text):
-    match = re.search(
-        r"\b(?:[01]?\d|2[0-3]):[0-5]\d\b",
-        text
+def date_value(value):
+    m = re.search(
+        r"\b(\d{2})[./-](\d{2})[./-](\d{4})\b",
+        value or ""
     )
 
-    return match.group(0) if match else ""
+    if not m:
+        return ""
+
+    return f"{m.group(1)}.{m.group(2)}.{m.group(3)}"
 
 
-def competition_from_text(text):
-    text = clean(text)
-
-    match = re.search(
-        r"COMPETICI[ÓO][N/:\s]+(.+?)(?:/Jornada|\s+Jornada)",
-        text,
-        re.IGNORECASE
+def time_value(value):
+    m = re.search(
+        r"\b([01]\d|2[0-3])[:.]([0-5]\d)\b",
+        value or ""
     )
 
-    if match:
-        return clean(match.group(1))
+    if not m:
+        return ""
 
-    return ""
-
-
-async def get_page(page, url):
-
-    try:
-        response = await page.goto(
-            url,
-            wait_until="domcontentloaded",
-            timeout=90000
-        )
-
-        await page.wait_for_timeout(5000)
-
-        return response
-
-    except Exception as exc:
-
-        print("ERROR:", url)
-        print(exc)
-
-        return None
+    return f"{m.group(1)}:{m.group(2)}"
 
 
-async def extract_calendar_links(page):
+def team_name(value):
+    value = clean(value)
 
-    links = set()
+    if not value:
+        return False
+
+    upper = value.upper()
+
+    if "VILAMAJOR" in upper:
+        return True
+
+    return False
+
+
+async def get_links(page):
+    result = set()
 
     for a in await page.locator("a").all():
-
         try:
-
             href = await a.get_attribute("href")
 
             if not href:
@@ -143,177 +106,150 @@ async def extract_calendar_links(page):
 
             url = absolute(href)
 
-            if not is_fcf(url):
+            if not valid_fcf(url):
                 continue
 
             low = url.lower()
 
             if (
                 "calendari-equip" in low
-                or "calendario-equipo" in low
-                or "/competicio/" in low
+                or "/competicio/acta/" in low
             ):
-                links.add(url)
+                result.add(url)
 
         except Exception:
             pass
 
-    return links
+    return result
 
 
-async def extract_team_links(page):
-
-    links = set()
-
-    for a in await page.locator("a").all():
-
-        try:
-
-            href = await a.get_attribute("href")
-            text = clean(await a.inner_text())
-
-            if not href:
-                continue
-
-            url = absolute(href)
-
-            if not is_fcf(url):
-                continue
-
-            if looks_like_team(text):
-
-                links.add(url)
-
-        except Exception:
-            pass
-
-    return links
-
-
-async def parse_calendar(page, url):
-
-    print("")
-    print("CALENDARIO:")
-    print(url)
-
-    await get_page(page, url)
-
-    text = clean(
-        await page.locator("body").inner_text()
-    )
-
-    title = clean(await page.title())
-
-    lines = [
-        clean(x)
-        for x in text.splitlines()
-        if clean(x)
-    ]
+async def extract_real_match_rows(page):
 
     matches = []
 
-    current = {}
+    # -------------------------------------------------
+    # BUSCAMOS TABLAS REALES
+    # -------------------------------------------------
 
-    for i, line in enumerate(lines):
+    tables = await page.locator("table").all()
 
-        upper = line.upper()
+    for table in tables:
 
-        if "JORNADA" in upper:
+        rows = await table.locator("tr").all()
 
-            if current:
-                matches.append(current)
+        for row in rows:
 
-            current = {
-                "round": line,
-                "raw": []
-            }
+            cells = await row.locator(
+                "th,td"
+            ).all()
 
-        if current:
-            current["raw"].append(line)
+            values = []
 
-        if "VILAMAJOR" in upper:
+            for cell in cells:
 
-            window = " ".join(
-                lines[
-                    max(0, i - 3):
-                    min(len(lines), i + 5)
-                ]
-            )
+                try:
+                    value = clean(
+                        await cell.inner_text()
+                    )
 
-            current.setdefault(
-                "teams_text",
-                window
-            )
+                    if value:
+                        values.append(value)
 
-            current.setdefault(
-                "date",
-                date_from_text(window)
-            )
+                except Exception:
+                    pass
 
-            current.setdefault(
-                "time",
-                time_from_text(window)
-            )
+            if len(values) < 2:
+                continue
 
-            current.setdefault(
-                "score",
-                score_from_text(window)
-            )
+            row_text = " | ".join(values)
 
-    if current:
-        matches.append(current)
+            # -----------------------------------------
+            # SOLO FILAS QUE CONTIENEN VILAMAJOR
+            # -----------------------------------------
 
-    clean_matches = []
+            if not team_name(row_text):
+                continue
 
-    for match in matches:
+            # -----------------------------------------
+            # RESULTADO:
+            # SOLO CELDAS INDIVIDUALES
+            # -----------------------------------------
 
-        raw = clean(
-            " ".join(match.get("raw", []))
+            found_score = ""
+
+            for value in values:
+
+                s = score(value)
+
+                if s:
+                    found_score = s
+                    break
+
+            found_date = ""
+
+            for value in values:
+
+                d = date_value(value)
+
+                if d:
+                    found_date = d
+                    break
+
+            found_time = ""
+
+            for value in values:
+
+                t = time_value(value)
+
+                if t:
+                    found_time = t
+                    break
+
+            # -----------------------------------------
+            # EQUIPOS
+            # -----------------------------------------
+
+            teams = [
+                v for v in values
+                if team_name(v)
+            ]
+
+            # Necesitamos al menos Vilamajor.
+            # Si no hay segundo equipo, no inventamos.
+            if not teams:
+                continue
+
+            matches.append({
+                "teams": teams,
+                "date": found_date,
+                "time": found_time,
+                "score": found_score,
+                "raw": values
+            })
+
+    return matches
+
+
+async def extract_page_data(page, url):
+
+    print("FCF:", url)
+
+    try:
+
+        await page.goto(
+            url,
+            wait_until="domcontentloaded",
+            timeout=90000
         )
 
-        if "VILAMAJOR" not in raw.upper():
-            continue
+    except Exception as exc:
 
-        clean_matches.append({
-            "round": match.get("round", ""),
-            "date": match.get("date", ""),
-            "time": match.get("time", ""),
-            "score": match.get("score", ""),
-            "text": match.get("teams_text", ""),
-            "raw": raw[:500]
-        })
+        print("Error:", exc)
+        return []
 
-    competition = ""
+    await page.wait_for_timeout(5000)
 
-    for line in lines:
-
-        if any(
-            word in line.upper()
-            for word in [
-                "DIVISIÓ",
-                "PREFERENT",
-                "TERCERA",
-                "SEGONA",
-                "PRIMERA",
-                "CADET",
-                "INFANTIL",
-                "ALEVÍ",
-                "BENJAMÍ",
-                "JUVENIL",
-                "FEMENÍ"
-            ]
-        ):
-
-            if len(line) < 150:
-                competition = line
-                break
-
-    return {
-        "url": url,
-        "title": title,
-        "competition": competition,
-        "matches": clean_matches,
-    }
+    return await extract_real_match_rows(page)
 
 
 async def main():
@@ -337,237 +273,162 @@ async def main():
             locale="ca-ES"
         )
 
-        print("====================================")
-        print("FCF VILAMAJOR")
-        print("TEMPORADA 2026/27")
-        print("====================================")
+        print("")
+        print("===================================")
+        print("FCF VILAMAJOR 2026/27")
+        print("===================================")
         print("")
 
-        # ------------------------------------------------
-        # 1. ENTRAR A LA PÀGINA DEL CLUB
-        # ------------------------------------------------
+        # -------------------------------------------------
+        # 1. ENTRAMOS EN LA PÁGINA OFICIAL DEL CLUB
+        # -------------------------------------------------
 
-        await get_page(
-            page,
-            CLUB_URL
-        )
+        calendar_links = set()
 
-        # ------------------------------------------------
-        # 2. BUSCAR ENLACES DIRECTOS
-        # ------------------------------------------------
+        for club_url in CLUB_URLS:
 
-        team_links = await extract_team_links(
-            page
-        )
+            try:
 
-        calendar_links = await extract_calendar_links(
-            page
-        )
+                await page.goto(
+                    club_url,
+                    wait_until="domcontentloaded",
+                    timeout=90000
+                )
 
-        print(
-            f"Enllaços d'equip trobats: {len(team_links)}"
-        )
+                await page.wait_for_timeout(8000)
 
-        print(
-            f"Enllaços de calendari trobats: {len(calendar_links)}"
-        )
+                found = await get_links(page)
 
-        # ------------------------------------------------
-        # 3. EXPLORAR TODAS LAS PÁGINAS FCF ENCONTRADAS
-        # ------------------------------------------------
+                calendar_links.update(found)
 
-        discovered = set()
+            except Exception as exc:
 
-        for url in team_links:
-
-            if url not in discovered:
-
-                discovered.add(url)
-
-                try:
-
-                    await get_page(
-                        page,
-                        url
-                    )
-
-                    found = await extract_calendar_links(
-                        page
-                    )
-
-                    calendar_links.update(
-                        found
-                    )
-
-                except Exception:
-                    pass
+                print(
+                    "Error club:",
+                    club_url,
+                    exc
+                )
 
         print(
-            f"Calendarios finales: {len(calendar_links)}"
+            "Calendarios/actas encontrados:",
+            len(calendar_links)
         )
 
-        # ------------------------------------------------
-        # 4. LEER CALENDARIOS
-        # ------------------------------------------------
+        # -------------------------------------------------
+        # 2. LEER SOLO PÁGINAS FCF
+        # -------------------------------------------------
 
-        calendars = []
+        all_matches = []
 
         for url in sorted(calendar_links):
 
-            result = await parse_calendar(
+            rows = await extract_page_data(
                 page,
                 url
             )
 
-            if result["matches"]:
+            for row in rows:
 
-                calendars.append(
-                    result
-                )
+                row["source"] = url
 
-        print(
-            f"Calendarios con partidos: {len(calendars)}"
-        )
+                all_matches.append(row)
 
-        # ------------------------------------------------
-        # 5. CONSTRUIR EQUIPOS
-        # ------------------------------------------------
-
-        teams = []
-
-        for calendar in calendars:
-
-            text = (
-                calendar["title"]
-                + " "
-                + calendar["competition"]
-                + " "
-                + " ".join(
-                    m["text"]
-                    for m in calendar["matches"]
-                )
-            )
-
-            name = "VILAMAJOR, C.F."
-
-            upper = text.upper()
-
-            if "JUVENIL" in upper:
-                name = "Juvenil"
-
-            elif "CADET" in upper:
-                name = "Cadet"
-
-            elif "INFANTIL" in upper:
-                name = "Infantil"
-
-            elif "ALEV" in upper:
-                name = "Aleví"
-
-            elif "BENJ" in upper:
-                name = "Benjamí"
-
-            elif "FEMEN" in upper:
-                name = "Femení"
-
-            elif "TERCERA CATALANA" in upper:
-                name = "Primer Equip"
-
-            team = {
-                "name": name,
-                "category": name,
-                "competition": calendar[
-                    "competition"
-                ],
-                "venue": "",
-                "url": calendar["url"],
-                "next": None,
-                "last": None,
-                "upcoming": [],
-                "results": [],
-                "standing": {}
-            }
-
-            for match in calendar["matches"]:
-
-                item = {
-                    "round": match["round"],
-                    "date": match["date"],
-                    "time": match["time"],
-                    "score": match["score"],
-                    "text": match["text"],
-                    "source": calendar["url"]
-                }
-
-                if match["score"]:
-
-                    team["results"].append(
-                        item
-                    )
-
-                else:
-
-                    team["upcoming"].append(
-                        item
-                    )
-
-            if team["upcoming"]:
-
-                team["next"] = team[
-                    "upcoming"
-                ][0]
-
-            if team["results"]:
-
-                team["last"] = team[
-                    "results"
-                ][-1]
-
-            teams.append(team)
-
-        # ------------------------------------------------
-        # 6. DEDUPLICAR EQUIPOS
-        # ------------------------------------------------
+        # -------------------------------------------------
+        # 3. DEDUPLICAR
+        # -------------------------------------------------
 
         unique = {}
 
-        for team in teams:
+        for match in all_matches:
 
             key = (
-                team["name"]
-                + "|"
-                + team["competition"]
+                tuple(match["teams"]),
+                match["date"],
+                match["time"],
+                match["score"]
             )
 
-            if key not in unique:
+            unique[key] = match
 
-                unique[key] = team
-
-            else:
-
-                old = unique[key]
-
-                old["upcoming"].extend(
-                    team["upcoming"]
-                )
-
-                old["results"].extend(
-                    team["results"]
-                )
-
-                if not old["next"]:
-                    old["next"] = team["next"]
-
-                if team["last"]:
-                    old["last"] = team["last"]
-
-        teams = list(
+        all_matches = list(
             unique.values()
         )
 
-        # ------------------------------------------------
-        # 7. RESULTADO
-        # ------------------------------------------------
+        print(
+            "Partidos reales encontrados:",
+            len(all_matches)
+        )
+
+        # -------------------------------------------------
+        # 4. CONSTRUIR UN ÚNICO EQUIPO SOLO SI EXISTE
+        # -------------------------------------------------
+
+        team = {
+            "name": "C.F. Vilamajor",
+            "category": "",
+            "competition": "",
+            "venue": "",
+            "url": CLUB_URLS[0],
+            "next": None,
+            "last": None,
+            "upcoming": [],
+            "results": [],
+            "standing": {}
+        }
+
+        for match in all_matches:
+
+            item = {
+                "teams": match["teams"],
+                "date": match["date"],
+                "time": match["time"],
+                "score": match["score"],
+                "source": match["source"]
+            }
+
+            # IMPORTANTÍSIMO:
+            #
+            # SIN MARCADOR = PRÓXIMO
+            # CON MARCADOR = RESULTADO
+            #
+            # Nunca intentamos deducirlo de otro texto.
+
+            if match["score"]:
+
+                team["results"].append(item)
+
+            else:
+
+                team["upcoming"].append(item)
+
+        if team["results"]:
+
+            team["last"] = team["results"][-1]
+
+        if team["upcoming"]:
+
+            team["next"] = team["upcoming"][0]
+
+        # -------------------------------------------------
+        # 5. SI NO HAY DATOS REALES, NO PISAR JSON
+        # -------------------------------------------------
+
+        if not all_matches:
+
+            print("")
+            print("NO SE HAN ENCONTRADO PARTIDOS REALES.")
+            print("NO SE MODIFICA data/fcf.json.")
+            print("")
+
+            await browser.close()
+
+            raise RuntimeError(
+                "FCF no ha devuelto filas de partidos."
+            )
+
+        # -------------------------------------------------
+        # 6. JSON
+        # -------------------------------------------------
 
         data = {
             "updated_at":
@@ -583,36 +444,13 @@ async def main():
                     CLUB_ID,
 
                 "source":
-                    CLUB_URL
+                    f"{BASE_URL}/ca"
             },
 
-            "teams":
-                teams
+            "teams": [
+                team
+            ]
         }
-
-        # ------------------------------------------------
-        # 8. NO SOBREESCRIBIR CON DATOS VACÍOS
-        # ------------------------------------------------
-
-        if not teams:
-
-            print("")
-            print(
-                "ERROR: FCF NO HA DEVUELTO EQUIPOS."
-            )
-            print(
-                "NO SE MODIFICA fcf.json."
-            )
-
-            await browser.close()
-
-            raise RuntimeError(
-                "No se han encontrado equipos/partidos FCF."
-            )
-
-        # ------------------------------------------------
-        # 9. GUARDAR
-        # ------------------------------------------------
 
         OUTPUT.write_text(
             json.dumps(
@@ -624,20 +462,21 @@ async def main():
         )
 
         print("")
-        print("====================================")
+        print("===================================")
+        print("OK")
         print(
-            f"OK - {len(teams)} EQUIPS"
+            "Partidos:",
+            len(all_matches)
         )
-        print("====================================")
-
-        for team in teams:
-
-            print(
-                f"- {team['name']} | "
-                f"{team['competition']} | "
-                f"{len(team['upcoming'])} propers | "
-                f"{len(team['results'])} resultats"
-            )
+        print(
+            "Resultados:",
+            len(team["results"])
+        )
+        print(
+            "Próximos:",
+            len(team["upcoming"])
+        )
+        print("===================================")
 
         await browser.close()
 
