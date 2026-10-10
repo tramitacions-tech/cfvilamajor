@@ -1,395 +1,410 @@
 {
-  "updated_at": "2026-10-10T18:31:24.111002+00:00",
-  "club": {
-    "name": "C.F. Vilamajor",
-    "fcf_id": "1096",
-    "source": "https://www.fcf.cat/ca/clubs/1096"
-  },
+  "source": "elFutbol",
+  "source_url": "https://elfutbol.co/es/club/vilamajor-cf",
+  "updated_at": "2026-10-10T18:58:11.018739+00:00",
   "teams": [
     {
-      "name": "VILAMAJOR, C.F.",
-      "category": "JUVENIL PRIMERA DIVISIÓ",
-      "competition": "JUVENIL PRIMERA DIVISIÓ",
-      "group": "GRUP 4",
-      "venue": "CAMP DE FUTBOL MPAL. JOAN NICOLAU E",
-      "url": "https://www.fcf.cat/ca/competicio/acta/4193903",
+      "name": "Vilamajor, C.F. A — Tercera Catalana",
+      "category": "Vilamajor, C.F. A — Tercera Catalana | elFutbol",
+      "competition": "Vilamajor, C.F. A — Tercera Catalana | elFutbol",
+      "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=tercera-catalana&group=grup-5",
       "next": {
-        "home": "VILAMAJOR, C.F.",
-        "away": "CARDEDEU, F.C.",
-        "date": "11.10.2026",
-        "iso": "2026-10-11",
-        "time": "17:00",
-        "score": "",
-        "venue": "CAMP DE FUTBOL MPAL. JOAN NICOLAU E",
-        "competition": "JUVENIL PRIMERA DIVISIÓ",
-        "round": "3",
-        "source": "https://www.fcf.cat/ca/competicio/acta/4193919"
+        "date": null,
+        "time": "18:30",
+        "home": null,
+        "away": null,
+        "venue": null,
+        "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=tercera-catalana&group=grup-5"
       },
-      "last": {
-        "home": "VILAMAJOR, C.F.",
-        "away": "MOLLET U.E.,CF.",
-        "date": "27.09.2026",
-        "iso": "2026-09-27",
-        "time": "17:00",
-        "score": "1-2",
-        "venue": "CAMP DE FUTBOL MPAL. JOAN NICOLAU E",
-        "competition": "JUVENIL PRIMERA DIVISIÓ",
-        "round": "1",
-        "source": "https://www.fcf.cat/ca/competicio/acta/4193903"
+      "last": null,
+      "standing": {
+        "position": 3,
+        "played": 3,
+        "points": 6
       },
       "upcoming": [
         {
-          "home": "VILAMAJOR, C.F.",
-          "away": "CARDEDEU, F.C.",
-          "date": "11.10.2026",
-          "iso": "2026-10-11",
+          "date": null,
+          "time": "18:30",
+          "home": null,
+          "away": null,
+          "venue": null,
+          "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=tercera-catalana&group=grup-5"
+        }
+      ],
+      "results": []
+    },
+    {
+      "name": "Vilamajor, C.F. A — Juvenil Primera Divisió",
+      "category": "Vilamajor, C.F. A — Juvenil Primera Divisió | elFutbol",
+      "competition": "Vilamajor, C.F. A — Juvenil Primera Divisió | elFutbol",
+      "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=juvenil-primera-divisio&group=grup-4",
+      "next": {
+        "date": null,
+        "time": "17:00",
+        "home": null,
+        "away": null,
+        "venue": null,
+        "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=juvenil-primera-divisio&group=grup-4"
+      },
+      "last": null,
+      "standing": {
+        "position": 10,
+        "played": 1,
+        "points": 0
+      },
+      "upcoming": [
+        {
+          "date": null,
           "time": "17:00",
-          "score": "",
-          "venue": "CAMP DE FUTBOL MPAL. JOAN NICOLAU E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "3",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4193919"
-        },
+          "home": null,
+          "away": null,
+          "venue": null,
+          "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=juvenil-primera-divisio&group=grup-4"
+        }
+      ],
+      "results": []
+    },
+    {
+      "name": "Vilamajor, C.F. B — Juvenil Segona Divisió",
+      "category": "Vilamajor, C.F. B — Juvenil Segona Divisió | elFutbol",
+      "competition": "Vilamajor, C.F. B — Juvenil Segona Divisió | elFutbol",
+      "url": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=juvenil-segona-divisio&group=grup-20",
+      "next": {
+        "date": null,
+        "time": "12:00",
+        "home": null,
+        "away": null,
+        "venue": null,
+        "url": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=juvenil-segona-divisio&group=grup-20"
+      },
+      "last": null,
+      "standing": {
+        "position": 3,
+        "played": 1,
+        "points": 1
+      },
+      "upcoming": [
         {
-          "home": "CANOVELLES, U.E.",
-          "away": "VILAMAJOR, C.F.",
-          "date": "17.10.2026",
-          "iso": "2026-10-17",
-          "time": "19:30",
-          "score": "",
-          "venue": "CAMP DE FUTBOL MPAL. CANOVELLES E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "4",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4193920"
-        },
-        {
-          "home": "VILAMAJOR, C.F.",
-          "away": "SABADELLENCA, UE.",
-          "date": "25.10.2026",
-          "iso": "2026-10-25",
-          "time": "17:00",
-          "score": "",
-          "venue": "CAMP DE FUTBOL MPAL. JOAN NICOLAU E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "5",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4193935"
-        },
-        {
-          "home": "OLIMPIC LA GARRIGA, C.F.",
-          "away": "VILAMAJOR, C.F.",
-          "date": "01.11.2026",
-          "iso": "2026-11-01",
-          "time": "18:00",
-          "score": "",
-          "venue": "CAMP D´ESPORTS MPAL. DE LA GARRIGA E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "6",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4193936"
-        },
-        {
-          "home": "VILAMAJOR, C.F.",
-          "away": "FUNDACIÓ UNIÓ ESPORTIVA VIC",
-          "date": "08.11.2026",
-          "iso": "2026-11-08",
-          "time": "17:00",
-          "score": "",
-          "venue": "CAMP DE FUTBOL MPAL. JOAN NICOLAU E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "7",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4193951"
-        },
-        {
-          "home": "SANT JULIA DE VILATORTA, C.F.",
-          "away": "VILAMAJOR, C.F.",
-          "date": "14.11.2026",
-          "iso": "2026-11-14",
+          "date": null,
           "time": "12:00",
-          "score": "",
-          "venue": "CAMP DE FUTBOL ZEM DE SANT JULIÀ DE VILATORTA E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "8",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4193952"
-        },
+          "home": null,
+          "away": null,
+          "venue": null,
+          "url": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=juvenil-segona-divisio&group=grup-20"
+        }
+      ],
+      "results": []
+    },
+    {
+      "name": "Vilamajor, C.F. A — Cadet Segona Divisió S16",
+      "category": "Vilamajor, C.F. A — Cadet Segona Divisió S16 | elFutbol",
+      "competition": "Vilamajor, C.F. A — Cadet Segona Divisió S16 | elFutbol",
+      "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=cadet-segona-divisio-s16&group=grup-12",
+      "next": {
+        "date": null,
+        "time": "15:00",
+        "home": null,
+        "away": null,
+        "venue": null,
+        "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=cadet-segona-divisio-s16&group=grup-12"
+      },
+      "last": null,
+      "standing": {
+        "position": 1,
+        "played": 1,
+        "points": 3
+      },
+      "upcoming": [
         {
-          "home": "VILAMAJOR, C.F.",
-          "away": "MANLLEU, A.E.C.",
-          "date": "22.11.2026",
-          "iso": "2026-11-22",
-          "time": "17:00",
-          "score": "",
-          "venue": "CAMP DE FUTBOL MPAL. JOAN NICOLAU E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "9",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4193967"
-        },
-        {
-          "home": "RIUDEPERES C.F. AT.",
-          "away": "VILAMAJOR, C.F.",
-          "date": "29.11.2026",
-          "iso": "2026-11-29",
-          "time": "16:00",
-          "score": "",
-          "venue": "CAMP DE FUTBOL MPAL. DE CALLDETENES E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "10",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4193968"
-        },
-        {
-          "home": "VILAMAJOR, C.F.",
-          "away": "SANT CELONI, FUTBOL CLUB",
-          "date": "13.12.2026",
-          "iso": "2026-12-13",
-          "time": "17:00",
-          "score": "",
-          "venue": "CAMP DE FUTBOL MPAL. JOAN NICOLAU E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "11",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4193983"
-        },
-        {
-          "home": "LES FRANQUESES, C.F.",
-          "away": "VILAMAJOR, C.F.",
-          "date": "19.12.2026",
-          "iso": "2026-12-19",
-          "time": "19:30",
-          "score": "",
-          "venue": "CAMP DE FUTBOL MPAL. DE CORRÓ D´AVALL E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "12",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4193984"
-        },
-        {
-          "home": "VILAMAJOR, C.F.",
-          "away": "BELLAVISTA MILAN, C.",
-          "date": "10.01.2027",
-          "iso": "2027-01-10",
-          "time": "17:00",
-          "score": "",
-          "venue": "CAMP DE FUTBOL MPAL. JOAN NICOLAU E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "13",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4193999"
-        },
-        {
-          "home": "VILAMAJOR, C.F.",
-          "away": "BIGUES, C.E.",
-          "date": "17.01.2027",
-          "iso": "2027-01-17",
-          "time": "17:00",
-          "score": "",
-          "venue": "CAMP DE FUTBOL MPAL. JOAN NICOLAU E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "14",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4194000"
-        },
-        {
-          "home": "FUNDACIO UNIÓ ESPORTIVA VILASSAR",
-          "away": "VILAMAJOR, C.F.",
-          "date": "23.01.2027",
-          "iso": "2027-01-23",
-          "time": "17:30",
-          "score": "",
-          "venue": "CAMP DE FUTBOL MPAL. XEVI RAMON E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "15",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4194015"
-        },
-        {
-          "home": "MOLLET U.E.,CF.",
-          "away": "VILAMAJOR, C.F.",
-          "date": "31.01.2027",
-          "iso": "2027-01-31",
-          "time": "12:00",
-          "score": "",
-          "venue": "CAMP DE FUTBOL MPAL. GERMANS GONZALVO (1) E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "16",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4194023"
-        },
-        {
-          "home": "VILAMAJOR, C.F.",
-          "away": "GRANOLLERS, E.C.",
-          "date": "14.02.2027",
-          "iso": "2027-02-14",
-          "time": "17:00",
-          "score": "",
-          "venue": "CAMP DE FUTBOL MPAL. JOAN NICOLAU E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "17",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4194024"
-        },
-        {
-          "home": "CARDEDEU, F.C.",
-          "away": "VILAMAJOR, C.F.",
-          "date": "21.02.2027",
-          "iso": "2027-02-21",
+          "date": null,
           "time": "15:00",
-          "score": "",
-          "venue": "CAMP D´ESPORTS MPAL. DE CARDEDEU E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "18",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4194039"
-        },
-        {
-          "home": "VILAMAJOR, C.F.",
-          "away": "CANOVELLES, U.E.",
-          "date": "28.02.2027",
-          "iso": "2027-02-28",
-          "time": "17:00",
-          "score": "",
-          "venue": "CAMP DE FUTBOL MPAL. JOAN NICOLAU E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "19",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4194040"
-        },
-        {
-          "home": "SABADELLENCA, UE.",
-          "away": "VILAMAJOR, C.F.",
-          "date": "06.03.2027",
-          "iso": "2027-03-06",
-          "time": "20:00",
-          "score": "",
-          "venue": "CAMP DE FUTBOL MPAL. LA CREU E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "20",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4194055"
-        },
-        {
-          "home": "VILAMAJOR, C.F.",
-          "away": "OLIMPIC LA GARRIGA, C.F.",
-          "date": "14.03.2027",
-          "iso": "2027-03-14",
-          "time": "17:00",
-          "score": "",
-          "venue": "CAMP DE FUTBOL MPAL. JOAN NICOLAU E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "21",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4194056"
-        },
-        {
-          "home": "FUNDACIÓ UNIÓ ESPORTIVA VIC",
-          "away": "VILAMAJOR, C.F.",
-          "date": "20.03.2027",
-          "iso": "2027-03-20",
-          "time": "16:00",
-          "score": "",
-          "venue": "ESTADI ZEM HIPÒLIT PLANÀS E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "22",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4194071"
-        },
-        {
-          "home": "VILAMAJOR, C.F.",
-          "away": "SANT JULIA DE VILATORTA, C.F.",
-          "date": "04.04.2027",
-          "iso": "2027-04-04",
-          "time": "17:00",
-          "score": "",
-          "venue": "CAMP DE FUTBOL MPAL. JOAN NICOLAU E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "23",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4194072"
-        },
-        {
-          "home": "MANLLEU, A.E.C.",
-          "away": "VILAMAJOR, C.F.",
-          "date": "11.04.2027",
-          "iso": "2027-04-11",
-          "time": "16:00",
-          "score": "",
-          "venue": "CAMP D´ESPORTS MPAL. DE MANLLEU E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "24",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4194087"
-        },
-        {
-          "home": "VILAMAJOR, C.F.",
-          "away": "RIUDEPERES C.F. AT.",
-          "date": "18.04.2027",
-          "iso": "2027-04-18",
-          "time": "17:00",
-          "score": "",
-          "venue": "CAMP DE FUTBOL MPAL. JOAN NICOLAU E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "25",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4194088"
-        },
-        {
-          "home": "SANT CELONI, FUTBOL CLUB",
-          "away": "VILAMAJOR, C.F.",
-          "date": "24.04.2027",
-          "iso": "2027-04-24",
-          "time": "17:30",
-          "score": "",
-          "venue": "CAMP D´ESPORTS MPAL. DE SANT CELONI E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "26",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4194103"
-        },
-        {
-          "home": "VILAMAJOR, C.F.",
-          "away": "LES FRANQUESES, C.F.",
-          "date": "02.05.2027",
-          "iso": "2027-05-02",
-          "time": "17:00",
-          "score": "",
-          "venue": "CAMP DE FUTBOL MPAL. JOAN NICOLAU E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "27",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4194104"
-        },
-        {
-          "home": "BELLAVISTA MILAN, C.",
-          "away": "VILAMAJOR, C.F.",
-          "date": "08.05.2027",
-          "iso": "2027-05-08",
-          "time": "18:30",
-          "score": "",
-          "venue": "CAMP DE FUTBOL MPAL. DE CORRÓ D´AVALL E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "28",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4194119"
-        },
-        {
-          "home": "BIGUES, C.E.",
-          "away": "VILAMAJOR, C.F.",
-          "date": "15.05.2027",
-          "iso": "2027-05-15",
-          "time": "18:30",
-          "score": "",
-          "venue": "CAMP D´ESPORTS MPAL. DE BIGUES I RIELLS E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "29",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4194120"
-        },
-        {
-          "home": "VILAMAJOR, C.F.",
-          "away": "FUNDACIO UNIÓ ESPORTIVA VILASSAR",
-          "date": "23.05.2027",
-          "iso": "2027-05-23",
-          "time": "17:00",
-          "score": "",
-          "venue": "CAMP DE FUTBOL MPAL. JOAN NICOLAU E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "30",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4194135"
+          "home": null,
+          "away": null,
+          "venue": null,
+          "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=cadet-segona-divisio-s16&group=grup-12"
         }
       ],
-      "results": [
+      "results": []
+    },
+    {
+      "name": "Vilamajor, C.F. B — Cadet Segona Divisió S16",
+      "category": "Vilamajor, C.F. B — Cadet Segona Divisió S16 | elFutbol",
+      "competition": "Vilamajor, C.F. B — Cadet Segona Divisió S16 | elFutbol",
+      "url": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=cadet-segona-divisio-s16&group=grup-11",
+      "next": {
+        "date": null,
+        "time": "16:00",
+        "home": null,
+        "away": null,
+        "venue": null,
+        "url": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=cadet-segona-divisio-s16&group=grup-11"
+      },
+      "last": null,
+      "standing": {
+        "position": 3,
+        "played": 0,
+        "points": 0
+      },
+      "upcoming": [
         {
-          "home": "VILAMAJOR, C.F.",
-          "away": "MOLLET U.E.,CF.",
-          "date": "27.09.2026",
-          "iso": "2026-09-27",
-          "time": "17:00",
-          "score": "1-2",
-          "venue": "CAMP DE FUTBOL MPAL. JOAN NICOLAU E",
-          "competition": "JUVENIL PRIMERA DIVISIÓ",
-          "round": "1",
-          "source": "https://www.fcf.cat/ca/competicio/acta/4193903"
+          "date": null,
+          "time": "16:00",
+          "home": null,
+          "away": null,
+          "venue": null,
+          "url": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=cadet-segona-divisio-s16&group=grup-11"
         }
       ],
-      "standing": {}
+      "results": []
+    },
+    {
+      "name": "Vilamajor, C.F. A — Infantil Segona Divisió S14",
+      "category": "Vilamajor, C.F. A — Infantil Segona Divisió S14 | elFutbol",
+      "competition": "Vilamajor, C.F. A — Infantil Segona Divisió S14 | elFutbol",
+      "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=infantil-segona-divisio-s14&group=grup-12",
+      "next": {
+        "date": null,
+        "time": "13:00",
+        "home": null,
+        "away": null,
+        "venue": null,
+        "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=infantil-segona-divisio-s14&group=grup-12"
+      },
+      "last": null,
+      "standing": {
+        "position": 3,
+        "played": 0,
+        "points": 0
+      },
+      "upcoming": [
+        {
+          "date": null,
+          "time": "13:00",
+          "home": null,
+          "away": null,
+          "venue": null,
+          "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=infantil-segona-divisio-s14&group=grup-12"
+        }
+      ],
+      "results": []
+    },
+    {
+      "name": "Vilamajor, C.F. A — Infantil Segona Divisió S13",
+      "category": "Vilamajor, C.F. A — Infantil Segona Divisió S13 | elFutbol",
+      "competition": "Vilamajor, C.F. A — Infantil Segona Divisió S13 | elFutbol",
+      "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=infantil-segona-divisio-s13&group=grup-11",
+      "next": {
+        "date": null,
+        "time": "13:00",
+        "home": null,
+        "away": null,
+        "venue": null,
+        "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=infantil-segona-divisio-s13&group=grup-11"
+      },
+      "last": null,
+      "standing": {
+        "position": 13,
+        "played": 1,
+        "points": 0
+      },
+      "upcoming": [
+        {
+          "date": null,
+          "time": "13:00",
+          "home": null,
+          "away": null,
+          "venue": null,
+          "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=infantil-segona-divisio-s13&group=grup-11"
+        }
+      ],
+      "results": []
+    },
+    {
+      "name": "Vilamajor, C.F. A — Segona Divisió Femení Infantil",
+      "category": "Vilamajor, C.F. A — Segona Divisió Femení Infantil | elFutbol",
+      "competition": "Vilamajor, C.F. A — Segona Divisió Femení Infantil | elFutbol",
+      "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=segona-divisio-femeni-infantil&group=grup-4",
+      "next": {
+        "date": null,
+        "time": "10:00",
+        "home": null,
+        "away": null,
+        "venue": null,
+        "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=segona-divisio-femeni-infantil&group=grup-4"
+      },
+      "last": null,
+      "standing": {
+        "position": 13,
+        "played": 1,
+        "points": 0
+      },
+      "upcoming": [
+        {
+          "date": null,
+          "time": "10:00",
+          "home": null,
+          "away": null,
+          "venue": null,
+          "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=segona-divisio-femeni-infantil&group=grup-4"
+        }
+      ],
+      "results": []
+    },
+    {
+      "name": "Vilamajor, C.F. B — Tercera Divisió Aleví S12",
+      "category": "Vilamajor, C.F. B — Tercera Divisió Aleví S12 | elFutbol",
+      "competition": "Vilamajor, C.F. B — Tercera Divisió Aleví S12 | elFutbol",
+      "url": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=tercera-divisio-alevi-s12&group=grup-13",
+      "next": {
+        "date": null,
+        "time": "10:00",
+        "home": null,
+        "away": null,
+        "venue": null,
+        "url": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=tercera-divisio-alevi-s12&group=grup-13"
+      },
+      "last": null,
+      "standing": {
+        "position": 7,
+        "played": 0,
+        "points": 0
+      },
+      "upcoming": [
+        {
+          "date": null,
+          "time": "10:00",
+          "home": null,
+          "away": null,
+          "venue": null,
+          "url": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=tercera-divisio-alevi-s12&group=grup-13"
+        }
+      ],
+      "results": []
+    },
+    {
+      "name": "Vilamajor, C.F. A — Segona Divisió Aleví S11",
+      "category": "Vilamajor, C.F. A — Segona Divisió Aleví S11 | elFutbol",
+      "competition": "Vilamajor, C.F. A — Segona Divisió Aleví S11 | elFutbol",
+      "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=segona-divisio-alevi-s11&group=grup-8",
+      "next": {
+        "date": null,
+        "time": "11:30",
+        "home": null,
+        "away": null,
+        "venue": null,
+        "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=segona-divisio-alevi-s11&group=grup-8"
+      },
+      "last": null,
+      "standing": {
+        "position": 12,
+        "played": 1,
+        "points": 0
+      },
+      "upcoming": [
+        {
+          "date": null,
+          "time": "11:30",
+          "home": null,
+          "away": null,
+          "venue": null,
+          "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=segona-divisio-alevi-s11&group=grup-8"
+        }
+      ],
+      "results": []
+    },
+    {
+      "name": "Vilamajor, C.F. A — Tercera Divisió Benjamí S10",
+      "category": "Vilamajor, C.F. A — Tercera Divisió Benjamí S10 | elFutbol",
+      "competition": "Vilamajor, C.F. A — Tercera Divisió Benjamí S10 | elFutbol",
+      "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=tercera-divisio-benjami-s10&group=grup-8",
+      "next": {
+        "date": null,
+        "time": "10:30",
+        "home": null,
+        "away": null,
+        "venue": null,
+        "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=tercera-divisio-benjami-s10&group=grup-8"
+      },
+      "last": null,
+      "standing": {
+        "position": 2,
+        "played": 0,
+        "points": 0
+      },
+      "upcoming": [
+        {
+          "date": null,
+          "time": "10:30",
+          "home": null,
+          "away": null,
+          "venue": null,
+          "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=tercera-divisio-benjami-s10&group=grup-8"
+        }
+      ],
+      "results": []
+    },
+    {
+      "name": "Vilamajor, C.F. A — Tercera Divisió Benjamí S9",
+      "category": "Vilamajor, C.F. A — Tercera Divisió Benjamí S9 | elFutbol",
+      "competition": "Vilamajor, C.F. A — Tercera Divisió Benjamí S9 | elFutbol",
+      "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=tercera-divisio-benjami-s9&group=grup-6",
+      "next": {
+        "date": null,
+        "time": "09:00",
+        "home": null,
+        "away": null,
+        "venue": null,
+        "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=tercera-divisio-benjami-s9&group=grup-6"
+      },
+      "last": null,
+      "standing": {
+        "position": 3,
+        "played": 0,
+        "points": 0
+      },
+      "upcoming": [
+        {
+          "date": null,
+          "time": "09:00",
+          "home": null,
+          "away": null,
+          "venue": null,
+          "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=tercera-divisio-benjami-s9&group=grup-6"
+        }
+      ],
+      "results": []
+    },
+    {
+      "name": "Vilamajor, C.F. A — Femení Benjamí",
+      "category": "Vilamajor, C.F. A — Femení Benjamí | elFutbol",
+      "competition": "Vilamajor, C.F. A — Femení Benjamí | elFutbol",
+      "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=femeni-benjami&group=grup-2",
+      "next": {
+        "date": null,
+        "time": "09:15",
+        "home": null,
+        "away": null,
+        "venue": null,
+        "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=femeni-benjami&group=grup-2"
+      },
+      "last": null,
+      "standing": {
+        "position": 14,
+        "played": 1,
+        "points": 0
+      },
+      "upcoming": [
+        {
+          "date": null,
+          "time": "09:15",
+          "home": null,
+          "away": null,
+          "venue": null,
+          "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=femeni-benjami&group=grup-2"
+        }
+      ],
+      "results": []
     }
   ]
 }
