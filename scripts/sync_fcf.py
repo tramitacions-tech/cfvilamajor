@@ -104,6 +104,85 @@ def parse_match_text(text):
     return date_match.group(1) if date_match else None, time_match.group(0) if time_match else None
 
 
+
+
+def parse_history_lines(lines, team_name):
+    """Parse visible elFutbol fixture lines such as:
+       FT27-09 Vilamajor, C.F. A Mollet U.E., CF. A 12
+       FT14-12 Vilassar ... Vilamajor, C.F. A 01
+       Scores are rendered as concatenated digits by the site: 12 means 1-2,
+       100 means 10-0, 131 means 13-1.
+    """
+    results = []
+    seen = set()
+    # Match the club's actual short label rather than the title containing its league.
+    club_match = re.search(r"Vilamajor,\s*C\.F\.\s*[AB]", team_name, re.I)
+    club = club_match.group(0) if club_match else "Vilamajor, C.F. A"
+    for line in lines:
+        raw = clean(line)
+        if not raw or not re.search(r"\bFT\s*\d{1,2}[-/]\d{1,2}\b", raw, re.I):
+            continue
+        date_match = re.search(r"\bFT\s*(\d{1,2}[-/]\d{1,2}(?:[-/]\d{2,4})?)", raw, re.I)
+        if not date_match:
+            continue
+        date_raw = date_match.group(1)
+        tail = raw[date_match.end():].strip()
+        # Last token is the site-rendered score, e.g. 12, 100 or 131.
+        score_match = re.search(r"(\d{2,3})\s*$", tail)
+        if not score_match:
+            continue
+        score_token = score_match.group(1)
+        if len(score_token) == 2:
+            home_score, away_score = int(score_token[0]), int(score_token[1])
+        else:
+            # Three digits means a double-digit score on the home side (10-20) and
+            # a single-digit away score, as in 100 = 10-0 or 131 = 13-1.
+            home_score, away_score = int(score_token[:-1]), int(score_token[-1])
+            if home_score > 20 or away_score > 20:
+                continue
+        if home_score > 20 or away_score > 20:
+            continue
+
+        fixture_text = clean(tail[:score_match.start()])
+        # Drop any leading jornada/time leftovers.
+        fixture_text = re.sub(r"^(?:Jornada\s*\d+\s*)", "", fixture_text, flags=re.I).strip()
+        idx = fixture_text.lower().find(club.lower())
+        if idx < 0:
+            # Some team pages abbreviate spacing; allow normalized whitespace comparison.
+            norm_fixture = re.sub(r"\s+", " ", fixture_text).lower()
+            norm_club = re.sub(r"\s+", " ", club).lower()
+            idx = norm_fixture.find(norm_club)
+            if idx < 0:
+                continue
+        before = clean(fixture_text[:idx])
+        after = clean(fixture_text[idx + len(club):])
+        if before:
+            home, away = before, club
+        elif after:
+            home, away = club, after
+        else:
+            continue
+
+        key = (date_raw, home, away, home_score, away_score)
+        if key in seen:
+            continue
+        seen.add(key)
+        results.append({
+            "date": date_raw,
+            "iso": date_iso(date_raw),
+            "time": None,
+            "home": home,
+            "away": away,
+            "home_score": home_score,
+            "away_score": away_score,
+            "score": f"{home_score}-{away_score}",
+            "venue": None,
+            "source": None,
+        })
+    results.sort(key=lambda x: x.get("iso") or "", reverse=True)
+    return results
+
+
 async def read_team(page, url, link_name):
     response = await page.goto(url, wait_until="domcontentloaded", timeout=60000)
     if not response or response.status >= 400:
@@ -162,58 +241,12 @@ async def read_team(page, url, link_name):
             })
             break
 
-    # Results: use actual match-card DOM nodes under the 'Resultados recientes'
-    # section. This is the key fix; results are not HTML tables on elFutbol.
-    cards = await extract_match_cards(page)
-    results = []
-    seen = set()
-    for card in cards:
-        text = clean(card.get("text"))
-        date_raw, time_raw = parse_match_text(text)
-        if not date_raw:
-            continue
-        home_score, away_score = parse_score_from_html(card.get("html", ""), text)
-        # A result needs a score and a Vilamajor fixture; upcoming fixtures have
-        # no score and are excluded. Never fabricate a score from a concatenated "11".
-        if home_score is None or away_score is None:
-            continue
-        if not re.search(r"\b\d{1,2}[-/]\d{1,2}\b", text):
-            continue
-
-        # The club name appears on one side; the other team is taken from the
-        # visible card text. Keep original card text as fallback for traceability.
-        cleaned = re.sub(r"\b(?:FT|FINALIZADO|FINAL|TERMINADO)\b", " ", text, flags=re.I)
-        cleaned = re.sub(r"\bJornada\s*\d+\b", " ", cleaned, flags=re.I)
-        cleaned = re.sub(r"\b\d{1,2}[-/]\d{1,2}(?:[-/]\d{2,4})?\b", " ", cleaned)
-        cleaned = re.sub(r"\b([01]?\d|2[0-3]):[0-5]\d\b", " ", cleaned)
-        cleaned = re.sub(r"(?<![\w])\d{1,2}(?![\w])", " ", cleaned)
-        cleaned = clean(cleaned)
-        # Try to split team names on the common "Home Away" boundary using the
-        # team name known for this page; leave opponent blank if ambiguous.
-        home = away = None
-        idx = cleaned.lower().find(name.lower())
-        if idx >= 0:
-            before, after = clean(cleaned[:idx]), clean(cleaned[idx + len(name):])
-            if before:
-                home, away = before, name
-            elif after:
-                home, away = name, after
-        key = (date_raw, home_score, away_score, text)
-        if key in seen:
-            continue
-        seen.add(key)
-        results.append({
-            "date": date_raw,
-            "iso": date_iso(date_raw),
-            "time": time_raw,
-            "home": home,
-            "away": away,
-            "home_score": home_score,
-            "away_score": away_score,
-            "score": f"{home_score}-{away_score}",
-            "venue": None,
-            "source": url,
-        })
+    # Results: elFutbol renders completed fixtures as visible text lines, e.g.
+    # "FT27-09 Vilamajor, C.F. A Mollet U.E., CF. A 12". The final score is
+    # concatenated (12 = 1-2, 100 = 10-0); parse these lines directly.
+    results = parse_history_lines(lines, name)
+    for result in results:
+        result["source"] = url
 
     results.sort(key=lambda x: x.get("iso") or "", reverse=True)
     upcoming.sort(key=lambda x: x.get("iso") or "")
@@ -225,6 +258,9 @@ async def read_team(page, url, link_name):
         "url": url,
         "next": upcoming[0] if upcoming else None,
         "last": results[0] if results else None,
+        # Compatibility with the existing index.html card renderers:
+        "next_match": upcoming[0] if upcoming else None,
+        "last_match": results[0] if results else None,
         "standing": standing,
         "upcoming": upcoming,
         "results": results,
