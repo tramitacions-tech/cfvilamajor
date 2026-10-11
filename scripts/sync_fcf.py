@@ -101,62 +101,84 @@ def parse_match_text(text):
 
 
 def parse_history_lines(lines, team_name):
-    """Parse elFutbol history even when FT/date/team/score are separate DOM lines."""
+    """Extract completed matches from elFutbol's visible history text.
+
+    elFutbol renders examples like:
+      FT03-10 Vilamajor, C.F. A Cardedeu, F.C. B 21[Button: star]
+    where 21 means 2-1 and the UI button may be appended to the same text node.
+    """
     results = []
     seen = set()
-    club_match = re.search(r"Vilamajor,\s*C\.?F\.?\s*[AB]", team_name, re.I)
-    club = clean(club_match.group(0)) if club_match else "Vilamajor, C.F. A"
-    # Build windows starting at FT. elFutbol often puts FT/date, each team and
-    # the concatenated score in separate elements/lines.
     for i, line in enumerate(lines):
         if not re.search(r"\b(?:FT|FINALIZADO|FINAL|TERMINADO)\s*\d{1,2}[-/]\d{1,2}\b", line, re.I):
             continue
+
+        # Join the current line with a few following DOM text lines because
+        # the date, clubs and score can be split across siblings.
         window = []
-        for candidate in lines[i:i+12]:
-            if window and re.search(r"\b(?:FT|FINALIZADO|FINAL|TERMINADO)\s*\d{1,2}[-/]\d{1,2}\b", candidate, re.I):
+        for candidate in lines[i:i + 10]:
+            if window and re.search(
+                r"\b(?:FT|FINALIZADO|FINAL|TERMINADO)\s*\d{1,2}[-/]\d{1,2}\b",
+                candidate, re.I
+            ):
                 break
-            if re.search(r"resultados recientes|pr[oó]ximo partido|clasificaci[oó]n", candidate, re.I):
-                if window:
-                    break
+            if window and re.search(
+                r"resultados recientes|pr[oó]ximo partido|clasificaci[oó]n",
+                candidate, re.I
+            ):
+                break
             window.append(candidate)
         raw = clean(" ".join(window))
-        date_match = re.search(r"\b(?:FT|FINALIZADO|FINAL|TERMINADO)\s*(\d{1,2}[-/]\d{1,2}(?:[-/]\d{2,4})?)", raw, re.I)
+        date_match = re.search(
+            r"\b(?:FT|FINALIZADO|FINAL|TERMINADO)\s*(\d{1,2}[-/]\d{1,2}(?:[-/]\d{2,4})?)",
+            raw, re.I
+        )
         if not date_match:
             continue
         date_raw = date_match.group(1)
         tail = clean(raw[date_match.end():])
-        # ElFutbol añade controles UI al final del texto (p.ej. [Button: star]).
-        # Quitarlos antes de leer el marcador era el fallo que dejaba todos los resultados a cero.
-        tail = re.sub(r"\s*\[(?:Button:\s*)?(?:star|chevron_right|more_vert)[^\]]*\]\s*$", "", tail, flags=re.I)
-        tail = re.sub(r"\s*(?:chevron_right|star)\s*$", "", tail, flags=re.I)
-        score_match = re.search(r"(?:^|\s)(\d{2,3})\s*$", tail)
+
+        # Remove UI controls BEFORE looking for the concatenated score.
+        tail = re.sub(r"\[Button:\s*star\]", " ", tail, flags=re.I)
+        tail = re.sub(r"\bchevron_right\b", " ", tail, flags=re.I)
+        tail = re.sub(r"\bstar\b", " ", tail, flags=re.I)
+        tail = clean(tail)
+
+        score_match = re.search(r"(?<!\d)(\d{2,3})\s*$", tail)
         if not score_match:
             continue
         token = score_match.group(1)
+        # Scores are concatenated: 21 -> 2-1, 100 -> 10-0, 121 -> 12-1.
         if len(token) == 2:
             hs, aws = int(token[0]), int(token[1])
         else:
             hs, aws = int(token[:-1]), int(token[-1])
         if hs > 20 or aws > 20:
             continue
+
         fixture = clean(tail[:score_match.start()])
-        # If score regex matched after whitespace, preserve preceding content only.
-        fixture = fixture.strip()
         mclub = re.search(r"Vilamajor,?\s*C\.?F\.?\s*[AB]", fixture, re.I)
         if not mclub:
             continue
         club_text = clean(mclub.group(0))
         before = clean(fixture[:mclub.start()])
         after = clean(fixture[mclub.end():])
-        if before:
-            home, away = before, club_text
-        elif after:
+
+        # If the Vilamajor name is first, it's the home side; if another
+        # club precedes it, that club is home and Vilamajor is away.
+        if not before and after:
             home, away = club_text, after
+        elif before and not after:
+            home, away = before, club_text
+        elif before and after:
+            # Usually any leading text is a stray icon/round label; use
+            # the club's position to retain the opponent on the other side.
+            home, away = before, clean(club_text + " " + after)
         else:
             continue
-        # Remove non-team labels that sometimes appear alongside a match.
-        home = re.sub(r"\s*(?:chevron_right|star)$", "", home, flags=re.I).strip()
-        away = re.sub(r"\s*(?:chevron_right|star)$", "", away, flags=re.I).strip()
+
+        home = re.sub(r"\s*(?:chevron_right|star)$", "", home, flags=re.I).strip(" -|")
+        away = re.sub(r"\s*(?:chevron_right|star)$", "", away, flags=re.I).strip(" -|")
         if not home or not away or len(home) < 3 or len(away) < 3:
             continue
         key = (date_raw, home, away, hs, aws)
@@ -181,8 +203,6 @@ def parse_history_cards(cards, team_name):
 
     for card in cards or []:
         raw = clean(card.get("text", ""))
-        # Normalize visible accessibility labels appended to each result card.
-        raw = re.sub(r"\s*\[(?:Button:\s*)?(?:star|chevron_right|more_vert)[^\]]*\]\s*", " ", raw, flags=re.I)
         if not raw or not re.search(r"\b(?:FT|FINALIZADO|FINAL|TERMINADO)\s*\d{1,2}[-/]\d{1,2}\b", raw, re.I):
             continue
         date_match = re.search(r"\b(?:FT|FINALIZADO|FINAL|TERMINADO)\s*(\d{1,2}[-/]\d{1,2}(?:[-/]\d{2,4})?)", raw, re.I)
@@ -190,8 +210,9 @@ def parse_history_cards(cards, team_name):
             continue
         date_raw = date_match.group(1)
         tail = clean(raw[date_match.end():])
-        tail = re.sub(r"\s*\[(?:Button:\s*)?(?:star|chevron_right|more_vert)[^\]]*\]\s*$", "", tail, flags=re.I)
-        tail = re.sub(r"\s*(?:chevron_right|star)\s*$", "", tail, flags=re.I)
+        tail = re.sub(r"\[Button:\s*star\]", " ", tail, flags=re.I)
+        tail = re.sub(r"\bchevron_right\b|\bstar\b", " ", tail, flags=re.I)
+        tail = clean(tail)
 
         hs, aws = parse_score_from_html(card.get("html", ""), raw)
         score_match = re.search(r"(?:^|\s)(\d{2,3})\s*$", tail)
