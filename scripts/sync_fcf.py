@@ -50,8 +50,8 @@ async def extract_match_cards(page):
     Solo devuelve un marcador si se identifican dos goles numéricos claros.
     """
     return await page.locator("body").evaluate("""body => {
-      const clean = s => (s || '').replace(/\\\\s+/g, ' ').trim();
-      const dateRe = /\\\\b(?:[01]?\\\\d|2\\\\d|3[01])[-/](?:0?\\\\d|1[0-2])\\\\b/;
+      const clean = s => (s || '').replace(/\\s+/g, ' ').trim();
+      const dateRe = /\\b(?:[01]?\\d|2\\d|3[01])[-/](?:0?\\d|1[0-2])\\b/;
       const isVisible = el => !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
       const all = Array.from(body.querySelectorAll('*')).filter(el => isVisible(el));
       const candidates = [];
@@ -72,25 +72,18 @@ async def extract_match_cards(page):
 
 
 def parse_score_from_html(html, text):
-    # Most reliable: elements whose class/aria-label explicitly indicates a score.
+    """Read goals only from explicitly score-labelled DOM nodes.
+
+    The generic-text fallback is intentionally avoided: opponent names can contain
+    years (e.g. "Palau 2024") and concatenated scores like "12" must mean 1-2,
+    not be mixed with unrelated numbers from the fixture text.
+    """
     score_nodes = re.findall(
         r"""<(?:span|div|b|strong)[^>]*(?:class|aria-label)=["'][^"']*(?:score|result|goal|goles|marcador)[^"']*["'][^>]*>\s*(\d{1,2})\s*</(?:span|div|b|strong)>""",
         html, re.I
     )
     if len(score_nodes) >= 2:
         return int(score_nodes[-2]), int(score_nodes[-1])
-
-    # Fallback: score is commonly rendered as two separate one/two-digit nodes.
-    # Only use the two final standalone numeric nodes if there are no other numeric
-    # labels after the team names. Do not split a concatenated "11" into 1-1.
-    tail = re.sub(r"\b(?:Jornada|J)\s*\d+\b", " ", text, flags=re.I)
-    tail = re.sub(r"\b\d{1,2}[-/]\d{1,2}(?:[-/]\d{2,4})?\b", " ", tail)
-    nums = re.findall(r"(?<![\w])(\d{1,2})(?![\w])", tail)
-    if len(nums) >= 2:
-        # Avoid assigning a score if more than two numbers make the row ambiguous.
-        last_two = nums[-2:]
-        if all(int(n) <= 20 for n in last_two):
-            return int(last_two[0]), int(last_two[1])
     return None, None
 
 
@@ -106,78 +99,141 @@ def parse_match_text(text):
 
 
 
+
 def parse_history_lines(lines, team_name):
-    """Parse visible elFutbol fixture lines such as:
-       FT27-09 Vilamajor, C.F. A Mollet U.E., CF. A 12
-       FT14-12 Vilassar ... Vilamajor, C.F. A 01
-       Scores are rendered as concatenated digits by the site: 12 means 1-2,
-       100 means 10-0, 131 means 13-1.
-    """
+    """Parse elFutbol history even when FT/date/team/score are separate DOM lines."""
     results = []
     seen = set()
-    # Match the club's actual short label rather than the title containing its league.
-    club_match = re.search(r"Vilamajor,\s*C\.F\.\s*[AB]", team_name, re.I)
-    club = club_match.group(0) if club_match else "Vilamajor, C.F. A"
-    for line in lines:
-        raw = clean(line)
-        if not raw or not re.search(r"\bFT\s*\d{1,2}[-/]\d{1,2}\b", raw, re.I):
+    club_match = re.search(r"Vilamajor,\s*C\.?F\.?\s*[AB]", team_name, re.I)
+    club = clean(club_match.group(0)) if club_match else "Vilamajor, C.F. A"
+    # Build windows starting at FT. elFutbol often puts FT/date, each team and
+    # the concatenated score in separate elements/lines.
+    for i, line in enumerate(lines):
+        if not re.search(r"\b(?:FT|FINALIZADO|FINAL|TERMINADO)\s*\d{1,2}[-/]\d{1,2}\b", line, re.I):
             continue
-        date_match = re.search(r"\bFT\s*(\d{1,2}[-/]\d{1,2}(?:[-/]\d{2,4})?)", raw, re.I)
+        window = []
+        for candidate in lines[i:i+12]:
+            if window and re.search(r"\b(?:FT|FINALIZADO|FINAL|TERMINADO)\s*\d{1,2}[-/]\d{1,2}\b", candidate, re.I):
+                break
+            if re.search(r"resultados recientes|pr[oó]ximo partido|clasificaci[oó]n", candidate, re.I):
+                if window:
+                    break
+            window.append(candidate)
+        raw = clean(" ".join(window))
+        date_match = re.search(r"\b(?:FT|FINALIZADO|FINAL|TERMINADO)\s*(\d{1,2}[-/]\d{1,2}(?:[-/]\d{2,4})?)", raw, re.I)
         if not date_match:
             continue
         date_raw = date_match.group(1)
-        tail = raw[date_match.end():].strip()
-        # Last token is the site-rendered score, e.g. 12, 100 or 131.
-        score_match = re.search(r"(\d{2,3})\s*$", tail)
+        tail = clean(raw[date_match.end():])
+        # Strip trailing UI labels; score is concatenated as 31=3-1, 100=10-0.
+        tail = re.sub(r"\s*(?:chevron_right|star)(?:\s*\[.*?\])?\s*$", "", tail, flags=re.I)
+        score_match = re.search(r"(?:^|\s)(\d{2,3})\s*$", tail)
         if not score_match:
             continue
-        score_token = score_match.group(1)
-        if len(score_token) == 2:
-            home_score, away_score = int(score_token[0]), int(score_token[1])
+        token = score_match.group(1)
+        if len(token) == 2:
+            hs, aws = int(token[0]), int(token[1])
         else:
-            # Three digits means a double-digit score on the home side (10-20) and
-            # a single-digit away score, as in 100 = 10-0 or 131 = 13-1.
-            home_score, away_score = int(score_token[:-1]), int(score_token[-1])
-            if home_score > 20 or away_score > 20:
-                continue
-        if home_score > 20 or away_score > 20:
+            hs, aws = int(token[:-1]), int(token[-1])
+        if hs > 20 or aws > 20:
             continue
-
-        fixture_text = clean(tail[:score_match.start()])
-        # Drop any leading jornada/time leftovers.
-        fixture_text = re.sub(r"^(?:Jornada\s*\d+\s*)", "", fixture_text, flags=re.I).strip()
-        idx = fixture_text.lower().find(club.lower())
-        if idx < 0:
-            # Some team pages abbreviate spacing; allow normalized whitespace comparison.
-            norm_fixture = re.sub(r"\s+", " ", fixture_text).lower()
-            norm_club = re.sub(r"\s+", " ", club).lower()
-            idx = norm_fixture.find(norm_club)
-            if idx < 0:
-                continue
-        before = clean(fixture_text[:idx])
-        after = clean(fixture_text[idx + len(club):])
+        fixture = clean(tail[:score_match.start()])
+        # If score regex matched after whitespace, preserve preceding content only.
+        fixture = fixture.strip()
+        mclub = re.search(r"Vilamajor,?\s*C\.?F\.?\s*[AB]", fixture, re.I)
+        if not mclub:
+            continue
+        club_text = clean(mclub.group(0))
+        before = clean(fixture[:mclub.start()])
+        after = clean(fixture[mclub.end():])
         if before:
-            home, away = before, club
+            home, away = before, club_text
         elif after:
-            home, away = club, after
+            home, away = club_text, after
         else:
             continue
-
-        key = (date_raw, home, away, home_score, away_score)
+        # Remove non-team labels that sometimes appear alongside a match.
+        home = re.sub(r"\s*(?:chevron_right|star)$", "", home, flags=re.I).strip()
+        away = re.sub(r"\s*(?:chevron_right|star)$", "", away, flags=re.I).strip()
+        if not home or not away or len(home) < 3 or len(away) < 3:
+            continue
+        key = (date_raw, home, away, hs, aws)
         if key in seen:
             continue
         seen.add(key)
         results.append({
-            "date": date_raw,
-            "iso": date_iso(date_raw),
-            "time": None,
-            "home": home,
-            "away": away,
-            "home_score": home_score,
-            "away_score": away_score,
-            "score": f"{home_score}-{away_score}",
-            "venue": None,
-            "source": None,
+            "date": date_raw, "iso": date_iso(date_raw), "time": None,
+            "home": home, "away": away, "home_score": hs, "away_score": aws,
+            "score": f"{hs}-{aws}", "venue": None, "source": None,
+        })
+    results.sort(key=lambda x: x.get("iso") or "", reverse=True)
+    return results
+
+
+def parse_history_cards(cards, team_name):
+    """Parse completed fixtures from DOM cards, even when body.inner_text splits them across lines."""
+    results = []
+    seen = set()
+    club_match = re.search(r"Vilamajor,\s*C\.F\.\s*[AB]", team_name, re.I)
+    club = club_match.group(0) if club_match else "Vilamajor, C.F. A"
+
+    for card in cards or []:
+        raw = clean(card.get("text", ""))
+        if not raw or not re.search(r"\b(?:FT|FINALIZADO|FINAL|TERMINADO)\s*\d{1,2}[-/]\d{1,2}\b", raw, re.I):
+            continue
+        date_match = re.search(r"\b(?:FT|FINALIZADO|FINAL|TERMINADO)\s*(\d{1,2}[-/]\d{1,2}(?:[-/]\d{2,4})?)", raw, re.I)
+        if not date_match:
+            continue
+        date_raw = date_match.group(1)
+        tail = clean(raw[date_match.end():])
+
+        hs, aws = parse_score_from_html(card.get("html", ""), raw)
+        score_match = re.search(r"(?:^|\s)(\d{2,3})\s*$", tail)
+        if hs is None and score_match:
+            token = score_match.group(1)
+            # elFutbol joins home and away goals in one token: 31 => 3-1, 100 => 10-0.
+            if len(token) == 2:
+                hs, aws = int(token[0]), int(token[1])
+            elif len(token) == 3:
+                hs, aws = int(token[:-1]), int(token[-1])
+            if hs is not None and (hs > 20 or aws > 20):
+                hs = aws = None
+            if hs is not None:
+                tail = clean(tail[:score_match.start()])
+        if hs is None or aws is None:
+            continue
+
+        # If goals were separate DOM nodes, remove only a trailing numeric score token if present.
+        tail = re.sub(r"\s+\d{2,3}\s*$", "", tail).strip()
+        fixture_text = clean(re.sub(r"\b(?:Jornada|J)\s*\d+\b", "", tail, flags=re.I))
+        idx = fixture_text.lower().find(club.lower())
+        if idx < 0:
+            # Try the short club label without relying on exact punctuation/spacing.
+            mclub = re.search(r"Vilamajor,?\s*C\.?F\.?\s*[AB]", fixture_text, re.I)
+            if not mclub:
+                continue
+            idx, end_idx = mclub.start(), mclub.end()
+        else:
+            end_idx = idx + len(club)
+        before = clean(fixture_text[:idx])
+        after = clean(fixture_text[end_idx:])
+        if before:
+            home, away = before, clean(fixture_text[idx:end_idx])
+        elif after:
+            home, away = clean(fixture_text[idx:end_idx]), after
+        else:
+            continue
+        # Remove stray UI labels from card text.
+        home = re.sub(r"\s*(?:chevron_right|star)$", "", home, flags=re.I).strip()
+        away = re.sub(r"\s*(?:chevron_right|star)$", "", away, flags=re.I).strip()
+        key = (date_raw, home, away, hs, aws)
+        if key in seen:
+            continue
+        seen.add(key)
+        results.append({
+            "date": date_raw, "iso": date_iso(date_raw), "time": None,
+            "home": home, "away": away, "home_score": hs, "away_score": aws,
+            "score": f"{hs}-{aws}", "venue": None, "source": None,
         })
     results.sort(key=lambda x: x.get("iso") or "", reverse=True)
     return results
@@ -241,10 +297,13 @@ async def read_team(page, url, link_name):
             })
             break
 
-    # Results: elFutbol renders completed fixtures as visible text lines, e.g.
-    # "FT27-09 Vilamajor, C.F. A Mollet U.E., CF. A 12". The final score is
-    # concatenated (12 = 1-2, 100 = 10-0); parse these lines directly.
-    results = parse_history_lines(lines, name)
+    # Results: read the actual DOM match cards first. inner_text() may split FT,
+    # date, team names and goals into different lines, so parsing lines alone misses them.
+    cards = await extract_match_cards(page)
+    results = parse_history_cards(cards, name)
+    if not results:
+        # Fallback for pages where a completed fixture is already on one text line.
+        results = parse_history_lines(lines, name)
     for result in results:
         result["source"] = url
 
@@ -307,6 +366,12 @@ async def main():
         raise RuntimeError(
             f"Solo se han leído {len(teams)} equipos. "
             "No se sobrescribe data/fcf.json."
+        )
+    result_count = sum(bool(t.get("last")) for t in teams)
+    if result_count == 0:
+        raise RuntimeError(
+            "No se ha podido extraer ningún último resultado. "
+            "Se conserva data/fcf.json anterior; no se publica una sincronización vacía."
         )
 
     data = {
