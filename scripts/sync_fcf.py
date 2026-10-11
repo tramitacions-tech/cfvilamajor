@@ -125,8 +125,10 @@ def parse_history_lines(lines, team_name):
             continue
         date_raw = date_match.group(1)
         tail = clean(raw[date_match.end():])
-        # Strip trailing UI labels; score is concatenated as 31=3-1, 100=10-0.
-        tail = re.sub(r"\s*(?:chevron_right|star)(?:\s*\[.*?\])?\s*$", "", tail, flags=re.I)
+        # ElFutbol añade controles UI al final del texto (p.ej. [Button: star]).
+        # Quitarlos antes de leer el marcador era el fallo que dejaba todos los resultados a cero.
+        tail = re.sub(r"\s*\[(?:Button:\s*)?(?:star|chevron_right|more_vert)[^\]]*\]\s*$", "", tail, flags=re.I)
+        tail = re.sub(r"\s*(?:chevron_right|star)\s*$", "", tail, flags=re.I)
         score_match = re.search(r"(?:^|\s)(\d{2,3})\s*$", tail)
         if not score_match:
             continue
@@ -179,6 +181,8 @@ def parse_history_cards(cards, team_name):
 
     for card in cards or []:
         raw = clean(card.get("text", ""))
+        # Normalize visible accessibility labels appended to each result card.
+        raw = re.sub(r"\s*\[(?:Button:\s*)?(?:star|chevron_right|more_vert)[^\]]*\]\s*", " ", raw, flags=re.I)
         if not raw or not re.search(r"\b(?:FT|FINALIZADO|FINAL|TERMINADO)\s*\d{1,2}[-/]\d{1,2}\b", raw, re.I):
             continue
         date_match = re.search(r"\b(?:FT|FINALIZADO|FINAL|TERMINADO)\s*(\d{1,2}[-/]\d{1,2}(?:[-/]\d{2,4})?)", raw, re.I)
@@ -186,6 +190,8 @@ def parse_history_cards(cards, team_name):
             continue
         date_raw = date_match.group(1)
         tail = clean(raw[date_match.end():])
+        tail = re.sub(r"\s*\[(?:Button:\s*)?(?:star|chevron_right|more_vert)[^\]]*\]\s*$", "", tail, flags=re.I)
+        tail = re.sub(r"\s*(?:chevron_right|star)\s*$", "", tail, flags=re.I)
 
         hs, aws = parse_score_from_html(card.get("html", ""), raw)
         score_match = re.search(r"(?:^|\s)(\d{2,3})\s*$", tail)
