@@ -194,73 +194,76 @@ def parse_history_lines(lines, team_name):
     return results
 
 
-
-def parse_history_blob(text, team_name):
-    """Fallback: parse completed fixtures from the full rendered page text.
-
-    Some Playwright/browser versions split the FT marker, date, teams and goals
-    into separate DOM text nodes. Flattening the history text avoids depending on
-    the original line boundaries.
+def parse_history_full_text(body, team_name, source=None):
+    """Fallback parser for pages where Playwright splits FT/date/teams/scores
+    into separate DOM text lines. Parse each completed-match block from the full
+    visible page text, bounded by the next FT marker.
     """
-    text = clean(text)
-    # Restrict parsing to the results-history section so stats and future fixtures
-    # cannot accidentally be interpreted as scores.
-    m = re.search(r"resultados recientes(.*?)(?:plantilla|clasificaci[oó]n|$)", text, re.I)
-    history = m.group(1) if m else text
-    starts = list(re.finditer(
-        r"(?:^|\s)(?:FT|FINALIZADO|FINAL|TERMINADO)\s*(\d{1,2}[-/]\d{1,2}(?:[-/]\d{2,4})?)",
-        history, re.I
-    ))
+    text = clean(body)
+    marker = re.compile(
+        r"\b(?:FT|FINALIZADO|FINAL|TERMINADO)\s*(\d{1,2}[-/]\d{1,2}(?:[-/]\d{2,4})?)",
+        re.I,
+    )
+    matches = list(marker.finditer(text))
+    # Upcoming fixtures have a clock followed by a date (often with no space,
+    # e.g. "18:3010-10"). Stop the final completed result before that next card.
+    upcoming_marker = re.compile(r"\b(?:[01]?\d|2[0-3]):[0-5]\d\s*\d{1,2}[-/]\d{1,2}\b")
     results = []
     seen = set()
-    for i, match in enumerate(starts):
-        end = starts[i + 1].start() if i + 1 < len(starts) else len(history)
-        segment = clean(history[match.end():end])
-        # The site appends a UI button after the concatenated score (e.g. 31[Button: star]).
-        score_match = re.search(r"(?<!\d)(\d{2,3})\s*(?=\[Button:\s*star\])", segment, re.I)
-        if not score_match:
-            segment = re.sub(r"\[Button:\s*star\]|\bchevron_right\b|\bstar\b", " ", segment, flags=re.I)
-            segment = clean(segment)
-            score_match = re.search(r"(?<!\d)(\d{2,3})\s*$", segment)
-        if not score_match:
-            continue
-        token = score_match.group(1)
-        if len(token) == 2:
-            hs, aws = int(token[0]), int(token[1])
+    for i, match in enumerate(matches):
+        end = matches[i + 1].start() if i + 1 < len(matches) else len(text)
+        upcoming = upcoming_marker.search(text, match.end(), end)
+        if upcoming:
+            end = upcoming.start()
+        raw = text[match.end():end]
+        raw = re.sub(r"\[Button:\s*star\]", " ", raw, flags=re.I)
+        raw = re.sub(r"\b(?:chevron_right|star)\b", " ", raw, flags=re.I)
+        raw = clean(raw)
+
+        # Accept explicit scores (2-1 / 2:1) and elFutbol's compact token (21 / 100).
+        hs = aws = None
+        score = re.search(r"(?:^|\s)(\d{1,2})\s*[-:]\s*(\d{1,2})\s*$", raw)
+        if score:
+            hs, aws = int(score.group(1)), int(score.group(2))
+            fixture = clean(raw[:score.start()])
         else:
-            hs, aws = int(token[:-1]), int(token[-1])
-        if hs > 20 or aws > 20:
+            score = re.search(r"(?<!\d)(\d{2,3})\s*$", raw)
+            if not score:
+                continue
+            token = score.group(1)
+            if len(token) == 2:
+                hs, aws = int(token[0]), int(token[1])
+            else:
+                hs, aws = int(token[:-1]), int(token[-1])
+            if hs > 20 or aws > 20:
+                continue
+            fixture = clean(raw[:score.start()])
+
+        fixture = clean(re.sub(r"\b(?:Jornada|J)\s*\d+\b", " ", fixture, flags=re.I))
+        club_match = re.search(r"Vilamajor,?\s*C\.?F\.?\s*[AB]", fixture, re.I)
+        if not club_match:
             continue
-        fixture = clean(segment[:score_match.start()])
-        # Remove jornada/card counters that sometimes leak from the rendered UI.
-        fixture = re.sub(r"^(?:Jornada\s*\d+\s*)?\d*\s*", "", fixture, flags=re.I)
-        club = re.search(r"Vilamajor,?\s*C\.?F\.?\s*[AB]", fixture, re.I)
-        if not club:
-            continue
-        club_name = clean(club.group(0))
-        before, after = clean(fixture[:club.start()]), clean(fixture[club.end():])
-        # Common format: home club then away club, or away club then Vilamajor.
-        if before and after:
-            # Team may be either home or away; if it appears first, it is home.
-            home, away = club_name, after
-        elif after:
-            home, away = club_name, after
-        elif before:
-            home, away = before, club_name
+        club = clean(club_match.group(0))
+        before = clean(fixture[:club_match.start()]).strip(" -|·")
+        after = clean(fixture[club_match.end():]).strip(" -|·")
+        if not before and after:
+            home, away = club, after
+        elif before and not after:
+            home, away = before, club
         else:
+            # Ambiguous team labels: don't invent a home/away assignment.
             continue
-        home = re.sub(r"^(?:Jornada\s*\d+\s*)?\d+\s*", "", home, flags=re.I).strip(" -|")
-        away = away.strip(" -|")
-        if not home or not away or len(home) < 3 or len(away) < 3:
+        if len(home) < 3 or len(away) < 3:
             continue
-        key = (match.group(1), home, away, hs, aws)
+        date_raw = match.group(1)
+        key = (date_raw, home, away, hs, aws)
         if key in seen:
             continue
         seen.add(key)
         results.append({
-            "date": match.group(1), "iso": date_iso(match.group(1)), "time": None,
+            "date": date_raw, "iso": date_iso(date_raw), "time": None,
             "home": home, "away": away, "home_score": hs, "away_score": aws,
-            "score": f"{hs}-{aws}", "venue": None, "source": None,
+            "score": f"{hs}-{aws}", "venue": None, "source": source,
         })
     results.sort(key=lambda x: x.get("iso") or "", reverse=True)
     return results
@@ -343,7 +346,7 @@ async def read_team(page, url, link_name):
     if not response or response.status >= 400:
         print("AVISO: no se pudo abrir", url)
         return None
-    await page.wait_for_timeout(1800)
+    await page.wait_for_timeout(800)
     title = clean(await page.title())
     body = await page.locator("body").inner_text()
     lines = [clean(x) for x in body.splitlines() if clean(x)]
@@ -396,15 +399,17 @@ async def read_team(page, url, link_name):
             })
             break
 
-    # Results: read the actual DOM match cards first. inner_text() may split FT,
-    # date, team names and goals into different lines, so parsing lines alone misses them.
+    # Results: read DOM cards first, then use two text fallbacks. The full-body
+    # parser handles pages where FT/date/teams/goals are split across DOM lines.
     cards = await extract_match_cards(page)
     results = parse_history_cards(cards, name)
     if not results:
-        # Fallbacks for layouts where scores are split between DOM nodes or lines.
+        # First fallback: line-oriented text extraction.
         results = parse_history_lines(lines, name)
     if not results:
-        results = parse_history_blob(body, name)
+        # Last fallback: full body text, because the site can split FT, date,
+        # club names and compact score into separate DOM lines.
+        results = parse_history_full_text(body, name, url)
     for result in results:
         result["source"] = url
 
@@ -431,7 +436,7 @@ async def main():
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
         page = await browser.new_page(locale="es-ES")
-        print("FUENTE: elFutbol (tarjetas DOM + texto completo como respaldo)")
+        print("FUENTE: elFutbol (tarjetas DOM + texto por líneas + texto completo)")
         print("Abriendo club:", CLUB_URL)
         response = await page.goto(CLUB_URL, wait_until="domcontentloaded", timeout=60000)
         if not response or response.status >= 400:
