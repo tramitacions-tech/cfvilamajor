@@ -11,6 +11,9 @@ BASE = "https://elfutbol.co"
 CLUB_URL = f"{BASE}/es/club/vilamajor-cf"
 OUTPUT = Path("data/fcf.json")
 MIN_TEAMS = 10
+# The club website must show 13 teams. elFutbol currently exposes this extra
+# Femenino Benjamín competition in its club-link list; do not import it.
+EXCLUDED_COMPETITION_SLUGS = {"femeni-benjami"}
 
 
 def clean(value):
@@ -399,17 +402,30 @@ async def read_team(page, url, link_name):
             })
             break
 
-    # Results: read DOM cards first, then use two text fallbacks. The full-body
-    # parser handles pages where FT/date/teams/goals are split across DOM lines.
+    # IMPORTANT: elFutbol opens team pages on the "Detalles" tab. The history
+    # of completed matches is rendered in the separate "Partidos" tab, so
+    # parsing the initial DOM can find standings/upcoming matches but zero
+    # results. Activate that tab before scraping history.
+    results_body = body
+    results_lines = lines
+    try:
+        partidos_tab = page.get_by_text("Partidos", exact=True).first
+        if await partidos_tab.count():
+            await partidos_tab.click(timeout=4000)
+            await page.wait_for_timeout(350)
+            results_body = await page.locator("body").inner_text()
+            results_lines = [clean(x) for x in results_body.splitlines() if clean(x)]
+    except Exception as exc:
+        print(f"AVISO: no se pudo abrir la pestaña Partidos en {url}: {exc}")
+
+    # Results: read the visible match cards, then text fallbacks from the
+    # activated Partidos tab (not the initial Details tab).
     cards = await extract_match_cards(page)
     results = parse_history_cards(cards, name)
     if not results:
-        # First fallback: line-oriented text extraction.
-        results = parse_history_lines(lines, name)
+        results = parse_history_lines(results_lines, name)
     if not results:
-        # Last fallback: full body text, because the site can split FT, date,
-        # club names and compact score into separate DOM lines.
-        results = parse_history_full_text(body, name, url)
+        results = parse_history_full_text(results_body, name, url)
     for result in results:
         result["source"] = url
 
@@ -436,7 +452,7 @@ async def main():
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
         page = await browser.new_page(locale="es-ES")
-        print("FUENTE: elFutbol (tarjetas DOM + texto por líneas + texto completo)")
+        print("FUENTE: elFutbol (pestaña Partidos + tarjetas DOM + texto de respaldo)")
         print("Abriendo club:", CLUB_URL)
         response = await page.goto(CLUB_URL, wait_until="domcontentloaded", timeout=60000)
         if not response or response.status >= 400:
@@ -450,6 +466,11 @@ async def main():
         for link in links:
             url = urldefrag(link["url"])[0]
             if urlparse(url).netloc.endswith("elfutbol.co") and "/es/team/" in url:
+                # Ignore the one extra competition link not included in the
+                # club's 13-team website roster.
+                query = urlparse(url).query.lower()
+                if any(f"comp={slug}" in query for slug in EXCLUDED_COMPETITION_SLUGS):
+                    continue
                 team_urls[url] = clean(link["name"])
         print("ENLACES DE EQUIPOS:", len(team_urls))
         teams = []
