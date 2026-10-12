@@ -194,6 +194,78 @@ def parse_history_lines(lines, team_name):
     return results
 
 
+
+def parse_history_blob(text, team_name):
+    """Fallback: parse completed fixtures from the full rendered page text.
+
+    Some Playwright/browser versions split the FT marker, date, teams and goals
+    into separate DOM text nodes. Flattening the history text avoids depending on
+    the original line boundaries.
+    """
+    text = clean(text)
+    # Restrict parsing to the results-history section so stats and future fixtures
+    # cannot accidentally be interpreted as scores.
+    m = re.search(r"resultados recientes(.*?)(?:plantilla|clasificaci[oó]n|$)", text, re.I)
+    history = m.group(1) if m else text
+    starts = list(re.finditer(
+        r"(?:^|\s)(?:FT|FINALIZADO|FINAL|TERMINADO)\s*(\d{1,2}[-/]\d{1,2}(?:[-/]\d{2,4})?)",
+        history, re.I
+    ))
+    results = []
+    seen = set()
+    for i, match in enumerate(starts):
+        end = starts[i + 1].start() if i + 1 < len(starts) else len(history)
+        segment = clean(history[match.end():end])
+        # The site appends a UI button after the concatenated score (e.g. 31[Button: star]).
+        score_match = re.search(r"(?<!\d)(\d{2,3})\s*(?=\[Button:\s*star\])", segment, re.I)
+        if not score_match:
+            segment = re.sub(r"\[Button:\s*star\]|\bchevron_right\b|\bstar\b", " ", segment, flags=re.I)
+            segment = clean(segment)
+            score_match = re.search(r"(?<!\d)(\d{2,3})\s*$", segment)
+        if not score_match:
+            continue
+        token = score_match.group(1)
+        if len(token) == 2:
+            hs, aws = int(token[0]), int(token[1])
+        else:
+            hs, aws = int(token[:-1]), int(token[-1])
+        if hs > 20 or aws > 20:
+            continue
+        fixture = clean(segment[:score_match.start()])
+        # Remove jornada/card counters that sometimes leak from the rendered UI.
+        fixture = re.sub(r"^(?:Jornada\s*\d+\s*)?\d*\s*", "", fixture, flags=re.I)
+        club = re.search(r"Vilamajor,?\s*C\.?F\.?\s*[AB]", fixture, re.I)
+        if not club:
+            continue
+        club_name = clean(club.group(0))
+        before, after = clean(fixture[:club.start()]), clean(fixture[club.end():])
+        # Common format: home club then away club, or away club then Vilamajor.
+        if before and after:
+            # Team may be either home or away; if it appears first, it is home.
+            home, away = club_name, after
+        elif after:
+            home, away = club_name, after
+        elif before:
+            home, away = before, club_name
+        else:
+            continue
+        home = re.sub(r"^(?:Jornada\s*\d+\s*)?\d+\s*", "", home, flags=re.I).strip(" -|")
+        away = away.strip(" -|")
+        if not home or not away or len(home) < 3 or len(away) < 3:
+            continue
+        key = (match.group(1), home, away, hs, aws)
+        if key in seen:
+            continue
+        seen.add(key)
+        results.append({
+            "date": match.group(1), "iso": date_iso(match.group(1)), "time": None,
+            "home": home, "away": away, "home_score": hs, "away_score": aws,
+            "score": f"{hs}-{aws}", "venue": None, "source": None,
+        })
+    results.sort(key=lambda x: x.get("iso") or "", reverse=True)
+    return results
+
+
 def parse_history_cards(cards, team_name):
     """Parse completed fixtures from DOM cards, even when body.inner_text splits them across lines."""
     results = []
@@ -271,7 +343,7 @@ async def read_team(page, url, link_name):
     if not response or response.status >= 400:
         print("AVISO: no se pudo abrir", url)
         return None
-    await page.wait_for_timeout(800)
+    await page.wait_for_timeout(1800)
     title = clean(await page.title())
     body = await page.locator("body").inner_text()
     lines = [clean(x) for x in body.splitlines() if clean(x)]
@@ -329,8 +401,10 @@ async def read_team(page, url, link_name):
     cards = await extract_match_cards(page)
     results = parse_history_cards(cards, name)
     if not results:
-        # Fallback for pages where a completed fixture is already on one text line.
+        # Fallbacks for layouts where scores are split between DOM nodes or lines.
         results = parse_history_lines(lines, name)
+    if not results:
+        results = parse_history_blob(body, name)
     for result in results:
         result["source"] = url
 
@@ -357,7 +431,7 @@ async def main():
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
         page = await browser.new_page(locale="es-ES")
-        print("FUENTE ÚNICA: elFutbol")
+        print("FUENTE: elFutbol (tarjetas DOM + texto completo como respaldo)")
         print("Abriendo club:", CLUB_URL)
         response = await page.goto(CLUB_URL, wait_until="domcontentloaded", timeout=60000)
         if not response or response.status >= 400:
