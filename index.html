@@ -103,6 +103,27 @@
 .our-team-detail button{background:transparent;border:1px solid #555;color:#fff;padding:10px 14px;cursor:pointer;font-weight:700}
 @media(max-width:900px){.our-team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.our-team-card.amateur{min-height:360px}.our-team-detail .detail-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.our-team-grid{grid-template-columns:1fr}.our-team-card.amateur{grid-column:auto;grid-row:auto;min-height:300px}.our-team-detail .detail-grid{grid-template-columns:1fr}}
+/* Ajustes solicitados: fichas de equipos, jerarquía del nombre y hero móvil */
+.our-team-card h3{font-size:clamp(23px,2vw,29px);line-height:1.08;font-weight:900;letter-spacing:-.035em;margin:0 0 12px}
+.our-team-card .team-data{display:grid;gap:9px;margin-top:14px;padding-top:13px;border-top:1px solid #ffffff20;font-size:11px;line-height:1.5;color:#e5e5e5}
+.our-team-card .team-data strong{display:block;color:var(--gold);font-size:9px;letter-spacing:.12em;margin-bottom:3px}
+.our-team-card .team-data .team-fixture{font-weight:600}
+.our-team-card .team-data .team-table{color:#c9cbd0}
+.our-team-card.amateur h3{font-size:clamp(34px,4vw,58px)}
+.detail-head h3{font-size:clamp(34px,5vw,54px)!important;line-height:1!important;font-weight:900!important;letter-spacing:-.045em!important}
+@media(max-width:560px){
+ .hero{height:92svh;min-height:620px;background-position:64% center;background-size:cover}
+ .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#050607d9 0%,#0506078c 55%,#05060724 100%);z-index:1}
+ .hero-content{left:6vw;right:6vw;bottom:13vh;transform:none;width:auto;max-width:none}
+ .hero .eyebrow{font-size:9px;letter-spacing:.2em;line-height:1.6;max-width:280px}
+ .hero h1{font-size:clamp(48px,13vw,72px);line-height:.9;margin:14px 0 18px;letter-spacing:-.06em}
+ .hero p{font-size:16px;line-height:1.45}
+ .hero-meta{font-size:8px;letter-spacing:.16em;line-height:1.8}
+ .our-team-card{padding:22px;min-height:240px}
+ .our-team-card h3{font-size:28px}
+ .our-team-card.amateur h3{font-size:42px}
+}
+
 </style></head><body>
 
 <nav class="nav" id="nav">
@@ -251,7 +272,7 @@
 
 <footer>
 <span>© C.F. VILAMAJOR</span>
-<span>WEB &amp; DIGITAL · <b>PROJECT SPORT</b></span>
+<span>WEB &amp; DIGITAL · <a href="https://www.projecthouseagents.com/project-sport" target="_blank" rel="noopener noreferrer" aria-label="PROJECT SPORT — Web & Digital"><b>PROJECT SPORT</b></a></span>
 </footer>
 
 <script>
@@ -275,8 +296,8 @@ function teamInfo(t){
  const fixture=next?`${next.home||''} — ${next.away||''}`:'Encara no hi ha cap proper partit publicat.';
  const dateText=next?`${next.date||''}${next.time?' · '+next.time:''}`:'Calendari pendent de dades';
  return `<div class="detail-head"><div class="kicker">FITXA D’EQUIP · C.F. VILAMAJOR</div><h3>${safeText(teamname)}</h3><p class="intro">${safeText(category)} · Temporada 2026–27</p></div>
- <div class="detail-tabs" role="tablist"><button class="detail-tab active" data-detail-tab="summary">RESUM</button><button class="detail-tab" data-detail-tab="calendar">CALENDARI</button><button class="detail-tab" data-detail-tab="results">RESULTATS</button><button class="detail-tab" data-detail-tab="standings">CLASSIFICACIÓ</button><button class="detail-tab" data-detail-tab="squad">PLANTILLA</button></div>
- <div class="detail-tab-panel" id="detail-tab-panel"><strong>PRÒXIM PARTIT</strong><br>${safeText(dateText)}<br>${safeText(fixture)}<br><br><strong>COMPETICIÓ</strong><br>${safeText(category)}<br><br><span style="color:var(--muted)">Consulta les pestanyes per veure la informació disponible d’aquest equip.</span></div>
+ <div class="detail-tabs" role="tablist"><button class="detail-tab active" data-detail-tab="summary">RESUM</button><button class="detail-tab" data-detail-tab="calendar">CALENDARI</button><button class="detail-tab" data-detail-tab="standings">CLASSIFICACIÓ</button><button class="detail-tab" data-detail-tab="squad">PLANTILLA</button></div>
+ <div class="detail-tab-panel" id="detail-tab-panel"><strong>PRÒXIM PARTIT</strong><br>${safeText(dateText)}<br>${safeText(fixture)}<br><br><strong>CLASSIFICACIÓ</strong><br>Posició: ${safeText(pos)} · Partits jugats: ${safeText(played)} · Punts: ${safeText(points)}<br><br><strong>COMPETICIÓ</strong><br>${safeText(category)}</div>
  <div style="display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin-top:18px"><span class="detail-copy">Fitxa integrada a la web del club, sense sortir a altres portals.</span><button type="button" onclick="document.getElementById('our-team-detail').hidden=true">TANCAR FITXA ×</button></div>
  <div class="team-detail-data" hidden data-json="${safeText(JSON.stringify({next,standing,results:t.results||[],upcoming:t.upcoming||[],category,teamname,played,points,pos}))}"></div>`;
 }
@@ -287,6 +308,7 @@ teamGrid.innerHTML=clubTeams.map((t,i)=>{
  <span class="team-eyebrow">${amateur?'PRIMER EQUIP · AMATEUR':'LA NOSTRA GENT'}</span>
  <h3>${safeText(t._display||t._category)}</h3>
  <span class="team-sub">${safeText(t._category)}<br>Temporada 2026–27</span>
+ <span class="team-data"><span><strong>PRÒXIM PARTIT</strong><span class="team-fixture">${safeText((t.next_match||t.next)?`${(t.next_match||t.next).date||''}${(t.next_match||t.next).time?' · '+(t.next_match||t.next).time:''} — ${(t.next_match||t.next).home||''} vs ${(t.next_match||t.next).away||''}`:'Calendari pendent de dades')}</span></span><span><strong>CLASSIFICACIÓ</strong><span class="team-table">${safeText(t.standing?.position!=null?`Posició ${t.standing.position} · ${t.standing.played??'—'} PJ · ${t.standing.points??'—'} punts`:'Dades de classificació pendents')}</span></span></span>
  <span class="team-open">VEURE FITXA INTERNA ↗</span></button>`;
 }).join('');
 teamGrid.addEventListener('click',e=>{
@@ -296,9 +318,8 @@ teamGrid.addEventListener('click',e=>{
  const data=JSON.parse(teamDetail.querySelector('.team-detail-data').dataset.json);teamDetail.querySelector('.team-detail-data').remove();
  const panel=teamDetail.querySelector('#detail-tab-panel');
  const renderDetail=tab=>{teamDetail.querySelectorAll('[data-detail-tab]').forEach(x=>x.classList.toggle('active',x.dataset.detailTab===tab));
- if(tab==='summary')panel.innerHTML=`<strong>PRÒXIM PARTIT</strong><br>${safeText(data.next?`${data.next.date||''}${data.next.time?' · '+data.next.time:''}`:'Calendari pendent de dades')}<br>${safeText(data.next?`${data.next.home||''} — ${data.next.away||''}`:'No hi ha cap partit disponible')}<br><br><strong>COMPETICIÓ</strong><br>${safeText(data.category)}`;
+ if(tab==='summary')panel.innerHTML=`<strong>PRÒXIM PARTIT</strong><br>${safeText(data.next?`${data.next.date||''}${data.next.time?' · '+data.next.time:''}`:'Calendari pendent de dades')}<br>${safeText(data.next?`${data.next.home||''} — ${data.next.away||''}`:'No hi ha cap partit disponible')}<br><br><strong>CLASSIFICACIÓ</strong><br>Posició: ${safeText(data.pos)} · Partits jugats: ${safeText(data.played)} · Punts: ${safeText(data.points)}<br><br><strong>COMPETICIÓ</strong><br>${safeText(data.category)}`;
  else if(tab==='calendar'){const items=data.upcoming.length?data.upcoming:(data.next?[data.next]:[]);panel.innerHTML=items.length?items.map(m=>`<div style="padding:10px 0;border-bottom:1px solid #303236"><b>${safeText(m.date||'Data pendent')} ${safeText(m.time||'')}</b><br>${safeText(m.home||'')} — ${safeText(m.away||'')}</div>`).join(''):'El calendari detallat encara no està disponible a les dades del club.'}
- else if(tab==='results')panel.innerHTML=data.results.length?data.results.map(m=>`<div style="padding:10px 0;border-bottom:1px solid #303236">${safeText(m.date||'')} · ${safeText(m.home||'')} <b>${safeText(m.score||m.result||'')}</b> ${safeText(m.away||'')}</div>`).join(''):'Els resultats anteriors encara no estan disponibles a la sincronització. No mostrem resultats inventats.';
  else if(tab==='standings')panel.innerHTML=`<strong>POSICIÓ: ${safeText(data.pos)}</strong><br>Partits jugats: ${safeText(data.played)}<br>Punts: ${safeText(data.points)}<br><br>La taula completa de la competició s’incorporarà quan la sincronització disposi de totes les dades.`;
  else panel.innerHTML='La plantilla completa encara no està disponible a les dades locals del club. Quan tinguem els noms i dorsals oficials, els mostrarem aquí.';
  };
