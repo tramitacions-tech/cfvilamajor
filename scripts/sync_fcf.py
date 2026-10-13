@@ -5,11 +5,22 @@ from bs4 import BeautifulSoup
 
 JSON_PATH = "data/fcf.json"
 
-# Las 14 categorías del C.F. Vilamajor con sus enlaces oficiales de la FCF
+# Les 14 categories del C.F. Vilamajor amb les seves URLs exactes de la FCF
 CATEGORIAS = [
-    {"id": "primer_equipo", "nombre": "Primer Equip", "url": "https://www.fcf.cat/equip/2425/11/cf-vilamajor-a"},
-    {"id": "juvenil_a", "nombre": "Juvenil A", "url": "https://www.fcf.cat/equip/2425/11/cf-vilamajor-a-juvenil"},
-    # Comprobar e incluir aquí las URLs correspondientes a las 14 categorías
+    {"id": "categoria_33085", "nombre": "Categoria 33085", "url": "https://www.fcf.cat/ca/clubs/1096/categories/33085"},
+    {"id": "categoria_39706", "nombre": "Categoria 39706", "url": "https://www.fcf.cat/ca/clubs/1096/categories/39706"},
+    {"id": "categoria_18499958", "nombre": "Categoria 18499958", "url": "https://www.fcf.cat/ca/clubs/1096/categories/18499958"},
+    {"id": "categoria_58515341", "nombre": "Categoria 58515341", "url": "https://www.fcf.cat/ca/clubs/1096/categories/58515341"},
+    {"id": "categoria_58730723", "nombre": "Categoria 58730723", "url": "https://www.fcf.cat/ca/clubs/1096/categories/58730723"},
+    {"id": "categoria_51348999", "nombre": "Categoria 51348999", "url": "https://www.fcf.cat/ca/clubs/1096/categories/51348999"},
+    {"id": "categoria_51349033", "nombre": "Categoria 51349033", "url": "https://www.fcf.cat/ca/clubs/1096/categories/51349033"},
+    {"id": "categoria_47860945", "nombre": "Categoria 47860945", "url": "https://www.fcf.cat/ca/clubs/1096/categories/47860945"},
+    {"id": "categoria_51436287", "nombre": "Categoria 51436287", "url": "https://www.fcf.cat/ca/clubs/1096/categories/51436287"},
+    {"id": "categoria_47860913", "nombre": "Categoria 47860913", "url": "https://www.fcf.cat/ca/clubs/1096/categories/47860913"},
+    {"id": "categoria_47860604", "nombre": "Categoria 47860604", "url": "https://www.fcf.cat/ca/clubs/1096/categories/47860604"},
+    {"id": "categoria_47860528", "nombre": "Categoria 47860528", "url": "https://www.fcf.cat/ca/clubs/1096/categories/47860528"},
+    {"id": "categoria_58663444", "nombre": "Categoria 58663444", "url": "https://www.fcf.cat/ca/clubs/1096/categories/58663444"},
+    {"id": "categoria_58663290", "nombre": "Categoria 58663290", "url": "https://www.fcf.cat/ca/clubs/1096/categories/58663290"}
 ]
 
 HEADERS = {
@@ -22,7 +33,7 @@ def fetch_html(url):
         with urllib.request.urlopen(req, timeout=15) as response:
             return response.read().decode('utf-8')
     except Exception as e:
-        print(f"[ERROR] No se pudo obtener la URL {url}: {e}")
+        print(f"[ERROR] No s'ha pogut obtenir la URL {url}: {e}")
         return None
 
 def parse_data(soup):
@@ -30,15 +41,15 @@ def parse_data(soup):
     clasificacion = []
     plantilla = []
 
-    # Extraer tabla de resultados
-    tabla_res = soup.find('table', class_='acta-table') or soup.find('table', class_='t-resultados')
+    # 1. Extreure taula de resultats / partits
+    tabla_res = soup.find('table', class_='acta-table') or soup.find('table', class_='t-resultados') or soup.find('table', class_='table-striped')
     if tabla_res:
         for fila in tabla_res.find_all('tr'):
             cols = [c.get_text(strip=True) for c in fila.find_all(['td', 'th'])]
             if cols:
                 resultados.append(" ".join(cols))
 
-    # Extraer tabla de clasificación
+    # 2. Extreure taula de classificació
     tabla_clas = soup.find('table', class_='t-clasificacio') or soup.find('table', class_='table-clasificacio')
     if tabla_clas:
         for fila in tabla_clas.find_all('tr')[1:]:
@@ -50,8 +61,8 @@ def parse_data(soup):
                     "puntos": cols[2].get_text(strip=True)
                 })
 
-    # Extraer plantilla
-    for el in soup.select('.jugador-card, .plantilla-jugador, .jugador'):
+    # 3. Extreure plantilla / jugadors
+    for el in soup.select('.jugador-card, .plantilla-jugador, .jugador, .fitxa-jugador'):
         nom = el.get_text(strip=True)
         if nom:
             plantilla.append({"nombre": nom})
@@ -71,11 +82,11 @@ def main():
 
     for cat in CATEGORIAS:
         cat_key = cat["id"]
-        print(f"Sincronizando {cat['nombre']}...")
+        print(f"Sincronitzant {cat['nombre']} ({cat_key})...")
         html = fetch_html(cat["url"])
 
         if not html:
-            # Conservar datos previos si falla la consulta
+            # Conservem dades anteriors en cas d'error de connexió
             if cat_key in datos_previos:
                 nuevos_datos[cat_key] = datos_previos[cat_key]
             continue
@@ -83,7 +94,7 @@ def main():
         soup = BeautifulSoup(html, 'html.parser')
         res, clas, plan = parse_data(soup)
 
-        # Si el raspado devuelve listas vacías, conservar datos anteriores válidos
+        # Si l'extracció no retorna res, preservem les dades existents per evitar JSONs buits
         nuevos_datos[cat_key] = {
             "nombre": cat["nombre"],
             "url_fcf": cat["url"],
@@ -96,7 +107,7 @@ def main():
     with open(JSON_PATH, 'w', encoding='utf-8') as f:
         json.dump(nuevos_datos, f, ensure_ascii=False, indent=2)
 
-    print("Sincronización completada.")
+    print("Sincronització finalitzada correctament.")
 
 if __name__ == "__main__":
     main()
