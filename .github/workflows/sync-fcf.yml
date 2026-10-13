@@ -5,12 +5,17 @@ on:
     - cron: '0 */6 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write  # <-- Esto concede los permisos de escritura necesarios para hacer push
+
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout del repositorio
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}  # <-- Usa el token con permiso de escritura
 
       - name: Configurar Python
         uses: actions/setup-python@v4
