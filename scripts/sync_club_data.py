@@ -273,13 +273,15 @@ def main():
             # Save each data domain only when a real payload is found; don't erase prior values on parsing failures.
             updated=[]
             if matches:
+                # Mantener el calendario completo para la pestaña CALENDARI; separar resultados solo con marcador reconocido.
+                team['calendar']=matches
                 future=[m for m in matches if m['iso']>=today and not m.get('score')]
-                played=[m for m in matches if m['iso']<today or m.get('score')]
+                played=[m for m in matches if m.get('score') or m.get('result')]
                 team['upcoming']=future; team['next']=future[0] if future else None; team['next_match']=team['next']
                 if played:
                     team['results']=sorted(played,key=lambda m:(m['iso'],m.get('time','')),reverse=True)
                     team['last']=team['results'][0]; team['last_match']=team['last']
-                updated.append(f'partits {len(matches)}')
+                updated.append(f'partits {len(matches)}; resultats {len(played)}')
             if standings:
                 team['standings']=standings
                 # Derive the row for the team when present, without discarding existing fields otherwise.
