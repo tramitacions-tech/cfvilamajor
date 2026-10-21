@@ -315,7 +315,7 @@ function teamInfo(t){
  <div class="detail-tabs" role="tablist"><button class="detail-tab active" data-detail-tab="summary">RESUM</button><button class="detail-tab" data-detail-tab="calendar">CALENDARI</button><button class="detail-tab" data-detail-tab="results">RESULTATS</button><button class="detail-tab" data-detail-tab="standings">CLASSIFICACIÓ</button><button class="detail-tab" data-detail-tab="squad">PLANTILLA</button><button class="detail-tab" data-detail-tab="directions">COM ARRIBAR-HI</button></div>
  <div class="detail-tab-panel" id="detail-tab-panel"><strong>PRÒXIM PARTIT</strong><br>${safeText(dateText)}<br>${safeText(fixture)}<br><br><strong>CLASSIFICACIÓ</strong><br>Posició: ${safeText(pos)} · Partits jugats: ${safeText(played)} · Punts: ${safeText(points)}<br><br><strong>COMPETICIÓ</strong><br>${safeText(category)}</div>
  <div style="display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin-top:18px"><span class="detail-copy">Fitxa integrada a la web del club, sense sortir a altres portals.</span><button type="button" onclick="document.getElementById('our-team-detail').hidden=true">TANCAR FITXA ×</button></div>
- <div class="team-detail-data" hidden data-json="${safeText(JSON.stringify({next,standing,results:t.results||[],upcoming:futureMatches,category,teamname,played,points,pos}))}"></div>`;
+ <div class="team-detail-data" hidden data-json="${safeText(JSON.stringify({next,standing,standings:t.standings||[],squad:t.squad||t.plantilla||[],results:t.results||[],upcoming:futureMatches,category,teamname,played,points,pos}))}"></div>`;
 }
 // EQUIPS: mostrar 13 equipos. Se excluye la entrada Infantil S13 duplicada en la sincronización;
  // el partido sigue apareciendo en PROPERS PARTITS.
@@ -341,17 +341,23 @@ teamGrid.addEventListener('click',e=>{
   if(tab==='summary') panel.innerHTML=`<strong>PRÒXIM PARTIT</strong><br>${safeText(data.next?`${data.next.date||''}${data.next.time?' · '+data.next.time:''}`:'Calendari pendent de dades')}<br>${safeText(data.next?`${data.next.home||''} — ${data.next.away||''}`:'No hi ha cap partit disponible')}<br><br><strong>COMPETICIÓ</strong><br>${safeText(data.category)}<br><br><strong>CLASSIFICACIÓ</strong><br>Posició: ${safeText(data.pos)} · Partits jugats: ${safeText(data.played)} · Punts: ${safeText(data.points)}`;
   else if(tab==='calendar'){const items=(data.upcoming||[]).filter(m=>{const iso=matchDateISO(m);return iso && new Date(iso+'T00:00:00')>=new Date(new Date().setHours(0,0,0,0));});panel.innerHTML=items.length?items.map(m=>`<div style="padding:10px 0;border-bottom:1px solid #303236"><b>${safeText(m.date||'Data pendent')} ${safeText(m.time||'')}</b><br>${safeText(m.home||'')} — ${safeText(m.away||'')}</div>`).join(''):'El calendari detallat encara no està disponible a les dades del club.'}
   else if(tab==='results'){const items=data.results||[];panel.innerHTML=items.length?items.map(m=>`<div style="padding:10px 0;border-bottom:1px solid #303236"><b>${safeText(m.date||'Data pendent')}</b><br>${safeText(m.home||'')} ${safeText(m.score||m.result||'')} ${safeText(m.away||'')}</div>`).join(''):'Encara no hi ha resultats confirmats disponibles per a aquest equip.'}
-  else if(tab==='standings') panel.innerHTML=`<strong>POSICIÓ: ${safeText(data.pos)}</strong><br>Partits jugats: ${safeText(data.played)}<br>Punts: ${safeText(data.points)}<br><br>La classificació completa apareixerà aquí quan les dades oficials estiguin disponibles.`;
+  else if(tab==='standings') {
+    const rows=data.standings||[];
+    panel.innerHTML=rows.length?`<strong>CLASSIFICACIÓ COMPLETA · ${safeText(data.category)}</strong><div style="overflow-x:auto;margin-top:12px"><table class="standings-list" style="width:100%;border-collapse:collapse;text-align:left"><thead><tr><th>Equip</th><th>Dades de la competició</th></tr></thead><tbody>${rows.map((r,i)=>`<tr><td style="padding:8px;border-bottom:1px solid #303236">${safeText(r.team||('Equip '+(i+1)))}</td><td style="padding:8px;border-bottom:1px solid #303236">${safeText((r.cells||[]).slice(1).join(' · ')||((r.numbers||[]).filter(v=>v!==null).join(' · ')))}</td></tr>`).join('')}</tbody></table></div>`:`<strong>POSICIÓ: ${safeText(data.pos)}</strong><br>Partits jugats: ${safeText(data.played)}<br>Punts: ${safeText(data.points)}<br><br>La classificació detallada encara no s'ha pogut recuperar de la font.`;
+  }
   else if(tab==='directions'){
     const match=data.next;
-    if(!match){panel.innerHTML='Encara no hi ha cap proper partit amb una destinació confirmada.'}
+    if(!match){const address='Camp de Futbol Municipal Joan Nicolau, Carrer Ferran Llach 9, 08459 Sant Antoni de Vilamajor';const maps='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(address);panel.innerHTML=`<strong>CAMP DEL C.F. VILAMAJOR</strong><br>${safeText(address)}<br><br><a href="${maps}" target="_blank" rel="noopener noreferrer" style="color:var(--gold);font-weight:800;border-bottom:1px solid var(--gold)">OBRIR GOOGLE MAPS · COM ARRIBAR-HI ↗</a>`}
     else{
       const destination=getMatchDestination(match);
       const maps='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(destination.address);
       panel.innerHTML=`<strong>${destination.local?'PARTIT A CASA':'PARTIT FORA'}</strong><br>${safeText(destination.label)}<br>${safeText(destination.address)}<br><br><span style="color:#aaa">${destination.local?'El partit es juga al camp del C.F. Vilamajor.':'La destinació s’ha cercat a Google Maps pel nom del rival/camp; comprova el resultat si el club té més d’un camp.'}</span><br><br><a href="${maps}" target="_blank" rel="noopener noreferrer" style="color:var(--gold);font-weight:800;border-bottom:1px solid var(--gold)">OBRIR GOOGLE MAPS · COM ARRIBAR-HI ↗</a>`;
     }
   }
-  else panel.innerHTML='La plantilla completa encara no està disponible a les dades locals del club. Quan tinguem els noms i dorsals oficials, els mostrarem aquí.';
+  else {
+    const players=data.squad||[];
+    panel.innerHTML=players.length?`<strong>PLANTILLA · ${players.length} JUGADORS/ES</strong><div style="margin-top:12px">${players.map((p,i)=>`<div style="padding:9px 0;border-bottom:1px solid #303236"><b>${safeText(p.name||('Jugador/a '+(i+1)))}</b>${p.stats&&p.stats.length?`<div style="color:#aaa;font-size:12px;margin-top:3px">${safeText(p.stats.join(' · '))}</div>`:''}</div>`).join('')}</div>`:'La plantilla no està publicada o no s’ha pogut recuperar de la font per a aquesta temporada.';
+  }
  };
  teamDetail.querySelectorAll('[data-detail-tab]').forEach(x=>x.addEventListener('click',()=>renderDetail(x.dataset.detailTab)));
  teamDetail.scrollIntoView({behavior:'smooth',block:'start'});
