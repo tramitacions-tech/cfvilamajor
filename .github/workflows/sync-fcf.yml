@@ -1,36 +1,35 @@
-name: Sincronización FCF
+name: Sincronización C.F. Vilamajor
 
 on:
   schedule:
-    # Se ejecuta automáticamente todos los días a las 6:00 AM UTC
-    - cron: '0 6 * * *'
-  workflow_dispatch: # Permite ejecutarlo manualmente desde la pestaña Actions
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
-  build:
+  sync:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Descargar el código del repositorio
+      - name: Descargar repositorio
         uses: actions/checkout@v4
-
-      - name: Configurar entorno de Python
+      - name: Configurar Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
-
+          python-version: '3.11'
       - name: Instalar dependencias
+        run: pip install requests beautifulsoup4
+      - name: Sincronizar calendarios y resultados
+        run: python scripts/sync_club_data.py
+      - name: Guardar datos actualizados
         run: |
-          python -m pip install --upgrade pip
-          pip install requests beautifulsoup4 lxml
-
-      - name: Ejecutar script de sincronización FCF
-        run: python scripts/sync_fcf.py
-
-      - name: Guardar y subir cambios al repositorio
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add .
-          git diff-index --quiet HEAD || git commit -m "Auto-update datos FCF"
-          git push
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/club.json
+          if git diff --cached --quiet; then
+            echo "No hay cambios de datos para guardar."
+          else
+            git commit -m "Actualizar datos deportivos automáticamente"
+            git push
+          fi
