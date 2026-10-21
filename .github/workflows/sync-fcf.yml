@@ -20,7 +20,7 @@ jobs:
           python-version: '3.11'
       - name: Instalar dependencias
         run: pip install requests beautifulsoup4
-      - name: Sincronizar calendarios y resultados
+      - name: Sincronizar calendario, resultados, clasificación y plantilla
         run: python scripts/sync_club_data.py
       - name: Guardar datos actualizados
         run: |
