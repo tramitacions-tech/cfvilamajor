@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T10:20:10+00:00",
+  "updated_at": "2026-10-23T11:53:17+00:00",
   "source": "elFutbol.co (partidos, clasificación y plantilla cuando están publicados)",
   "teams": [
     {
@@ -14,7 +14,7 @@
         "home": "Ramassa A.E. A",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=plantilla"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=squad"
       },
       "last": null,
       "next_match": {
@@ -24,7 +24,7 @@
         "home": "Ramassa A.E. A",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=plantilla"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=squad"
       },
       "last_match": null,
       "standing": {
@@ -40,7 +40,7 @@
           "home": "Ramassa A.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=squad"
         },
         {
           "date": "08-11",
@@ -49,7 +49,7 @@
           "home": "La Torreta, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=squad"
         },
         {
           "date": "21-11",
@@ -58,7 +58,7 @@
           "home": "Llinars, C.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=squad"
         },
         {
           "date": "13-12",
@@ -67,7 +67,7 @@
           "home": "Sant Quirze Valles, F.C. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=squad"
         },
         {
           "date": "16-01",
@@ -76,7 +76,7 @@
           "home": "Parets, C.F. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=squad"
         },
         {
           "date": "23-01",
@@ -85,7 +85,7 @@
           "home": "Ass.esp.f.base Palau 2024, A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=squad"
         },
         {
           "date": "13-02",
@@ -94,7 +94,7 @@
           "home": "Cardedeu, F.C. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=squad"
         },
         {
           "date": "27-02",
@@ -103,7 +103,7 @@
           "home": "La Roca Penya Blanc Blava Club Futbol A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=squad"
         }
       ],
       "results": [],
@@ -1280,7 +1280,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-a",
-      "data_updated_at": "2026-10-23T10:20:04+00:00",
+      "data_updated_at": "2026-10-23T11:51:06+00:00",
       "calendar": [
         {
           "date": "26-09",
@@ -1289,7 +1289,7 @@
           "home": "Canovelles, U.E. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=squad"
         },
         {
           "date": "10-10",
@@ -1298,7 +1298,7 @@
           "home": "La Llagosta, C.D. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=squad"
         },
         {
           "date": "24-10",
@@ -1307,7 +1307,7 @@
           "home": "Ramassa A.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=squad"
         },
         {
           "date": "08-11",
@@ -1316,7 +1316,7 @@
           "home": "La Torreta, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=squad"
         },
         {
           "date": "21-11",
@@ -1325,7 +1325,7 @@
           "home": "Llinars, C.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=squad"
         },
         {
           "date": "13-12",
@@ -1334,7 +1334,7 @@
           "home": "Sant Quirze Valles, F.C. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=squad"
         },
         {
           "date": "16-01",
@@ -1343,7 +1343,7 @@
           "home": "Parets, C.F. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=squad"
         },
         {
           "date": "23-01",
@@ -1352,7 +1352,7 @@
           "home": "Ass.esp.f.base Palau 2024, A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=squad"
         },
         {
           "date": "13-02",
@@ -1361,7 +1361,7 @@
           "home": "Cardedeu, F.C. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=squad"
         },
         {
           "date": "27-02",
@@ -1370,7 +1370,7 @@
           "home": "La Roca Penya Blanc Blava Club Futbol A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?season=2627&tab=squad"
         }
       ]
     },
@@ -1386,7 +1386,7 @@
         "home": "Mollet U.E., CF. C",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=plantilla"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=squad"
       },
       "last": null,
       "next_match": {
@@ -1396,7 +1396,7 @@
         "home": "Mollet U.E., CF. C",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=plantilla"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=squad"
       },
       "last_match": null,
       "standing": {
@@ -1412,7 +1412,7 @@
           "home": "Mollet U.E., CF. C",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=squad"
         },
         {
           "date": "14-11",
@@ -1421,7 +1421,7 @@
           "home": "Vilanova Valles, C.F. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=squad"
         },
         {
           "date": "28-11",
@@ -1430,7 +1430,7 @@
           "home": "Ametlla Valles, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=squad"
         },
         {
           "date": "20-12",
@@ -1439,7 +1439,7 @@
           "home": "Bigues, C.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=squad"
         },
         {
           "date": "31-01",
@@ -1448,7 +1448,7 @@
           "home": "Molletense, U.D. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=squad"
         },
         {
           "date": "20-02",
@@ -1457,7 +1457,7 @@
           "home": "Ass.esp.f. Base Palau 2024, A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=squad"
         },
         {
           "date": "06-03",
@@ -1466,7 +1466,7 @@
           "home": "Caldes Montbui, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=squad"
         }
       ],
       "results": [],
@@ -2424,7 +2424,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a",
-      "data_updated_at": "2026-10-23T10:20:06+00:00",
+      "data_updated_at": "2026-10-23T11:51:15+00:00",
       "calendar": [
         {
           "date": "04-10",
@@ -2433,7 +2433,7 @@
           "home": "Taradell, U.D. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=squad"
         },
         {
           "date": "17-10",
@@ -2442,7 +2442,7 @@
           "home": "La Llagosta, C.D. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=squad"
         },
         {
           "date": "01-11",
@@ -2451,7 +2451,7 @@
           "home": "Mollet U.E., CF. C",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=squad"
         },
         {
           "date": "14-11",
@@ -2460,7 +2460,7 @@
           "home": "Vilanova Valles, C.F. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=squad"
         },
         {
           "date": "28-11",
@@ -2469,7 +2469,7 @@
           "home": "Ametlla Valles, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=squad"
         },
         {
           "date": "20-12",
@@ -2478,7 +2478,7 @@
           "home": "Bigues, C.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=squad"
         },
         {
           "date": "31-01",
@@ -2487,7 +2487,7 @@
           "home": "Molletense, U.D. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=squad"
         },
         {
           "date": "20-02",
@@ -2496,7 +2496,7 @@
           "home": "Ass.esp.f. Base Palau 2024, A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=squad"
         },
         {
           "date": "06-03",
@@ -2505,7 +2505,7 @@
           "home": "Caldes Montbui, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?season=2627&tab=squad"
         }
       ]
     },
@@ -2514,58 +2514,40 @@
       "category": "Vilamajor, C.F. A — Femenino Benjamín | elFutbol",
       "competition": "Vilamajor, C.F. A — Femenino Benjamín | elFutbol",
       "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=femeni-benjami&group=grup-2",
-      "next": null,
-      "last": {
-        "date": "20-12",
-        "iso": "2026-12-20",
-        "time": "16:10",
-        "home": "Fundació Esportiva Grama A",
+      "next": {
+        "date": "31-10",
+        "iso": "2026-10-31",
+        "time": "11:30",
+        "home": "Pª Barc. Barcino, CE A",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=plantilla",
-        "score": "16-10",
-        "result": "16-10"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=squad"
       },
-      "next_match": null,
-      "last_match": {
-        "date": "20-12",
-        "iso": "2026-12-20",
-        "time": "16:10",
-        "home": "Fundació Esportiva Grama A",
+      "last": null,
+      "next_match": {
+        "date": "31-10",
+        "iso": "2026-10-31",
+        "time": "11:30",
+        "home": "Pª Barc. Barcino, CE A",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=plantilla",
-        "score": "16-10",
-        "result": "16-10"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=squad"
       },
+      "last_match": null,
       "standing": {
         "position": 12,
         "played": 3,
         "points": 3
       },
-      "upcoming": [],
-      "results": [
+      "upcoming": [
         {
-          "date": "20-12",
-          "iso": "2026-12-20",
-          "time": "16:10",
-          "home": "Fundació Esportiva Grama A",
+          "date": "31-10",
+          "iso": "2026-10-31",
+          "time": "11:30",
+          "home": "Pª Barc. Barcino, CE A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=plantilla",
-          "score": "16-10",
-          "result": "16-10"
-        },
-        {
-          "date": "28-11",
-          "iso": "2026-11-28",
-          "time": "10:30",
-          "home": "Femeni Mollet City, C.F. A",
-          "away": "Vilamajor, C.F. A",
-          "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=plantilla",
-          "score": "10-30",
-          "result": "10-30"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=squad"
         },
         {
           "date": "15-11",
@@ -2574,93 +2556,91 @@
           "home": "Premia Dalt, C.D. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=plantilla",
-          "score": "10-00",
-          "result": "10-00"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=squad"
         },
         {
-          "date": "31-10",
-          "iso": "2026-10-31",
-          "time": "11:30",
-          "home": "Pª Barc. Barcino, CE A",
-          "away": "Vilamajor, C.F. A",
-          "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=plantilla",
-          "score": "11-30",
-          "result": "11-30"
-        },
-        {
-          "date": "17-10",
-          "iso": "2026-10-17",
-          "time": "",
-          "home": "Santa Eulalia Ronçana, C.F. A",
-          "away": "Vilamajor, C.F. A",
-          "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=plantilla",
-          "score": "17-10",
-          "result": "17-10"
-        },
-        {
-          "date": "03-10",
-          "iso": "2026-10-03",
-          "time": "",
-          "home": "Premia Club Esp. A",
-          "away": "Vilamajor, C.F. A",
-          "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=plantilla",
-          "score": "03-10",
-          "result": "03-10"
-        },
-        {
-          "date": "07-03",
-          "iso": "2026-03-07",
-          "time": "11:15",
-          "home": "La Roca Penya Blanc Blava Club Futbol A",
-          "away": "Vilamajor, C.F. A",
-          "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=plantilla",
-          "score": "11-15",
-          "result": "11-15"
-        },
-        {
-          "date": "21-02",
-          "iso": "2026-02-21",
+          "date": "28-11",
+          "iso": "2026-11-28",
           "time": "10:30",
-          "home": "Escola De Llavaneres, CF. A",
+          "home": "Femeni Mollet City, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=plantilla",
-          "score": "10-30",
-          "result": "10-30"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=squad"
         },
         {
-          "date": "30-01",
-          "iso": "2026-01-30",
-          "time": "09:00",
-          "home": "Tiana, C.C.E. A",
+          "date": "20-12",
+          "iso": "2026-12-20",
+          "time": "16:10",
+          "home": "Fundació Esportiva Grama A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=plantilla",
-          "score": "09-00",
-          "result": "09-00"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=squad"
         },
         {
           "date": "16-01",
-          "iso": "2026-01-16",
+          "iso": "2027-01-16",
           "time": "09:00",
           "home": "Mercantil, C.E B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=plantilla",
-          "score": "09-00",
-          "result": "09-00"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=squad"
+        },
+        {
+          "date": "30-01",
+          "iso": "2027-01-30",
+          "time": "09:00",
+          "home": "Tiana, C.C.E. A",
+          "away": "Vilamajor, C.F. A",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=squad"
+        },
+        {
+          "date": "21-02",
+          "iso": "2027-02-21",
+          "time": "10:30",
+          "home": "Escola De Llavaneres, CF. A",
+          "away": "Vilamajor, C.F. A",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=squad"
+        },
+        {
+          "date": "07-03",
+          "iso": "2027-03-07",
+          "time": "11:15",
+          "home": "La Roca Penya Blanc Blava Club Futbol A",
+          "away": "Vilamajor, C.F. A",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=squad"
         }
       ],
+      "results": [],
       "_display": "Femení Benjamí",
       "_category": "Femenino Benjamín",
       "standings": [
         {
           "team": "Femeni Mollet City, C.F. A",
+          "position": 1,
+          "numbers": [
+            1,
+            3,
+            null,
+            null,
+            null,
+            10,
+            4,
+            6,
+            7
+          ],
+          "stats": [
+            3,
+            null,
+            null,
+            null,
+            10,
+            4,
+            6,
+            7
+          ],
           "cells": [
             "1",
             "Femeni Mollet City, C.F. A",
@@ -2672,22 +2652,32 @@
             "4",
             "+6",
             "7"
-          ],
-          "numbers": [
-            1,
-            null,
-            3,
-            2,
-            1,
-            0,
-            10,
-            4,
-            6,
-            7
           ]
         },
         {
           "team": "Vilassar Dalt-Giatsu, C.E. A",
+          "position": 2,
+          "numbers": [
+            2,
+            3,
+            null,
+            null,
+            null,
+            10,
+            6,
+            4,
+            7
+          ],
+          "stats": [
+            3,
+            null,
+            null,
+            null,
+            10,
+            6,
+            4,
+            7
+          ],
           "cells": [
             "2",
             "Vilassar Dalt-Giatsu, C.E. A",
@@ -2699,22 +2689,32 @@
             "6",
             "+4",
             "7"
-          ],
-          "numbers": [
-            2,
-            null,
-            3,
-            2,
-            1,
-            0,
-            10,
-            6,
-            4,
-            7
           ]
         },
         {
           "team": "Palautordera, C.F. A",
+          "position": 3,
+          "numbers": [
+            3,
+            3,
+            null,
+            null,
+            null,
+            25,
+            9,
+            16,
+            6
+          ],
+          "stats": [
+            3,
+            null,
+            null,
+            null,
+            25,
+            9,
+            16,
+            6
+          ],
           "cells": [
             "3",
             "Palautordera, C.F. A",
@@ -2726,22 +2726,32 @@
             "9",
             "+16",
             "6"
-          ],
-          "numbers": [
-            3,
-            null,
-            3,
-            2,
-            0,
-            1,
-            25,
-            9,
-            16,
-            6
           ]
         },
         {
           "team": "Santa Susanna Assoc. Esp. A",
+          "position": 4,
+          "numbers": [
+            4,
+            3,
+            null,
+            null,
+            null,
+            24,
+            8,
+            16,
+            6
+          ],
+          "stats": [
+            3,
+            null,
+            null,
+            null,
+            24,
+            8,
+            16,
+            6
+          ],
           "cells": [
             "4",
             "Santa Susanna Assoc. Esp. A",
@@ -2753,22 +2763,32 @@
             "8",
             "+16",
             "6"
-          ],
-          "numbers": [
-            4,
-            null,
-            3,
-            2,
-            0,
-            1,
-            24,
-            8,
-            16,
-            6
           ]
         },
         {
           "team": "Mercantil, C.E B",
+          "position": 5,
+          "numbers": [
+            5,
+            2,
+            null,
+            null,
+            null,
+            16,
+            2,
+            14,
+            6
+          ],
+          "stats": [
+            2,
+            null,
+            null,
+            null,
+            16,
+            2,
+            14,
+            6
+          ],
           "cells": [
             "5",
             "Mercantil, C.E B",
@@ -2780,22 +2800,32 @@
             "2",
             "+14",
             "6"
-          ],
-          "numbers": [
-            5,
-            null,
-            2,
-            2,
-            0,
-            0,
-            16,
-            2,
-            14,
-            6
           ]
         },
         {
           "team": "Escola De Llavaneres, CF. A",
+          "position": 6,
+          "numbers": [
+            6,
+            2,
+            null,
+            null,
+            null,
+            15,
+            4,
+            11,
+            6
+          ],
+          "stats": [
+            2,
+            null,
+            null,
+            null,
+            15,
+            4,
+            11,
+            6
+          ],
           "cells": [
             "6",
             "Escola De Llavaneres, CF. A",
@@ -2807,22 +2837,32 @@
             "4",
             "+11",
             "6"
-          ],
-          "numbers": [
-            6,
-            null,
-            2,
-            2,
-            0,
-            0,
-            15,
-            4,
-            11,
-            6
           ]
         },
         {
           "team": "Premia Dalt, C.D. A",
+          "position": 7,
+          "numbers": [
+            7,
+            3,
+            null,
+            null,
+            null,
+            13,
+            4,
+            9,
+            6
+          ],
+          "stats": [
+            3,
+            null,
+            null,
+            null,
+            13,
+            4,
+            9,
+            6
+          ],
           "cells": [
             "7",
             "Premia Dalt, C.D. A",
@@ -2834,22 +2874,32 @@
             "4",
             "+9",
             "6"
-          ],
-          "numbers": [
-            7,
-            null,
-            3,
-            2,
-            0,
-            1,
-            13,
-            4,
-            9,
-            6
           ]
         },
         {
           "team": "La Roca Penya Blanc Blava Club Futbol A",
+          "position": 8,
+          "numbers": [
+            8,
+            2,
+            null,
+            null,
+            null,
+            11,
+            3,
+            8,
+            6
+          ],
+          "stats": [
+            2,
+            null,
+            null,
+            null,
+            11,
+            3,
+            8,
+            6
+          ],
           "cells": [
             "8",
             "La Roca Penya Blanc Blava Club Futbol A",
@@ -2861,22 +2911,32 @@
             "3",
             "+8",
             "6"
-          ],
-          "numbers": [
-            8,
-            null,
-            2,
-            2,
-            0,
-            0,
-            11,
-            3,
-            8,
-            6
           ]
         },
         {
           "team": "Premia Club Esp. A",
+          "position": 9,
+          "numbers": [
+            9,
+            3,
+            null,
+            null,
+            null,
+            10,
+            11,
+            -1,
+            3
+          ],
+          "stats": [
+            3,
+            null,
+            null,
+            null,
+            10,
+            11,
+            -1,
+            3
+          ],
           "cells": [
             "9",
             "Premia Club Esp. A",
@@ -2888,22 +2948,32 @@
             "11",
             "-1",
             "3"
-          ],
-          "numbers": [
-            9,
-            null,
-            3,
-            1,
-            0,
-            2,
-            10,
-            11,
-            -1,
-            3
           ]
         },
         {
           "team": "Masnou AT. A",
+          "position": 10,
+          "numbers": [
+            10,
+            3,
+            null,
+            null,
+            null,
+            5,
+            9,
+            -4,
+            3
+          ],
+          "stats": [
+            3,
+            null,
+            null,
+            null,
+            5,
+            9,
+            -4,
+            3
+          ],
           "cells": [
             "10",
             "Masnou AT. A",
@@ -2915,22 +2985,32 @@
             "9",
             "-4",
             "3"
-          ],
-          "numbers": [
-            10,
-            null,
-            3,
-            1,
-            0,
-            2,
-            5,
-            9,
-            -4,
-            3
           ]
         },
         {
           "team": "Tiana, C.C.E. A",
+          "position": 11,
+          "numbers": [
+            11,
+            2,
+            null,
+            null,
+            null,
+            4,
+            10,
+            -6,
+            3
+          ],
+          "stats": [
+            2,
+            null,
+            null,
+            null,
+            4,
+            10,
+            -6,
+            3
+          ],
           "cells": [
             "11",
             "Tiana, C.C.E. A",
@@ -2942,22 +3022,32 @@
             "10",
             "-6",
             "3"
-          ],
-          "numbers": [
-            11,
-            null,
-            2,
-            1,
-            0,
-            1,
-            4,
-            10,
-            -6,
-            3
           ]
         },
         {
           "team": "Vilamajor, C.F. A",
+          "position": 12,
+          "numbers": [
+            12,
+            3,
+            null,
+            null,
+            null,
+            9,
+            16,
+            -7,
+            3
+          ],
+          "stats": [
+            3,
+            null,
+            null,
+            null,
+            9,
+            16,
+            -7,
+            3
+          ],
           "cells": [
             "12",
             "Vilamajor, C.F. A",
@@ -2969,22 +3059,32 @@
             "16",
             "-7",
             "3"
-          ],
-          "numbers": [
-            12,
-            null,
-            3,
-            1,
-            0,
-            2,
-            9,
-            16,
-            -7,
-            3
           ]
         },
         {
           "team": "Pª Barc. Barcino, CE A",
+          "position": 13,
+          "numbers": [
+            13,
+            3,
+            null,
+            null,
+            null,
+            7,
+            25,
+            -18,
+            3
+          ],
+          "stats": [
+            3,
+            null,
+            null,
+            null,
+            7,
+            25,
+            -18,
+            3
+          ],
           "cells": [
             "13",
             "Pª Barc. Barcino, CE A",
@@ -2996,22 +3096,32 @@
             "25",
             "-18",
             "3"
-          ],
-          "numbers": [
-            13,
-            null,
-            3,
-            1,
-            0,
-            2,
-            7,
-            25,
-            -18,
-            3
           ]
         },
         {
           "team": "Santa Eulalia Ronçana, C.F. A",
+          "position": 14,
+          "numbers": [
+            14,
+            3,
+            null,
+            null,
+            null,
+            8,
+            21,
+            -13,
+            0
+          ],
+          "stats": [
+            3,
+            null,
+            null,
+            null,
+            8,
+            21,
+            -13,
+            0
+          ],
           "cells": [
             "14",
             "Santa Eulalia Ronçana, C.F. A",
@@ -3023,22 +3133,32 @@
             "21",
             "-13",
             "0"
-          ],
-          "numbers": [
-            14,
-            null,
-            3,
-            0,
-            0,
-            3,
-            8,
-            21,
-            -13,
-            0
           ]
         },
         {
           "team": "Fundació Esportiva Grama A",
+          "position": 15,
+          "numbers": [
+            15,
+            3,
+            null,
+            null,
+            null,
+            5,
+            21,
+            -16,
+            0
+          ],
+          "stats": [
+            3,
+            null,
+            null,
+            null,
+            5,
+            21,
+            -16,
+            0
+          ],
           "cells": [
             "15",
             "Fundació Esportiva Grama A",
@@ -3050,22 +3170,32 @@
             "21",
             "-16",
             "0"
-          ],
-          "numbers": [
-            15,
-            null,
-            3,
-            0,
-            0,
-            3,
-            5,
-            21,
-            -16,
-            0
           ]
         },
         {
           "team": "Martorelles, C.F. A",
+          "position": 16,
+          "numbers": [
+            16,
+            3,
+            null,
+            null,
+            null,
+            4,
+            23,
+            -19,
+            0
+          ],
+          "stats": [
+            3,
+            null,
+            null,
+            null,
+            4,
+            23,
+            -19,
+            0
+          ],
           "cells": [
             "16",
             "Martorelles, C.F. A",
@@ -3077,24 +3207,13 @@
             "23",
             "-19",
             "0"
-          ],
-          "numbers": [
-            16,
-            null,
-            3,
-            0,
-            0,
-            3,
-            4,
-            23,
-            -19,
-            0
           ]
         }
       ],
       "squad": [
         {
           "name": "Muñoz Mas, Abril",
+          "appearances": 1,
           "stats": [
             "1",
             "1",
@@ -3107,6 +3226,7 @@
         },
         {
           "name": "Bachs Castillo, Juno",
+          "appearances": 1,
           "stats": [
             "1",
             "1",
@@ -3119,6 +3239,7 @@
         },
         {
           "name": "Batlles Gros, Ivet",
+          "appearances": 1,
           "stats": [
             "1",
             "1",
@@ -3131,6 +3252,7 @@
         },
         {
           "name": "Molina Perez, Ona",
+          "appearances": 1,
           "stats": [
             "1",
             "1",
@@ -3143,6 +3265,7 @@
         },
         {
           "name": "Serra Cazcarra, Alèxia",
+          "appearances": 1,
           "stats": [
             "1",
             "0",
@@ -3155,6 +3278,7 @@
         },
         {
           "name": "Serra Cazcarra, Martina",
+          "appearances": 1,
           "stats": [
             "1",
             "0",
@@ -3167,6 +3291,7 @@
         },
         {
           "name": "Serra Rius, Jana",
+          "appearances": 1,
           "stats": [
             "1",
             "1",
@@ -3181,6 +3306,7 @@
       "plantilla": [
         {
           "name": "Muñoz Mas, Abril",
+          "appearances": 1,
           "stats": [
             "1",
             "1",
@@ -3193,6 +3319,7 @@
         },
         {
           "name": "Bachs Castillo, Juno",
+          "appearances": 1,
           "stats": [
             "1",
             "1",
@@ -3205,6 +3332,7 @@
         },
         {
           "name": "Batlles Gros, Ivet",
+          "appearances": 1,
           "stats": [
             "1",
             "1",
@@ -3217,6 +3345,7 @@
         },
         {
           "name": "Molina Perez, Ona",
+          "appearances": 1,
           "stats": [
             "1",
             "1",
@@ -3229,6 +3358,7 @@
         },
         {
           "name": "Serra Cazcarra, Alèxia",
+          "appearances": 1,
           "stats": [
             "1",
             "0",
@@ -3241,6 +3371,7 @@
         },
         {
           "name": "Serra Cazcarra, Martina",
+          "appearances": 1,
           "stats": [
             "1",
             "0",
@@ -3253,6 +3384,7 @@
         },
         {
           "name": "Serra Rius, Jana",
+          "appearances": 1,
           "stats": [
             "1",
             "1",
@@ -3265,52 +3397,8 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a",
-      "data_updated_at": "2026-10-23T05:52:13+00:00",
+      "data_updated_at": "2026-10-23T11:51:23+00:00",
       "calendar": [
-        {
-          "date": "16-01",
-          "iso": "2026-01-16",
-          "time": "09:00",
-          "home": "Mercantil, C.E B",
-          "away": "Vilamajor, C.F. A",
-          "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=plantilla",
-          "score": "09-00",
-          "result": "09-00"
-        },
-        {
-          "date": "30-01",
-          "iso": "2026-01-30",
-          "time": "09:00",
-          "home": "Tiana, C.C.E. A",
-          "away": "Vilamajor, C.F. A",
-          "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=plantilla",
-          "score": "09-00",
-          "result": "09-00"
-        },
-        {
-          "date": "21-02",
-          "iso": "2026-02-21",
-          "time": "10:30",
-          "home": "Escola De Llavaneres, CF. A",
-          "away": "Vilamajor, C.F. A",
-          "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=plantilla",
-          "score": "10-30",
-          "result": "10-30"
-        },
-        {
-          "date": "07-03",
-          "iso": "2026-03-07",
-          "time": "11:15",
-          "home": "La Roca Penya Blanc Blava Club Futbol A",
-          "away": "Vilamajor, C.F. A",
-          "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=plantilla",
-          "score": "11-15",
-          "result": "11-15"
-        },
         {
           "date": "03-10",
           "iso": "2026-10-03",
@@ -3318,9 +3406,7 @@
           "home": "Premia Club Esp. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=plantilla",
-          "score": "03-10",
-          "result": "03-10"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=squad"
         },
         {
           "date": "17-10",
@@ -3329,9 +3415,7 @@
           "home": "Santa Eulalia Ronçana, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=plantilla",
-          "score": "17-10",
-          "result": "17-10"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=squad"
         },
         {
           "date": "31-10",
@@ -3340,9 +3424,7 @@
           "home": "Pª Barc. Barcino, CE A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=plantilla",
-          "score": "11-30",
-          "result": "11-30"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=squad"
         },
         {
           "date": "15-11",
@@ -3351,9 +3433,7 @@
           "home": "Premia Dalt, C.D. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=plantilla",
-          "score": "10-00",
-          "result": "10-00"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=squad"
         },
         {
           "date": "28-11",
@@ -3362,9 +3442,7 @@
           "home": "Femeni Mollet City, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=plantilla",
-          "score": "10-30",
-          "result": "10-30"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=squad"
         },
         {
           "date": "20-12",
@@ -3373,9 +3451,43 @@
           "home": "Fundació Esportiva Grama A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=plantilla",
-          "score": "16-10",
-          "result": "16-10"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=squad"
+        },
+        {
+          "date": "16-01",
+          "iso": "2027-01-16",
+          "time": "09:00",
+          "home": "Mercantil, C.E B",
+          "away": "Vilamajor, C.F. A",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=squad"
+        },
+        {
+          "date": "30-01",
+          "iso": "2027-01-30",
+          "time": "09:00",
+          "home": "Tiana, C.C.E. A",
+          "away": "Vilamajor, C.F. A",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=squad"
+        },
+        {
+          "date": "21-02",
+          "iso": "2027-02-21",
+          "time": "10:30",
+          "home": "Escola De Llavaneres, CF. A",
+          "away": "Vilamajor, C.F. A",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=squad"
+        },
+        {
+          "date": "07-03",
+          "iso": "2027-03-07",
+          "time": "11:15",
+          "home": "La Roca Penya Blanc Blava Club Futbol A",
+          "away": "Vilamajor, C.F. A",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?season=2627&tab=squad"
         }
       ]
     },
@@ -3391,7 +3503,7 @@
         "home": "Palautordera, C.F. A",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=plantilla"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=squad"
       },
       "last": null,
       "next_match": {
@@ -3401,7 +3513,7 @@
         "home": "Palautordera, C.F. A",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=plantilla"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=squad"
       },
       "last_match": null,
       "standing": {
@@ -3417,7 +3529,7 @@
           "home": "Palautordera, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=squad"
         },
         {
           "date": "14-11",
@@ -3426,7 +3538,7 @@
           "home": "Escola Pia Granollers, A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=squad"
         },
         {
           "date": "28-11",
@@ -3435,7 +3547,7 @@
           "home": "Sant Celoni, Futbol Club B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=squad"
         },
         {
           "date": "10-01",
@@ -3444,7 +3556,7 @@
           "home": "Granollers, E.C. D",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=squad"
         },
         {
           "date": "31-01",
@@ -3453,7 +3565,7 @@
           "home": "Cardedeu, F.C. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=squad"
         },
         {
           "date": "20-02",
@@ -3462,7 +3574,7 @@
           "home": "Bellavista Milan, C. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=squad"
         },
         {
           "date": "06-03",
@@ -3471,7 +3583,7 @@
           "home": "Tiana, C.C.E. C",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=squad"
         }
       ],
       "results": [],
@@ -4418,7 +4530,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a",
-      "data_updated_at": "2026-10-23T10:20:07+00:00",
+      "data_updated_at": "2026-10-23T11:51:34+00:00",
       "calendar": [
         {
           "date": "03-10",
@@ -4427,7 +4539,7 @@
           "home": "La Roca Penya Blanc Blava Club Futbol A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=squad"
         },
         {
           "date": "17-10",
@@ -4436,7 +4548,7 @@
           "home": "Lliça De Vall C.F. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=squad"
         },
         {
           "date": "31-10",
@@ -4445,7 +4557,7 @@
           "home": "Palautordera, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=squad"
         },
         {
           "date": "14-11",
@@ -4454,7 +4566,7 @@
           "home": "Escola Pia Granollers, A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=squad"
         },
         {
           "date": "28-11",
@@ -4463,7 +4575,7 @@
           "home": "Sant Celoni, Futbol Club B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=squad"
         },
         {
           "date": "10-01",
@@ -4472,7 +4584,7 @@
           "home": "Granollers, E.C. D",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=squad"
         },
         {
           "date": "31-01",
@@ -4481,7 +4593,7 @@
           "home": "Cardedeu, F.C. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=squad"
         },
         {
           "date": "20-02",
@@ -4490,7 +4602,7 @@
           "home": "Bellavista Milan, C. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=squad"
         },
         {
           "date": "06-03",
@@ -4499,7 +4611,7 @@
           "home": "Tiana, C.C.E. C",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?season=2627&tab=squad"
         }
       ]
     },
@@ -4515,7 +4627,7 @@
         "home": "La Roca Penya Blanc Blava Club Futbol B",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=squad"
       },
       "last": null,
       "next_match": {
@@ -4525,7 +4637,7 @@
         "home": "La Roca Penya Blanc Blava Club Futbol B",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=squad"
       },
       "last_match": null,
       "standing": {
@@ -4541,7 +4653,7 @@
           "home": "La Roca Penya Blanc Blava Club Futbol B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=squad"
         },
         {
           "date": "07-11",
@@ -4550,7 +4662,7 @@
           "home": "Palautordera, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=squad"
         },
         {
           "date": "21-11",
@@ -4559,7 +4671,7 @@
           "home": "Llinars, C.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=squad"
         },
         {
           "date": "12-12",
@@ -4568,7 +4680,7 @@
           "home": "Bellavista Milan, C. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=squad"
         },
         {
           "date": "09-01",
@@ -4577,7 +4689,7 @@
           "home": "La Torreta, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=squad"
         },
         {
           "date": "30-01",
@@ -4586,7 +4698,7 @@
           "home": "Bigues, C.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=squad"
         },
         {
           "date": "13-02",
@@ -4595,7 +4707,7 @@
           "home": "Canovelles, U.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=squad"
         },
         {
           "date": "27-02",
@@ -4604,7 +4716,7 @@
           "home": "Ametlla Valles, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=squad"
         }
       ],
       "results": [],
@@ -5677,7 +5789,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a",
-      "data_updated_at": "2026-10-23T10:20:07+00:00",
+      "data_updated_at": "2026-10-23T11:51:41+00:00",
       "calendar": [
         {
           "date": "10-10",
@@ -5686,7 +5798,7 @@
           "home": "Lliça D'Amunt, C.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=squad"
         },
         {
           "date": "24-10",
@@ -5695,7 +5807,7 @@
           "home": "La Roca Penya Blanc Blava Club Futbol B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=squad"
         },
         {
           "date": "07-11",
@@ -5704,7 +5816,7 @@
           "home": "Palautordera, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=squad"
         },
         {
           "date": "21-11",
@@ -5713,7 +5825,7 @@
           "home": "Llinars, C.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=squad"
         },
         {
           "date": "12-12",
@@ -5722,7 +5834,7 @@
           "home": "Bellavista Milan, C. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=squad"
         },
         {
           "date": "09-01",
@@ -5731,7 +5843,7 @@
           "home": "La Torreta, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=squad"
         },
         {
           "date": "30-01",
@@ -5740,7 +5852,7 @@
           "home": "Bigues, C.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=squad"
         },
         {
           "date": "13-02",
@@ -5749,7 +5861,7 @@
           "home": "Canovelles, U.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=squad"
         },
         {
           "date": "27-02",
@@ -5758,7 +5870,7 @@
           "home": "Ametlla Valles, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=squad"
         }
       ]
     },
@@ -5774,7 +5886,7 @@
         "home": "Olimpic La Garriga, C.F. A",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=plantilla"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=squad"
       },
       "last": null,
       "next_match": {
@@ -5784,7 +5896,7 @@
         "home": "Olimpic La Garriga, C.F. A",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=plantilla"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=squad"
       },
       "last_match": null,
       "standing": {
@@ -5800,7 +5912,7 @@
           "home": "Olimpic La Garriga, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=squad"
         },
         {
           "date": "29-11",
@@ -5809,7 +5921,7 @@
           "home": "Riudeperes C.F. AT. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=squad"
         },
         {
           "date": "19-12",
@@ -5818,7 +5930,7 @@
           "home": "Les Franqueses, C.F. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=squad"
         },
         {
           "date": "23-01",
@@ -5827,7 +5939,7 @@
           "home": "Fundacio Unió Esportiva Vilassar C",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=squad"
         },
         {
           "date": "31-01",
@@ -5836,7 +5948,7 @@
           "home": "Mollet U.E., CF. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=squad"
         },
         {
           "date": "21-02",
@@ -5845,7 +5957,7 @@
           "home": "Cardedeu, F.C. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=squad"
         },
         {
           "date": "06-03",
@@ -5854,7 +5966,7 @@
           "home": "Sabadellenca, UE. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=squad"
         }
       ],
       "results": [],
@@ -7031,7 +7143,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a",
-      "data_updated_at": "2026-10-23T10:20:08+00:00",
+      "data_updated_at": "2026-10-23T11:51:51+00:00",
       "calendar": [
         {
           "date": "01-11",
@@ -7040,7 +7152,7 @@
           "home": "Olimpic La Garriga, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=squad"
         },
         {
           "date": "29-11",
@@ -7049,7 +7161,7 @@
           "home": "Riudeperes C.F. AT. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=squad"
         },
         {
           "date": "19-12",
@@ -7058,7 +7170,7 @@
           "home": "Les Franqueses, C.F. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=squad"
         },
         {
           "date": "23-01",
@@ -7067,7 +7179,7 @@
           "home": "Fundacio Unió Esportiva Vilassar C",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=squad"
         },
         {
           "date": "31-01",
@@ -7076,7 +7188,7 @@
           "home": "Mollet U.E., CF. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=squad"
         },
         {
           "date": "21-02",
@@ -7085,7 +7197,7 @@
           "home": "Cardedeu, F.C. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=squad"
         },
         {
           "date": "06-03",
@@ -7094,7 +7206,7 @@
           "home": "Sabadellenca, UE. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?season=2627&tab=squad"
         }
       ]
     },
@@ -7110,7 +7222,7 @@
         "home": "Base Montcada Club Futbol B",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=plantilla"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=squad"
       },
       "last": null,
       "next_match": {
@@ -7120,7 +7232,7 @@
         "home": "Base Montcada Club Futbol B",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=plantilla"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=squad"
       },
       "last_match": null,
       "standing": {
@@ -7136,7 +7248,7 @@
           "home": "Base Montcada Club Futbol B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=squad"
         },
         {
           "date": "07-11",
@@ -7145,7 +7257,7 @@
           "home": "Atlético Roureda, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=squad"
         },
         {
           "date": "21-11",
@@ -7154,7 +7266,7 @@
           "home": "Cerdanyola Valles, F.C. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=squad"
         },
         {
           "date": "12-12",
@@ -7163,7 +7275,7 @@
           "home": "Llinars, C.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=squad"
         },
         {
           "date": "19-12",
@@ -7172,7 +7284,7 @@
           "home": "Planadeu, Unió Esportiva Club Futbol A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=squad"
         },
         {
           "date": "30-01",
@@ -7181,7 +7293,7 @@
           "home": "Parets, C.F. D",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=squad"
         },
         {
           "date": "13-02",
@@ -7190,7 +7302,7 @@
           "home": "Pª Blaugrana De La Roca Del Vallès B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=squad"
         },
         {
           "date": "27-02",
@@ -7199,7 +7311,7 @@
           "home": "Canovelles, U.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=squad"
         }
       ],
       "results": [],
@@ -8053,7 +8165,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a",
-      "data_updated_at": "2026-10-23T10:20:08+00:00",
+      "data_updated_at": "2026-10-23T11:52:07+00:00",
       "calendar": [
         {
           "date": "10-10",
@@ -8062,7 +8174,7 @@
           "home": "Martorelles, C.F. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=squad"
         },
         {
           "date": "25-10",
@@ -8071,7 +8183,7 @@
           "home": "Base Montcada Club Futbol B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=squad"
         },
         {
           "date": "07-11",
@@ -8080,7 +8192,7 @@
           "home": "Atlético Roureda, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=squad"
         },
         {
           "date": "21-11",
@@ -8089,7 +8201,7 @@
           "home": "Cerdanyola Valles, F.C. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=squad"
         },
         {
           "date": "12-12",
@@ -8098,7 +8210,7 @@
           "home": "Llinars, C.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=squad"
         },
         {
           "date": "19-12",
@@ -8107,7 +8219,7 @@
           "home": "Planadeu, Unió Esportiva Club Futbol A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=squad"
         },
         {
           "date": "30-01",
@@ -8116,7 +8228,7 @@
           "home": "Parets, C.F. D",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=squad"
         },
         {
           "date": "13-02",
@@ -8125,7 +8237,7 @@
           "home": "Pª Blaugrana De La Roca Del Vallès B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=squad"
         },
         {
           "date": "27-02",
@@ -8134,7 +8246,7 @@
           "home": "Canovelles, U.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?season=2627&tab=squad"
         }
       ]
     },
@@ -8150,7 +8262,7 @@
         "home": "Santvicenti Club Futbol B",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=plantilla"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=squad"
       },
       "last": null,
       "next_match": {
@@ -8160,7 +8272,7 @@
         "home": "Santvicenti Club Futbol B",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=plantilla"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=squad"
       },
       "last_match": null,
       "standing": {
@@ -8176,7 +8288,7 @@
           "home": "Santvicenti Club Futbol B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=squad"
         },
         {
           "date": "28-11",
@@ -8185,7 +8297,7 @@
           "home": "Ametlla Valles, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=squad"
         },
         {
           "date": "20-12",
@@ -8194,7 +8306,7 @@
           "home": "Santa Eulalia Ronçana, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=squad"
         },
         {
           "date": "17-01",
@@ -8203,7 +8315,7 @@
           "home": "Centelles, U.E. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=squad"
         },
         {
           "date": "20-02",
@@ -8212,7 +8324,7 @@
           "home": "Fundacio Unió Esportiva Vilassar B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=squad"
         },
         {
           "date": "06-03",
@@ -8221,7 +8333,7 @@
           "home": "Ass.esp.f. Base Palau 2024, A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=squad"
         }
       ],
       "results": [],
@@ -8997,7 +9109,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a",
-      "data_updated_at": "2026-10-23T10:20:08+00:00",
+      "data_updated_at": "2026-10-23T11:52:19+00:00",
       "calendar": [
         {
           "date": "03-10",
@@ -9006,7 +9118,7 @@
           "home": "Sant Feliu De Codines, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=squad"
         },
         {
           "date": "18-10",
@@ -9015,7 +9127,7 @@
           "home": "Sant Esteve, Futbol Club A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=squad"
         },
         {
           "date": "01-11",
@@ -9024,7 +9136,7 @@
           "home": "Santvicenti Club Futbol B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=squad"
         },
         {
           "date": "28-11",
@@ -9033,7 +9145,7 @@
           "home": "Ametlla Valles, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=squad"
         },
         {
           "date": "20-12",
@@ -9042,7 +9154,7 @@
           "home": "Santa Eulalia Ronçana, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=squad"
         },
         {
           "date": "17-01",
@@ -9051,7 +9163,7 @@
           "home": "Centelles, U.E. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=squad"
         },
         {
           "date": "20-02",
@@ -9060,7 +9172,7 @@
           "home": "Fundacio Unió Esportiva Vilassar B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=squad"
         },
         {
           "date": "06-03",
@@ -9069,7 +9181,7 @@
           "home": "Ass.esp.f. Base Palau 2024, A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?season=2627&tab=squad"
         }
       ]
     },
@@ -9085,7 +9197,7 @@
         "home": "Llerona, C.E. A",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=plantilla"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=squad"
       },
       "last": null,
       "next_match": {
@@ -9095,7 +9207,7 @@
         "home": "Llerona, C.E. A",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=plantilla"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=squad"
       },
       "last_match": null,
       "standing": {
@@ -9111,7 +9223,7 @@
           "home": "Llerona, C.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=squad"
         },
         {
           "date": "10-11",
@@ -9120,7 +9232,7 @@
           "home": "Les Franqueses, C.F. C",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=squad"
         },
         {
           "date": "21-11",
@@ -9129,7 +9241,7 @@
           "home": "Bellavista Milan, C. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=squad"
         },
         {
           "date": "13-12",
@@ -9138,7 +9250,7 @@
           "home": "Bigues, C.E. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=squad"
         },
         {
           "date": "09-01",
@@ -9147,7 +9259,7 @@
           "home": "Ripollet, C.F. E",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=squad"
         },
         {
           "date": "24-01",
@@ -9156,7 +9268,7 @@
           "home": "Molletense, U.D. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=squad"
         },
         {
           "date": "20-02",
@@ -9165,7 +9277,7 @@
           "home": "La Roca Penya Blanc Blava Club Futbol B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=squad"
         },
         {
           "date": "06-03",
@@ -9174,7 +9286,7 @@
           "home": "Valles, C.at. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=squad"
         }
       ],
       "results": [],
@@ -9958,7 +10070,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a",
-      "data_updated_at": "2026-10-23T10:20:09+00:00",
+      "data_updated_at": "2026-10-23T11:52:30+00:00",
       "calendar": [
         {
           "date": "17-10",
@@ -9967,7 +10079,7 @@
           "home": "Finsobe, C.F. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=squad"
         },
         {
           "date": "07-11",
@@ -9976,7 +10088,7 @@
           "home": "Llerona, C.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=squad"
         },
         {
           "date": "10-11",
@@ -9985,7 +10097,7 @@
           "home": "Les Franqueses, C.F. C",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=squad"
         },
         {
           "date": "21-11",
@@ -9994,7 +10106,7 @@
           "home": "Bellavista Milan, C. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=squad"
         },
         {
           "date": "13-12",
@@ -10003,7 +10115,7 @@
           "home": "Bigues, C.E. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=squad"
         },
         {
           "date": "09-01",
@@ -10012,7 +10124,7 @@
           "home": "Ripollet, C.F. E",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=squad"
         },
         {
           "date": "24-01",
@@ -10021,7 +10133,7 @@
           "home": "Molletense, U.D. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=squad"
         },
         {
           "date": "20-02",
@@ -10030,7 +10142,7 @@
           "home": "La Roca Penya Blanc Blava Club Futbol B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=squad"
         },
         {
           "date": "06-03",
@@ -10039,7 +10151,7 @@
           "home": "Valles, C.at. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?season=2627&tab=squad"
         }
       ]
     },
@@ -10055,7 +10167,7 @@
         "home": "La Torreta, C.F. A",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=plantilla"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=squad"
       },
       "last": null,
       "next_match": {
@@ -10065,7 +10177,7 @@
         "home": "La Torreta, C.F. A",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=plantilla"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=squad"
       },
       "last_match": null,
       "standing": {
@@ -10081,7 +10193,7 @@
           "home": "La Torreta, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=squad"
         },
         {
           "date": "21-11",
@@ -10090,7 +10202,7 @@
           "home": "Olimpic La Garriga, C.F. C",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=squad"
         },
         {
           "date": "13-12",
@@ -10099,7 +10211,7 @@
           "home": "Canovelles, U.E. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=squad"
         },
         {
           "date": "09-01",
@@ -10108,7 +10220,7 @@
           "home": "Vilanova Valles, C.F. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=squad"
         },
         {
           "date": "23-01",
@@ -10117,7 +10229,7 @@
           "home": "Valles, C.at. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=squad"
         },
         {
           "date": "21-02",
@@ -10126,7 +10238,7 @@
           "home": "Les Franqueses, C.F. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=squad"
         },
         {
           "date": "06-03",
@@ -10135,7 +10247,7 @@
           "home": "Gualba, F.C. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=squad"
         }
       ],
       "results": [],
@@ -11000,7 +11112,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a",
-      "data_updated_at": "2026-10-23T10:20:09+00:00",
+      "data_updated_at": "2026-10-23T11:52:40+00:00",
       "calendar": [
         {
           "date": "17-10",
@@ -11009,7 +11121,7 @@
           "home": "Escola Pia Granollers, A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=squad"
         },
         {
           "date": "31-10",
@@ -11018,7 +11130,7 @@
           "home": "La Torreta, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=squad"
         },
         {
           "date": "21-11",
@@ -11027,7 +11139,7 @@
           "home": "Olimpic La Garriga, C.F. C",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=squad"
         },
         {
           "date": "13-12",
@@ -11036,7 +11148,7 @@
           "home": "Canovelles, U.E. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=squad"
         },
         {
           "date": "09-01",
@@ -11045,7 +11157,7 @@
           "home": "Vilanova Valles, C.F. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=squad"
         },
         {
           "date": "23-01",
@@ -11054,7 +11166,7 @@
           "home": "Valles, C.at. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=squad"
         },
         {
           "date": "21-02",
@@ -11063,7 +11175,7 @@
           "home": "Les Franqueses, C.F. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=squad"
         },
         {
           "date": "06-03",
@@ -11072,7 +11184,7 @@
           "home": "Gualba, F.C. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?season=2627&tab=squad"
         }
       ]
     },
@@ -11088,7 +11200,7 @@
         "home": "Llerona, C.E. A",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=plantilla"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=squad"
       },
       "last": null,
       "next_match": {
@@ -11098,7 +11210,7 @@
         "home": "Llerona, C.E. A",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=plantilla"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=squad"
       },
       "last_match": null,
       "standing": {
@@ -11114,7 +11226,7 @@
           "home": "Llerona, C.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=squad"
         },
         {
           "date": "21-11",
@@ -11123,7 +11235,7 @@
           "home": "Cardedeu, F.C. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=squad"
         },
         {
           "date": "20-12",
@@ -11132,7 +11244,7 @@
           "home": "Les Franqueses, C.F. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=squad"
         },
         {
           "date": "17-01",
@@ -11141,7 +11253,7 @@
           "home": "Lourdes, U.D. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=squad"
         },
         {
           "date": "30-01",
@@ -11150,7 +11262,7 @@
           "home": "Mollet U.E., CF. C",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=squad"
         },
         {
           "date": "28-02",
@@ -11159,7 +11271,7 @@
           "home": "Olimpic La Garriga, C.F. C",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=squad"
         },
         {
           "date": "14-03",
@@ -11168,7 +11280,7 @@
           "home": "Ametlla Valles, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=squad"
         }
       ],
       "results": [],
@@ -11981,7 +12093,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a",
-      "data_updated_at": "2026-10-23T10:20:09+00:00",
+      "data_updated_at": "2026-10-23T11:52:48+00:00",
       "calendar": [
         {
           "date": "11-10",
@@ -11990,7 +12102,7 @@
           "home": "Pª Blaugrana De La Roca Del Vallès B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=squad"
         },
         {
           "date": "08-11",
@@ -11999,7 +12111,7 @@
           "home": "Llerona, C.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=squad"
         },
         {
           "date": "21-11",
@@ -12008,7 +12120,7 @@
           "home": "Cardedeu, F.C. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=squad"
         },
         {
           "date": "20-12",
@@ -12017,7 +12129,7 @@
           "home": "Les Franqueses, C.F. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=squad"
         },
         {
           "date": "17-01",
@@ -12026,7 +12138,7 @@
           "home": "Lourdes, U.D. B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=squad"
         },
         {
           "date": "30-01",
@@ -12035,7 +12147,7 @@
           "home": "Mollet U.E., CF. C",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=squad"
         },
         {
           "date": "28-02",
@@ -12044,7 +12156,7 @@
           "home": "Olimpic La Garriga, C.F. C",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=squad"
         },
         {
           "date": "14-03",
@@ -12053,7 +12165,7 @@
           "home": "Ametlla Valles, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=plantilla"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?season=2627&tab=squad"
         }
       ]
     },
@@ -12605,7 +12717,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=cadet-segona-divisio-s16&group=grup-11",
-      "data_updated_at": "2026-10-23T10:20:10+00:00"
+      "data_updated_at": "2026-10-23T11:53:02+00:00"
     },
     {
       "name": "Vilamajor, C.F. B — Juvenil Segunda División",
@@ -13266,7 +13378,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=juvenil-segona-divisio&group=grup-20",
-      "data_updated_at": "2026-10-23T10:20:10+00:00"
+      "data_updated_at": "2026-10-23T11:53:11+00:00"
     },
     {
       "name": "Vilamajor, C.F. B — Tercera División Alevín S12",
@@ -13890,7 +14002,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=tercera-divisio-alevi-s12&group=grup-13",
-      "data_updated_at": "2026-10-23T10:20:10+00:00"
+      "data_updated_at": "2026-10-23T11:53:17+00:00"
     }
   ]
 }
