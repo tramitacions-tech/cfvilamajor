@@ -20,6 +20,8 @@ jobs:
           python-version: '3.11'
       - name: Instalar dependencias
         run: pip install requests beautifulsoup4
+      - name: Validar el parser deportivo
+        run: python -m unittest discover -s tests -v
       - name: Sincronizar calendario, resultados, clasificación y plantilla
         run: python scripts/sync_club_data.py
       - name: Guardar datos actualizados
