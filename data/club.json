@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T05:50:35+00:00",
+  "updated_at": "2026-10-23T05:54:06+00:00",
   "source": "elFutbol.co (partidos, clasificación y plantilla cuando están publicados)",
   "teams": [
     {
@@ -2226,7 +2226,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-a",
-      "data_updated_at": "2026-10-22T05:50:29+00:00",
+      "data_updated_at": "2026-10-23T05:51:33+00:00",
       "calendar": [
         {
           "date": "16-01",
@@ -3895,7 +3895,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a",
-      "data_updated_at": "2026-10-22T05:50:30+00:00",
+      "data_updated_at": "2026-10-23T05:51:51+00:00",
       "calendar": [
         {
           "date": "31-01",
@@ -4754,7 +4754,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a",
-      "data_updated_at": "2026-10-22T05:50:30+00:00",
+      "data_updated_at": "2026-10-23T05:52:13+00:00",
       "calendar": [
         {
           "date": "16-01",
@@ -6329,7 +6329,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a",
-      "data_updated_at": "2026-10-21T15:32:40+00:00",
+      "data_updated_at": "2026-10-23T05:52:30+00:00",
       "calendar": [
         {
           "date": "10-01",
@@ -6445,7 +6445,7 @@
         "home": "Bellavista Milan, C. A",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=clasif",
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla",
         "score": "14-30",
         "result": "14-30"
       },
@@ -6457,7 +6457,7 @@
         "home": "Bellavista Milan, C. A",
         "away": "Vilamajor, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=clasif",
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla",
         "score": "14-30",
         "result": "14-30"
       },
@@ -6475,7 +6475,7 @@
           "home": "Bellavista Milan, C. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=clasif",
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla",
           "score": "14-30",
           "result": "14-30"
         },
@@ -6486,7 +6486,7 @@
           "home": "Llinars, C.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=clasif",
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla",
           "score": "14-00",
           "result": "14-00"
         },
@@ -6497,7 +6497,7 @@
           "home": "Palautordera, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=clasif",
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla",
           "score": "13-30",
           "result": "13-30"
         },
@@ -6508,7 +6508,7 @@
           "home": "La Roca Penya Blanc Blava Club Futbol B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=clasif",
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla",
           "score": "17-00",
           "result": "17-00"
         },
@@ -6519,7 +6519,7 @@
           "home": "Lliça D'Amunt, C.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=clasif",
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla",
           "score": "10-10",
           "result": "10-10"
         },
@@ -6530,7 +6530,7 @@
           "home": "Ametlla Valles, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=clasif",
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla",
           "score": "12-30",
           "result": "12-30"
         },
@@ -6541,7 +6541,7 @@
           "home": "Canovelles, U.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=clasif",
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla",
           "score": "13-00",
           "result": "13-00"
         },
@@ -6552,7 +6552,7 @@
           "home": "Bigues, C.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=clasif",
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla",
           "score": "12-00",
           "result": "12-00"
         },
@@ -6563,7 +6563,7 @@
           "home": "La Torreta, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=clasif",
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla",
           "score": "16-30",
           "result": "16-30"
         }
@@ -8269,7 +8269,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a",
-      "data_updated_at": "2026-10-22T05:50:31+00:00",
+      "data_updated_at": "2026-10-23T05:52:37+00:00",
       "calendar": [
         {
           "date": "09-01",
@@ -8278,7 +8278,7 @@
           "home": "La Torreta, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=clasif",
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla",
           "score": "16-30",
           "result": "16-30"
         },
@@ -8289,7 +8289,7 @@
           "home": "Bigues, C.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=clasif",
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla",
           "score": "12-00",
           "result": "12-00"
         },
@@ -8300,7 +8300,7 @@
           "home": "Canovelles, U.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=clasif",
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla",
           "score": "13-00",
           "result": "13-00"
         },
@@ -8311,7 +8311,7 @@
           "home": "Ametlla Valles, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=clasif",
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla",
           "score": "12-30",
           "result": "12-30"
         },
@@ -8322,7 +8322,7 @@
           "home": "Lliça D'Amunt, C.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=clasif",
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla",
           "score": "10-10",
           "result": "10-10"
         },
@@ -8333,7 +8333,7 @@
           "home": "La Roca Penya Blanc Blava Club Futbol B",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=clasif",
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla",
           "score": "17-00",
           "result": "17-00"
         },
@@ -8344,7 +8344,7 @@
           "home": "Palautordera, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=clasif",
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla",
           "score": "13-30",
           "result": "13-30"
         },
@@ -8355,7 +8355,7 @@
           "home": "Llinars, C.E. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=clasif",
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla",
           "score": "14-00",
           "result": "14-00"
         },
@@ -8366,7 +8366,7 @@
           "home": "Bellavista Milan, C. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=clasif",
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?season=2627&tab=plantilla",
           "score": "14-30",
           "result": "14-30"
         }
@@ -10516,7 +10516,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a",
-      "data_updated_at": "2026-10-22T05:50:32+00:00",
+      "data_updated_at": "2026-10-23T05:53:06+00:00",
       "calendar": [
         {
           "date": "23-01",
@@ -11635,7 +11635,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a",
-      "data_updated_at": "2026-10-22T05:50:32+00:00",
+      "data_updated_at": "2026-10-23T05:53:13+00:00",
       "calendar": [
         {
           "date": "30-01",
@@ -12469,7 +12469,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a",
-      "data_updated_at": "2026-10-22T05:50:33+00:00",
+      "data_updated_at": "2026-10-23T05:53:22+00:00",
       "calendar": [
         {
           "date": "17-01",
@@ -12591,9 +12591,9 @@
         "result": "11-00"
       },
       "standing": {
-        "position": 9,
-        "played": 0,
-        "points": 0
+        "position": 7,
+        "played": 1,
+        "points": 3
       },
       "upcoming": [],
       "results": [
@@ -12701,84 +12701,84 @@
       "_category": "Tercera División Alevín S12",
       "standings": [
         {
-          "team": "Bigues, C.E. B",
-          "cells": [
-            "1",
-            "Bigues, C.E. B",
-            "1",
-            "1",
-            "0",
-            "0",
-            "13",
-            "3",
-            "+10",
-            "3"
-          ],
-          "numbers": [
-            1,
-            null,
-            1,
-            1,
-            0,
-            0,
-            13,
-            3,
-            10,
-            3
-          ]
-        },
-        {
-          "team": "Finsobe, C.F. B",
-          "cells": [
-            "2",
-            "Finsobe, C.F. B",
-            "2",
-            "1",
-            "0",
-            "1",
-            "12",
-            "5",
-            "+7",
-            "3"
-          ],
-          "numbers": [
-            2,
-            null,
-            2,
-            1,
-            0,
-            1,
-            12,
-            5,
-            7,
-            3
-          ]
-        },
-        {
           "team": "Molletense, U.D. B",
           "cells": [
-            "3",
+            "1",
             "Molletense, U.D. B",
-            "1",
-            "1",
-            "0",
-            "0",
-            "7",
             "2",
-            "+5",
-            "3"
+            "2",
+            "0",
+            "0",
+            "18",
+            "3",
+            "+15",
+            "6"
+          ],
+          "numbers": [
+            1,
+            null,
+            2,
+            2,
+            0,
+            0,
+            18,
+            3,
+            15,
+            6
+          ]
+        },
+        {
+          "team": "Bigues, C.E. B",
+          "cells": [
+            "2",
+            "Bigues, C.E. B",
+            "2",
+            "2",
+            "0",
+            "0",
+            "18",
+            "5",
+            "+13",
+            "6"
+          ],
+          "numbers": [
+            2,
+            null,
+            2,
+            2,
+            0,
+            0,
+            18,
+            5,
+            13,
+            6
+          ]
+        },
+        {
+          "team": "La Roca Penya Blanc Blava Club Futbol B",
+          "cells": [
+            "3",
+            "La Roca Penya Blanc Blava Club Futbol B",
+            "2",
+            "2",
+            "0",
+            "0",
+            "14",
+            "4",
+            "+10",
+            "6"
           ],
           "numbers": [
             3,
             null,
-            1,
-            1,
-            0,
-            0,
-            7,
             2,
-            5,
-            3
+            2,
+            0,
+            0,
+            14,
+            4,
+            10,
+            6
           ]
         },
         {
@@ -12786,188 +12786,188 @@
           "cells": [
             "4",
             "Olimpic La Garriga, C.F. D",
-            "1",
-            "1",
+            "2",
+            "2",
             "0",
             "0",
-            "6",
+            "13",
             "3",
-            "+3",
-            "3"
+            "+10",
+            "6"
           ],
           "numbers": [
             4,
+            null,
+            2,
+            2,
+            0,
+            0,
+            13,
+            3,
+            10,
+            6
+          ]
+        },
+        {
+          "team": "Les Franqueses, C.F. C",
+          "cells": [
+            "5",
+            "Les Franqueses, C.F. C",
+            "2",
+            "1",
+            "1",
+            "0",
+            "12",
+            "2",
+            "+10",
+            "4"
+          ],
+          "numbers": [
+            5,
+            null,
+            2,
+            1,
+            1,
+            0,
+            12,
+            2,
+            10,
+            4
+          ]
+        },
+        {
+          "team": "Finsobe, C.F. B",
+          "cells": [
+            "6",
+            "Finsobe, C.F. B",
+            "3",
+            "1",
+            "0",
+            "2",
+            "12",
+            "6",
+            "+6",
+            "3"
+          ],
+          "numbers": [
+            6,
+            null,
+            3,
+            1,
+            0,
+            2,
+            12,
+            6,
+            6,
+            3
+          ]
+        },
+        {
+          "team": "Vilamajor, C.F. A",
+          "cells": [
+            "7",
+            "Vilamajor, C.F. A",
+            "1",
+            "1",
+            "0",
+            "0",
+            "1",
+            "0",
+            "+1",
+            "3"
+          ],
+          "numbers": [
+            7,
             null,
             1,
             1,
             0,
             0,
-            6,
-            3,
-            3,
+            1,
+            0,
+            1,
+            3
+          ]
+        },
+        {
+          "team": "Valles, C.at. B",
+          "cells": [
+            "8",
+            "Valles, C.at. B",
+            "2",
+            "1",
+            "0",
+            "1",
+            "9",
+            "9",
+            "0",
+            "3"
+          ],
+          "numbers": [
+            8,
+            null,
+            2,
+            1,
+            0,
+            1,
+            9,
+            9,
+            0,
             3
           ]
         },
         {
           "team": "Sant Esteve, Futbol Club A",
           "cells": [
-            "5",
+            "9",
             "Sant Esteve, Futbol Club A",
-            "1",
+            "2",
             "1",
             "0",
-            "0",
+            "1",
             "7",
-            "5",
-            "+2",
+            "12",
+            "-5",
             "3"
           ],
           "numbers": [
-            5,
+            9,
             null,
-            1,
+            2,
             1,
             0,
-            0,
+            1,
             7,
-            5,
-            2,
+            12,
+            -5,
             3
-          ]
-        },
-        {
-          "team": "La Roca Penya Blanc Blava Club Futbol B",
-          "cells": [
-            "6",
-            "La Roca Penya Blanc Blava Club Futbol B",
-            "1",
-            "1",
-            "0",
-            "0",
-            "5",
-            "4",
-            "+1",
-            "3"
-          ],
-          "numbers": [
-            6,
-            null,
-            1,
-            1,
-            0,
-            0,
-            5,
-            4,
-            1,
-            3
-          ]
-        },
-        {
-          "team": "Les Franqueses, C.F. C",
-          "cells": [
-            "7",
-            "Les Franqueses, C.F. C",
-            "1",
-            "0",
-            "1",
-            "0",
-            "2",
-            "2",
-            "0",
-            "1"
-          ],
-          "numbers": [
-            7,
-            null,
-            1,
-            0,
-            1,
-            0,
-            2,
-            2,
-            0,
-            1
           ]
         },
         {
           "team": "Llinars, C.E. B",
           "cells": [
-            "7",
+            "10",
             "Llinars, C.E. B",
-            "1",
-            "0",
-            "1",
-            "0",
-            "2",
             "2",
             "0",
+            "1",
+            "1",
+            "2",
+            "11",
+            "-9",
             "1"
           ],
           "numbers": [
-            7,
+            10,
             null,
-            1,
-            0,
-            1,
-            0,
-            2,
             2,
             0,
+            1,
+            1,
+            2,
+            11,
+            -9,
             1
-          ]
-        },
-        {
-          "team": "Llerona, C.E. A",
-          "cells": [
-            "9",
-            "Llerona, C.E. A",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0"
-          ],
-          "numbers": [
-            9,
-            null,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ]
-        },
-        {
-          "team": "Vilamajor, C.F. A",
-          "cells": [
-            "9",
-            "Vilamajor, C.F. A",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0"
-          ],
-          "numbers": [
-            9,
-            null,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
           ]
         },
         {
@@ -12975,59 +12975,32 @@
           "cells": [
             "11",
             "Ripollet, C.F. E",
-            "1",
+            "2",
             "0",
             "0",
-            "1",
-            "5",
+            "2",
             "7",
-            "-2",
+            "12",
+            "-5",
             "0"
           ],
           "numbers": [
             11,
             null,
-            1,
+            2,
             0,
             0,
-            1,
-            5,
+            2,
             7,
-            -2,
-            0
-          ]
-        },
-        {
-          "team": "Bellavista Milan, C. B",
-          "cells": [
-            "12",
-            "Bellavista Milan, C. B",
-            "1",
-            "0",
-            "0",
-            "1",
-            "3",
-            "6",
-            "-3",
-            "0"
-          ],
-          "numbers": [
             12,
-            null,
-            1,
-            0,
-            0,
-            1,
-            3,
-            6,
-            -3,
+            -5,
             0
           ]
         },
         {
           "team": "La Torreta, C.F. A",
           "cells": [
-            "13",
+            "12",
             "La Torreta, C.F. A",
             "1",
             "0",
@@ -13039,7 +13012,7 @@
             "0"
           ],
           "numbers": [
-            13,
+            12,
             null,
             1,
             0,
@@ -13052,29 +13025,56 @@
           ]
         },
         {
-          "team": "Valles, C.at. B",
+          "team": "Llerona, C.E. A",
           "cells": [
-            "14",
-            "Valles, C.at. B",
+            "13",
+            "Llerona, C.E. A",
             "1",
             "0",
             "0",
             "1",
             "0",
-            "8",
-            "-8",
+            "10",
+            "-10",
             "0"
           ],
           "numbers": [
-            14,
+            13,
             null,
             1,
             0,
             0,
             1,
             0,
-            8,
-            -8,
+            10,
+            -10,
+            0
+          ]
+        },
+        {
+          "team": "Bellavista Milan, C. B",
+          "cells": [
+            "14",
+            "Bellavista Milan, C. B",
+            "2",
+            "0",
+            "0",
+            "2",
+            "4",
+            "17",
+            "-13",
+            "0"
+          ],
+          "numbers": [
+            14,
+            null,
+            2,
+            0,
+            0,
+            2,
+            4,
+            17,
+            -13,
             0
           ]
         },
@@ -13083,25 +13083,25 @@
           "cells": [
             "15",
             "Gualba, F.C. B",
-            "1",
+            "2",
             "0",
             "0",
-            "1",
-            "3",
-            "13",
-            "-10",
+            "2",
+            "4",
+            "22",
+            "-18",
             "0"
           ],
           "numbers": [
             15,
             null,
-            1,
+            2,
             0,
             0,
-            1,
-            3,
-            13,
-            -10,
+            2,
+            4,
+            22,
+            -18,
             0
           ]
         }
@@ -13327,7 +13327,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a",
-      "data_updated_at": "2026-10-22T05:50:33+00:00",
+      "data_updated_at": "2026-10-23T05:53:25+00:00",
       "calendar": [
         {
           "date": "09-01",
@@ -14504,7 +14504,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a",
-      "data_updated_at": "2026-10-22T05:50:33+00:00",
+      "data_updated_at": "2026-10-23T05:53:29+00:00",
       "calendar": [
         {
           "date": "09-01",
@@ -15482,7 +15482,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a",
-      "data_updated_at": "2026-10-22T05:50:34+00:00",
+      "data_updated_at": "2026-10-23T05:53:36+00:00",
       "calendar": [
         {
           "date": "17-01",
@@ -15992,7 +15992,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=cadet-segona-divisio-s16&group=grup-11",
-      "data_updated_at": "2026-10-22T05:50:34+00:00"
+      "data_updated_at": "2026-10-23T05:53:38+00:00"
     },
     {
       "name": "Vilamajor, C.F. B — Juvenil Segunda División",
@@ -16493,7 +16493,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=juvenil-segona-divisio&group=grup-20",
-      "data_updated_at": "2026-10-22T05:50:35+00:00"
+      "data_updated_at": "2026-10-23T05:53:48+00:00"
     },
     {
       "name": "Vilamajor, C.F. B — Tercera División Alevín S12",
@@ -16967,7 +16967,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=tercera-divisio-alevi-s12&group=grup-13",
-      "data_updated_at": "2026-10-22T05:50:35+00:00"
+      "data_updated_at": "2026-10-23T05:54:06+00:00"
     }
   ]
 }
