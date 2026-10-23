@@ -279,7 +279,14 @@ function matchDateISO(m){
 }
 function getFutureMatches(t){
   const today=new Date(); today.setHours(0,0,0,0);
-  const source=[...(Array.isArray(t.upcoming)?t.upcoming:[]),t.next_match,t.next].filter(Boolean);
+  // El calendario puede contener partidos futuros aunque next/upcoming estén vacíos
+  // o con una jornada pasada. Buscar en todas las listas disponibles.
+  const source=[
+    ...(Array.isArray(t.calendar)?t.calendar:[]),
+    ...(Array.isArray(t.matches)?t.matches:[]),
+    ...(Array.isArray(t.upcoming)?t.upcoming:[]),
+    t.next_match,t.next
+  ].filter(Boolean);
   const seen=new Set();
   return source.filter(m=>{
     const iso=matchDateISO(m); if(!iso) return false;
@@ -315,19 +322,20 @@ function teamInfo(t){
  <div class="detail-tabs" role="tablist"><button class="detail-tab active" data-detail-tab="summary">RESUM</button><button class="detail-tab" data-detail-tab="calendar">CALENDARI</button><button class="detail-tab" data-detail-tab="results">RESULTATS</button><button class="detail-tab" data-detail-tab="standings">CLASSIFICACIÓ</button><button class="detail-tab" data-detail-tab="squad">PLANTILLA</button></div>
  <div class="detail-tab-panel" id="detail-tab-panel"><strong>PRÒXIM PARTIT</strong><br>${safeText(dateText)}<br>${safeText(fixture)}<br><br><strong>CLASSIFICACIÓ</strong><br>Posició: ${safeText(pos)} · Partits jugats: ${safeText(played)} · Punts: ${safeText(points)}<br><br><strong>COMPETICIÓ</strong><br>${safeText(category)}</div>
  <div style="display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin-top:18px"><span class="detail-copy">Fitxa integrada a la web del club, sense sortir a altres portals.</span><button type="button" onclick="document.getElementById('our-team-detail').hidden=true">TANCAR FITXA ×</button></div>
- <div class="team-detail-data" hidden data-json="${safeText(JSON.stringify({next,standing,standings:t.standings||[],squad:t.squad||t.plantilla||[],results:t.results||[],calendar:t.calendar||t.matches||t.upcoming||[],upcoming:futureMatches,category,teamname,played,points,pos}))}"></div>`;
+ <div class="team-detail-data" hidden data-json="${safeText(JSON.stringify({next,standing,standings:t.standings||[],squad:t.squad||t.plantilla||[],results:t.results||[],calendar:[...(Array.isArray(t.calendar)?t.calendar:[]),...(Array.isArray(t.matches)?t.matches:[]),...(Array.isArray(t.upcoming)?t.upcoming:[])],upcoming:futureMatches,category,teamname,played,points,pos}))}"></div>`;
 }
 // EQUIPS: mostrar 13 equipos. Se excluye la entrada Infantil S13 duplicada en la sincronización;
  // el partido sigue apareciendo en PROPERS PARTITS.
 const teamsForGrid=clubTeams.slice(); // Mostrar todos los equipos oficiales de la temporada, sin excluir ni limitar ninguno.
 teamGrid.innerHTML=teamsForGrid.map((t,i)=>{
  const amateur=(t._category||'').includes('Tercera Catalana');
+ const next=getFutureMatches(t)[0]||null;
  return `<button class="our-team-card ${amateur?'amateur':''}" type="button" data-team="${clubTeams.indexOf(t)}">
  ${amateur?'<div class="amateur-mark">A</div>':''}
  <span class="team-eyebrow">${amateur?'PRIMER EQUIP · AMATEUR':'LA NOSTRA GENT'}</span>
  <h3>${safeText(t._display||t._category)}</h3>
  <span class="team-sub">${safeText(t._category)}<br>Temporada 2026–27</span>
- <span class="team-data"><span><strong>PRÒXIM PARTIT</strong><span class="team-fixture">${safeText((t.next_match||t.next)?`${(t.next_match||t.next).date||''}${(t.next_match||t.next).time?' · '+(t.next_match||t.next).time:''} — ${(t.next_match||t.next).home||''} vs ${(t.next_match||t.next).away||''}`:'Calendari pendent de dades')}</span></span><span><strong>CLASSIFICACIÓ</strong><span class="team-table">${safeText(t.standing?.position!=null?`Posició ${t.standing.position} · ${t.standing.played??'—'} PJ · ${t.standing.points??'—'} punts`:'Dades de classificació pendents')}</span></span></span>
+ <span class="team-data"><span><strong>PRÒXIM PARTIT</strong><span class="team-fixture">${safeText(next?`${next.date||''}${next.time?' · '+next.time:''} — ${next.home||''} vs ${next.away||''}`:'Calendari pendent de dades')}</span></span><span><strong>CLASSIFICACIÓ</strong><span class="team-table">${safeText(t.standing?.position!=null?`Posició ${t.standing.position} · ${t.standing.played??'—'} PJ · ${t.standing.points??'—'} punts`:'Dades de classificació pendents')}</span></span></span>
  <span class="team-open">VEURE FITXA INTERNA ↗</span></button>`;
 }).join('');
 teamGrid.addEventListener('click',e=>{
