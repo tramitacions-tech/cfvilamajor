@@ -17,11 +17,24 @@ class SyncParserTests(unittest.TestCase):
         self.assertEqual(sync.explicit_match_score('FT11-10 Vilamajor, C.F. A Cardedeu, F.C. A 23'), '2-3')
         self.assertEqual(sync.explicit_match_score('FT 01-11 Vilamajor, C.F. A Rival 2-1'), '2-1')
 
+    def test_isolated_past_score_cell_is_recognized(self):
+        self.assertEqual(sync.score_from_cells(['27-09', 'Vilamajor, C.F. A', '2-1', 'Mollet U.E., CF. A'], '2026-09-27', date(2026,10,23)), '2-1')
+        self.assertEqual(sync.score_from_cells(['25-10', 'Vilamajor, C.F. A', '2-1', 'Rival C.F. A'], '2026-10-25', date(2026,10,23)), '')
+        self.assertEqual(sync.score_from_cells(['27-09', 'Vilamajor, C.F. A', '17:00', 'Mollet U.E., CF. A'], '2026-09-27', date(2026,10,23)), '')
+
     def test_season_year_rollover(self):
         today = date(2026, 10, 23)
         self.assertEqual(sync.iso_date('25-10', today), '2026-10-25')
         self.assertEqual(sync.iso_date('10-01', today), '2027-01-10')
         self.assertEqual(sync.iso_date('23-01', today), '2027-01-23')
+
+    def test_match_row_separate_score_cell_becomes_result(self):
+        html = '''<table><tr><td>27-09-2026</td><td><a href="/team/vilamajor">Vilamajor, C.F. A</a></td><td>2-1</td><td><a href="/team/mollet">Mollet U.E., CF. A</a></td></tr></table>'''
+        rows = sync.extract_matches(BeautifulSoup(html, 'html.parser'), 'https://elfutbol.co/es/team/vilamajor-c-f-a', {'name':'Vilamajor, C.F. A'})
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0].get('score'), '2-1')
+        self.assertEqual(rows[0]['home'], 'Vilamajor, C.F. A')
+        self.assertEqual(rows[0]['away'], 'Mollet U.E., CF. A')
 
     def test_standings_reject_player_table_and_accept_team_table(self):
         html = '''<table><tr><th>Jugador</th><th>PJ</th><th>Goles</th></tr><tr><td>Jugador A</td><td>2</td><td>1</td></tr></table>
