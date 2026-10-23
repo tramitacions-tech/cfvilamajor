@@ -62,6 +62,25 @@ def get_page(session,url):
 
 def row_cells(row): return [clean(x.get_text(' ',strip=True)) for x in row.find_all(['td','th'],recursive=False)]
 
+def score_from_cells(cells, match_date=None, today=None):
+    """Accept a score only when it is an isolated cell in a dated fixture row.
+    This handles sources that render home, score, away in separate columns without FT.
+    """
+    today=today or date.today()
+    if not match_date:
+        return ''
+    try:
+        played=date.fromisoformat(match_date) < today
+    except ValueError:
+        return ''
+    if not played:
+        return ''
+    for cell in cells:
+        m=re.fullmatch(r'\s*(\d{1,2})\s*[-–]\s*(\d{1,2})\s*', cell)
+        if m and int(m.group(1))<=20 and int(m.group(2))<=20:
+            return f'{int(m.group(1))}-{int(m.group(2))}'
+    return ''
+
 def split_match_label(full, team):
     """Read elFutbol's compact single-link match labels, e.g. FT30-11 Rival A Vilamajor, C.F. A 21."""
     raw=clean(full)
@@ -251,7 +270,7 @@ def extract_matches(soup, source_url, team=None):
         for x in links:
             if x not in names: names.append(x)
         if len(names)<2: continue
-        score=explicit_match_score(text)
+        score=explicit_match_score(text) or score_from_cells(cells, iso)
         tm=TIME_RE.search(text); time=f'{int(tm.group(1)):02d}:{tm.group(2)}' if tm else ''
         item={'date':date.fromisoformat(iso).strftime('%d-%m'),'iso':iso,'time':time,'home':names[0],'away':names[1],'venue':None,'source':source_url}
         if score: item.update(score=score,result=score)
@@ -303,7 +322,11 @@ def extract_standings(soup):
                 'points': next((i for i,h in enumerate(headers) if h in {'pts','puntos','punts'}),None),
             }
             stats=[num_at(indices[k]) for k in ('played','won','drawn','lost','gf','ga','gd','points')]
-            rows.append({'team':name,'position':num_at(pos_i),'numbers':[num_at(pos_i)]+stats,'stats':stats,'cells':cells})
+            position=num_at(pos_i)
+            # Reject malformed/player-stat rows and zero-position placeholders.
+            if position is None or position < 1 or num_at(pj_i) is None or num_at(pts_i) is None:
+                continue
+            rows.append({'team':name,'position':position,'numbers':[position]+stats,'stats':stats,'cells':cells})
         if rows:
             # A valid league table should contain several club/team rows, not individual players.
             candidates.append(rows)
