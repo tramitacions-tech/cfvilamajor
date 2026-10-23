@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T11:53:17+00:00",
+  "updated_at": "2026-10-23T15:36:41+00:00",
   "source": "elFutbol.co (partidos, clasificación y plantilla cuando están publicados)",
   "teams": [
     {
@@ -1280,7 +1280,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-a",
-      "data_updated_at": "2026-10-23T11:51:06+00:00",
+      "data_updated_at": "2026-10-23T15:35:39+00:00",
       "calendar": [
         {
           "date": "26-09",
@@ -2424,7 +2424,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a",
-      "data_updated_at": "2026-10-23T11:51:15+00:00",
+      "data_updated_at": "2026-10-23T15:35:42+00:00",
       "calendar": [
         {
           "date": "04-10",
@@ -3397,7 +3397,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a",
-      "data_updated_at": "2026-10-23T11:51:23+00:00",
+      "data_updated_at": "2026-10-23T15:35:45+00:00",
       "calendar": [
         {
           "date": "03-10",
@@ -3590,43 +3590,6 @@
       "_display": "Infantil",
       "_category": "Infantil Segunda División S13",
       "standings": [
-        {
-          "team": "Premia Club Esp. C",
-          "position": 0,
-          "numbers": [
-            0,
-            0,
-            null,
-            null,
-            null,
-            0,
-            0,
-            0,
-            0
-          ],
-          "stats": [
-            0,
-            null,
-            null,
-            null,
-            0,
-            0,
-            0,
-            0
-          ],
-          "cells": [
-            "0",
-            "Premia Club Esp. C",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
         {
           "team": "La Roca Penya Blanc Blava Club Futbol A",
           "position": 1,
@@ -4530,7 +4493,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a",
-      "data_updated_at": "2026-10-23T11:51:34+00:00",
+      "data_updated_at": "2026-10-23T15:35:48+00:00",
       "calendar": [
         {
           "date": "03-10",
@@ -4723,43 +4686,6 @@
       "_display": "Infantil",
       "_category": "Infantil Segunda División S14",
       "standings": [
-        {
-          "team": "Gualba, F.C. A",
-          "position": 0,
-          "numbers": [
-            0,
-            0,
-            null,
-            null,
-            null,
-            0,
-            0,
-            0,
-            0
-          ],
-          "stats": [
-            0,
-            null,
-            null,
-            null,
-            0,
-            0,
-            0,
-            0
-          ],
-          "cells": [
-            "0",
-            "Gualba, F.C. A",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
         {
           "team": "Sant Esteve, Futbol Club A",
           "position": 1,
@@ -5789,7 +5715,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a",
-      "data_updated_at": "2026-10-23T11:51:41+00:00",
+      "data_updated_at": "2026-10-23T15:35:51+00:00",
       "calendar": [
         {
           "date": "10-10",
@@ -5973,43 +5899,6 @@
       "_display": "Juvenil A",
       "_category": "Juvenil Primera División",
       "standings": [
-        {
-          "team": "Sant Julia De Vilatorta, C.F. A",
-          "position": 0,
-          "numbers": [
-            0,
-            0,
-            null,
-            null,
-            null,
-            0,
-            0,
-            0,
-            0
-          ],
-          "stats": [
-            0,
-            null,
-            null,
-            null,
-            0,
-            0,
-            0,
-            0
-          ],
-          "cells": [
-            "0",
-            "Sant Julia De Vilatorta, C.F. A",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
         {
           "team": "Fundacio Unió Esportiva Vilassar C",
           "position": 1,
@@ -7143,7 +7032,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a",
-      "data_updated_at": "2026-10-23T11:51:51+00:00",
+      "data_updated_at": "2026-10-23T15:35:55+00:00",
       "calendar": [
         {
           "date": "01-11",
@@ -8165,7 +8054,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a",
-      "data_updated_at": "2026-10-23T11:52:07+00:00",
+      "data_updated_at": "2026-10-23T15:35:58+00:00",
       "calendar": [
         {
           "date": "10-10",
@@ -8340,43 +8229,6 @@
       "_display": "Femení Infantil",
       "_category": "Segunda División Femenino Infantil",
       "standings": [
-        {
-          "team": "Premia Club Esp. B",
-          "position": 0,
-          "numbers": [
-            0,
-            0,
-            null,
-            null,
-            null,
-            0,
-            0,
-            0,
-            0
-          ],
-          "stats": [
-            0,
-            null,
-            null,
-            null,
-            0,
-            0,
-            0,
-            0
-          ],
-          "cells": [
-            "0",
-            "Premia Club Esp. B",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
         {
           "team": "Ametlla Valles, C.F. A",
           "position": 1,
@@ -9109,7 +8961,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a",
-      "data_updated_at": "2026-10-23T11:52:19+00:00",
+      "data_updated_at": "2026-10-23T15:36:01+00:00",
       "calendar": [
         {
           "date": "03-10",
@@ -10070,7 +9922,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a",
-      "data_updated_at": "2026-10-23T11:52:30+00:00",
+      "data_updated_at": "2026-10-23T15:36:04+00:00",
       "calendar": [
         {
           "date": "17-10",
@@ -11112,7 +10964,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a",
-      "data_updated_at": "2026-10-23T11:52:40+00:00",
+      "data_updated_at": "2026-10-23T15:36:07+00:00",
       "calendar": [
         {
           "date": "17-10",
@@ -11287,117 +11139,6 @@
       "_display": "Benjamí",
       "_category": "Tercera División Benjamín S9",
       "standings": [
-        {
-          "team": "Llinars, C.E. B",
-          "position": 0,
-          "numbers": [
-            0,
-            0,
-            null,
-            null,
-            null,
-            0,
-            0,
-            0,
-            0
-          ],
-          "stats": [
-            0,
-            null,
-            null,
-            null,
-            0,
-            0,
-            0,
-            0
-          ],
-          "cells": [
-            "0",
-            "Llinars, C.E. B",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "team": "Escola Futbol Mataro C.E C",
-          "position": 0,
-          "numbers": [
-            0,
-            0,
-            null,
-            null,
-            null,
-            0,
-            0,
-            0,
-            0
-          ],
-          "stats": [
-            0,
-            null,
-            null,
-            null,
-            0,
-            0,
-            0,
-            0
-          ],
-          "cells": [
-            "0",
-            "Escola Futbol Mataro C.E C",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "team": "Escola De Llavaneres, CF. D",
-          "position": 0,
-          "numbers": [
-            0,
-            0,
-            null,
-            null,
-            null,
-            0,
-            0,
-            0,
-            0
-          ],
-          "stats": [
-            0,
-            null,
-            null,
-            null,
-            0,
-            0,
-            0,
-            0
-          ],
-          "cells": [
-            "0",
-            "Escola De Llavaneres, CF. D",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
         {
           "team": "Escola Pia Granollers, A",
           "position": 1,
@@ -12093,7 +11834,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a",
-      "data_updated_at": "2026-10-23T11:52:48+00:00",
+      "data_updated_at": "2026-10-23T15:36:09+00:00",
       "calendar": [
         {
           "date": "11-10",
@@ -12717,7 +12458,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=cadet-segona-divisio-s16&group=grup-11",
-      "data_updated_at": "2026-10-23T11:53:02+00:00"
+      "data_updated_at": "2026-10-23T15:36:11+00:00"
     },
     {
       "name": "Vilamajor, C.F. B — Juvenil Segunda División",
@@ -13378,7 +13119,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=juvenil-segona-divisio&group=grup-20",
-      "data_updated_at": "2026-10-23T11:53:11+00:00"
+      "data_updated_at": "2026-10-23T15:36:27+00:00"
     },
     {
       "name": "Vilamajor, C.F. B — Tercera División Alevín S12",
@@ -14002,7 +13743,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=tercera-divisio-alevi-s12&group=grup-13",
-      "data_updated_at": "2026-10-23T11:53:17+00:00"
+      "data_updated_at": "2026-10-23T15:36:41+00:00"
     }
   ]
 }
