@@ -22,7 +22,14 @@ def norm(s):
 def clean(s): return re.sub(r'\s+',' ',s or '').strip()
 
 def iso_date(txt, today=None):
-    today=today or date.today(); m=DATE_RE.search(txt or '')
+    today=today or date.today()
+    # Prefer explicit ISO dates before DD-MM parsing; otherwise YYYY-MM-DD can
+    # be misread from an internal substring such as 10-03.
+    iso_match=re.search(r'(?<!\d)(20\d{2})-(\d{1,2})-(\d{1,2})(?!\d)',txt or '')
+    if iso_match:
+        try: return date(int(iso_match.group(1)),int(iso_match.group(2)),int(iso_match.group(3))).isoformat()
+        except ValueError: return None
+    m=DATE_RE.search(txt or '')
     if not m: return None
     d,mo,y=m.groups(); d=int(d); mo=int(mo)
     if y:
@@ -255,6 +262,56 @@ def extract_matches(soup, source_url, team=None):
         item={'date':date.fromisoformat(iso).strftime('%d-%m'),'iso':iso,'time':time,'home':home,'away':away,'venue':None,'source':source_url}
         if score: item.update(score=score,result=score)
         found.append(item)
+    # elFutbol also renders fixtures as cards/divs where the date and score are
+    # siblings of the team links (so the anchor text itself has no date). Walk up
+    # from match/team links and parse the smallest ancestor containing a date, two
+    # team links, and Vilamajor. This is the key path for the visible history cards.
+    for a in soup.find_all('a', href=True):
+        href=a.get('href','')
+        if '/team/' not in href and '/match/' not in href and 'vilamajor' not in norm(a.get_text(' ',strip=True)):
+            continue
+        node=a
+        for _ in range(6):
+            node=getattr(node,'parent',None)
+            if node is None or not getattr(node,'name',None): break
+            full=clean(node.get_text(' ',strip=True))
+            iso=iso_date(full)
+            if not iso or 'vilamajor' not in norm(full): continue
+            links=[]
+            for link in node.find_all('a',href=True):
+                label=clean(link.get_text(' ',strip=True))
+                lhref=link.get('href','')
+                if '/team/' not in lhref or len(label)<3: continue
+                if norm(label) in {'ver mas detalles','ver más detalles','detalles','detail','plantilla'}: continue
+                if label not in links: links.append(label)
+            if len(links)<2 or not any('vilamajor' in norm(x) for x in links): continue
+            # Prefer match-specific final markers; never infer a score from a date/time.
+            score=explicit_match_score(full)
+            if not score:
+                # Some cards duplicate linked team names after the visible score;
+                # check leaf labels independently so the compact final token is retained.
+                for leaf in node.find_all(['span','strong','b','time']):
+                    score=explicit_match_score(clean(leaf.get_text(' ',strip=True)))
+                    if score: break
+            tm=TIME_RE.search(full)
+            time=f'{int(tm.group(1)):02d}:{tm.group(2)}' if tm else ''
+            home,away=links[0],links[1]
+            # Merge the same fixture across different DOM parsers; if one parser
+            # found the score, retain it rather than creating a duplicate row.
+            existing=next((m for m in found if m.get('iso')==iso and
+                           norm(m.get('home'))==norm(home) and norm(m.get('away'))==norm(away)),None)
+            if existing:
+                if score and not existing.get('score'):
+                    existing.update(score=score,result=score)
+                if time and not existing.get('time'): existing['time']=time
+            else:
+                key=(iso,norm(home),norm(away),score)
+                seen.add(key)
+                item={'date':date.fromisoformat(iso).strftime('%d-%m'),'iso':iso,'time':time,
+                      'home':home,'away':away,'venue':None,'source':source_url}
+                if score: item.update(score=score,result=score)
+                found.append(item)
+            break
     # Structured table rows are often more reliable than linked labels.
     for row in soup.find_all('tr'):
         cells=row_cells(row); text=' | '.join(cells)
@@ -276,7 +333,20 @@ def extract_matches(soup, source_url, team=None):
         if score: item.update(score=score,result=score)
         key=(iso,norm(item['home']),norm(item['away']),score)
         if key not in seen: seen.add(key); found.append(item)
-    return sorted(found,key=lambda x:(x['iso'],x.get('time','')))
+    # Final canonicalization across anchor, card and table parsers. Keep a single
+    # fixture per date/home/away and preserve the richest version (score/time).
+    canonical={}
+    for item in found:
+        key=(item.get('iso'),norm(item.get('home')),norm(item.get('away')))
+        if key not in canonical:
+            canonical[key]=item
+            continue
+        old=canonical[key]
+        if item.get('score') and not old.get('score'):
+            old.update(score=item['score'],result=item.get('result',item['score']))
+        if item.get('time') and not old.get('time'): old['time']=item['time']
+        if item.get('source') and not old.get('source'): old['source']=item['source']
+    return sorted(canonical.values(),key=lambda x:(x['iso'],x.get('time','')))
 
 def extract_standings(soup):
     """Extract a league table only when its headers identify team standings.
