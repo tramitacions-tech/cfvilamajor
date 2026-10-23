@@ -36,6 +36,22 @@ class SyncParserTests(unittest.TestCase):
         self.assertEqual(rows[0]['home'], 'Vilamajor, C.F. A')
         self.assertEqual(rows[0]['away'], 'Mollet U.E., CF. A')
 
+    def test_match_cards_with_date_outside_team_links(self):
+        html = '''<div class="match-card"><span>Última derrota</span><span>FT27-09 Vilamajor, C.F. A Mollet U.E., CF. A 12</span>
+        <a href="/es/team/vilamajor-c-f-a">Vilamajor, C.F. A</a>
+        <a href="/es/team/mollet-u-e-cf-a">Mollet U.E., CF. A</a></div>
+        <div class="match-card"><span>Jornada 2 VS 2026-10-03 · 20:00</span>
+        <a href="/es/team/granollers">Granollers, E.C. B</a>
+        <a href="/es/team/vilamajor-c-f-a">Vilamajor, C.F. A</a></div>'''
+        rows = sync.extract_matches(BeautifulSoup(html, 'html.parser'), 'https://elfutbol.co/es/team/vilamajor-c-f-a', {'name':'Vilamajor, C.F. A'})
+        self.assertEqual(len(rows), 2)
+        past = next(x for x in rows if x['iso'] == '2026-09-27')
+        self.assertEqual((past['home'], past['away']), ('Vilamajor, C.F. A', 'Mollet U.E., CF. A'))
+        self.assertEqual(past.get('score'), '1-2')
+        upcoming = next(x for x in rows if x['iso'] == '2026-10-03')
+        self.assertEqual((upcoming['home'], upcoming['away']), ('Granollers, E.C. B', 'Vilamajor, C.F. A'))
+        self.assertNotIn('score', upcoming)
+
     def test_standings_reject_player_table_and_accept_team_table(self):
         html = '''<table><tr><th>Jugador</th><th>PJ</th><th>Goles</th></tr><tr><td>Jugador A</td><td>2</td><td>1</td></tr></table>
         <table><tr><th>Pos</th><th>Equipo</th><th>PJ</th><th>DG</th><th>Pts</th></tr>
