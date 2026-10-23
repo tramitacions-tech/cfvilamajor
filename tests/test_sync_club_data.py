@@ -46,5 +46,25 @@ class SyncParserTests(unittest.TestCase):
         self.assertEqual(rows[0]['name'], 'Jugador A')
         self.assertEqual(rows[0]['appearances'], 2)
 
+    def test_related_pages_requests_all_tabs_preserving_competition(self):
+        class Response:
+            status_code = 200
+            text = '<html><body><div>Vilamajor C.F. A</div></body></html>'
+            url = 'https://elfutbol.co/es/team/vilamajor-c-f-a?comp=juvenil-primera-divisio&group=grup-4&season=2627&tab=calendario'
+            def raise_for_status(self): pass
+        class Session:
+            def __init__(self): self.urls=[]
+            def get(self, url, timeout=0):
+                self.urls.append(url)
+                return Response()
+        session=Session()
+        base='https://elfutbol.co/es/team/vilamajor-c-f-a?comp=juvenil-primera-divisio&group=grup-4'
+        pages=sync.related_pages(session,base,BeautifulSoup('<html><body>Vilamajor</body></html>','html.parser'))
+        self.assertTrue(any('tab=calendario' in u for u in session.urls))
+        self.assertTrue(any('tab=resultados' in u for u in session.urls))
+        self.assertTrue(any('tab=clasificacion' in u for u in session.urls))
+        self.assertTrue(any('tab=plantilla' in u for u in session.urls))
+        self.assertTrue(all('comp=juvenil-primera-divisio' in u and 'group=grup-4' in u for u in session.urls))
+
 if __name__ == '__main__':
     unittest.main()
