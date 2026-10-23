@@ -28,11 +28,14 @@ def iso_date(txt, today=None):
     if y:
         y=int(y); y=y+2000 if y<100 else y
     else:
-        y=today.year
-        # season turns over around July; Oct is current year, dates in Jan-Jun remain current year
+        # La temporada futbolística cruza el año natural (p. ej. 2026-27):
+        # entre julio y diciembre se usa el año de inicio; enero-junio, el siguiente.
+        if today.month >= 7:
+            y = today.year if mo >= 7 else today.year + 1
+        else:
+            y = today.year - 1 if mo >= 7 else today.year
         try:
-            candidate=date(y,mo,d)
-            if candidate < today.replace(year=max(1,today.year-1)) and mo>=7: y+=1
+            date(y,mo,d)
         except ValueError: return None
     try: return date(y,mo,d).isoformat()
     except ValueError: return None
@@ -63,8 +66,9 @@ def split_match_label(full, team):
     """Read elFutbol's compact single-link match labels, e.g. FT30-11 Rival A Vilamajor, C.F. A 21."""
     raw=clean(full)
     score=''
-    # In match links elFutbol sometimes concatenates scores (2-1 -> 21).
-    tail=re.search(r'\s(\d{2,3})\s*$',raw)
+    # Only strip/decode a compact score when the source explicitly marks the match final.
+    final_marked=bool(re.search(r'(?:\bFT(?=\d)|\bFT\b|\b(?:FINALIZADO|FINALITZAT)\b)',raw,re.I))
+    tail=re.search(r'\s(\d{2,3})\s*$',raw) if final_marked else None
     if tail:
         digits=tail.group(1)
         if len(digits)==2: score=f'{digits[0]}-{digits[1]}'; raw=raw[:tail.start()].strip()
@@ -110,6 +114,31 @@ def related_pages(session, base_url, soup):
         except Exception as e: print(f'AVISO subpágina {label}: {e}')
     return pages
 
+def explicit_match_score(text):
+    """Only parse compact scores when the source explicitly marks the match FT/final.
+    Never interpret a kickoff time such as 17:00 or a date such as 19-12 as a score.
+    elFutbol sometimes appends a compact score (e.g. FT11-10 ... 23 = 2-3).
+    """
+    raw=clean(text)
+    if not re.search(r'(?:\bFT(?=\d)|\bFT\b|\b(?:FINALIZADO|FINALITZAT)\b)', raw, re.I):
+        return ''
+    # A separated score is accepted only as the final token, never the date after FT.
+    explicit=re.search(r'\s(\d{1,2})\s*[-–:]\s*(\d{1,2})\s*$', raw)
+    if explicit:
+        a,b=int(explicit.group(1)),int(explicit.group(2))
+        if a <= 20 and b <= 20: return f'{a}-{b}'
+    # Compact score suffix used by the source: 12 => 1-2; 203 => 20-3.
+    tail=re.search(r'\s(\d{2,3})\s*$', raw)
+    if not tail: return ''
+    digits=tail.group(1)
+    if len(digits)==2:
+        a,b=int(digits[0]),int(digits[1])
+    else:
+        a,b=int(digits[:2]),int(digits[2])
+    if a <= 20 and b <= 20:
+        return f'{a}-{b}'
+    return ''
+
 def extract_matches(soup, source_url, team=None):
     found=[]; seen=set()
     # Prefer explicit match links; elFutbol exposes a linked label containing date, teams and sometimes score.
@@ -131,7 +160,7 @@ def extract_matches(soup, source_url, team=None):
                 if label and label not in names and not re.search(r'\d{1,2}[-/]\d{1,2}',label) and len(label)>2:
                     if norm(label) not in {'ver','detalles','detall','resultats','resultados','calendari','calendario'}: names.append(label)
         # Remove common date/time/status fragments from link label before a conservative text fallback.
-        score=''
+        score=explicit_match_score(full) or explicit_match_score(txt)
         compact=split_match_label(full,team)
         if len(names)<2 and compact:
             left, own, compact_score, orientation=compact
@@ -142,21 +171,22 @@ def extract_matches(soup, source_url, team=None):
                 right=DATE_RE.sub(' ',right); right=TIME_RE.sub(' ',right)
                 right=re.sub(r'\s+\d{2,3}\s*$','',right).strip()
                 names=[own,right]
-            if compact_score and not SCORE_RE.search(full):
+            if compact_score and not score:
                 score=compact_score
         if len(names)<2:
             cleaned=re.sub(r'\b(FT|HT|FINALIZADO|FINALITZAT|APLAZADO|SUSPENDIDO)\b',' ',full,flags=re.I)
             cleaned=DATE_RE.sub(' ',cleaned); cleaned=TIME_RE.sub(' ',cleaned)
-            sm=SCORE_RE.search(cleaned)
-            if sm: cleaned=cleaned[:sm.start()]+' '+cleaned[sm.end():]
+            # No generic score regex here: it can mistake dates/times for goals.
+            if score:
+                cleaned=re.sub(r'\s+\d{2,3}\s*$', ' ', cleaned)
             parts=re.split(r'\s{2,}|\s+[–—]\s+|\s+vs\.?\s+',cleaned)
             parts=[clean(x) for x in parts if len(clean(x))>2 and not re.fullmatch(r'\d+',clean(x))]
             club=[x for x in parts if any(w in norm(x) for w in ['vilamajor','c.f.','f.c.','u.d.','c.e.','club futbol','futbol club'])]
             if len(club)>=2: names=club[:2]
         if len(names)<2: continue
         # Score is only accepted when it is visibly separated; don't guess compact strings like "21".
-        sm=SCORE_RE.search(full)
-        if sm: score=f'{sm.group(1)}-{sm.group(2)}'
+        # A generic N-N match over the whole label is unsafe: it catches DD-MM and HH:MM.
+        score = score or explicit_match_score(full) or explicit_match_score(txt)
         time=''; tm=TIME_RE.search(full)
         if tm: time=f'{int(tm.group(1)):02d}:{tm.group(2)}'
         home,away=names[0],names[1]
@@ -183,7 +213,7 @@ def extract_matches(soup, source_url, team=None):
         for x in links:
             if x not in names: names.append(x)
         if len(names)<2: continue
-        sm=SCORE_RE.search(text); score=f'{sm.group(1)}-{sm.group(2)}' if sm else ''
+        score=explicit_match_score(text)
         tm=TIME_RE.search(text); time=f'{int(tm.group(1)):02d}:{tm.group(2)}' if tm else ''
         item={'date':date.fromisoformat(iso).strftime('%d-%m'),'iso':iso,'time':time,'home':names[0],'away':names[1],'venue':None,'source':source_url}
         if score: item.update(score=score,result=score)
@@ -192,54 +222,97 @@ def extract_matches(soup, source_url, team=None):
     return sorted(found,key=lambda x:(x['iso'],x.get('time','')))
 
 def extract_standings(soup):
-    best=[]
+    """Extract a league table only when its headers identify team standings.
+    Reject player-stat tables even if they contain PJ/points-like columns.
+    """
+    candidates=[]
     for table in soup.find_all('table'):
-        headers=[norm(x.get_text(' ',strip=True)) for x in table.find_all('th')]
+        header_cells=table.find_all('th')
+        headers=[norm(x.get_text(' ',strip=True)) for x in header_cells]
         if not headers: continue
-        blob=' '.join(headers)
-        if not any(x in blob for x in ['pts','punts','puntos','equip','club','pj','partits','partidos']): continue
+        # Must look like a standings table: position + team + played + points.
+        pos_i=next((i for i,h in enumerate(headers) if h in {'pos','pos.','posicion','posición','class','posicio'}),None)
+        team_i=next((i for i,h in enumerate(headers) if h in {'equipo','equip','club','team'}),None)
+        pj_i=next((i for i,h in enumerate(headers) if h in {'pj','partidos','partits','jugados'}),None)
+        pts_i=next((i for i,h in enumerate(headers) if h in {'pts','puntos','punts'}),None)
+        # Compact elFutbol table has Pos, Equipo, PJ, DG, Pts.
+        if pos_i is None or team_i is None or pj_i is None or pts_i is None: continue
         rows=[]
         for tr in table.find_all('tr'):
             cells=row_cells(tr)
-            if len(cells)<3 or tr.find('th'): continue
-            links=[clean(a.get_text(' ',strip=True)) for a in tr.find_all('a',href=True)]
-            name=next((x for x in links if len(x)>2),cells[0])
-            nums=[]
+            if tr.find('th') or len(cells)<len(headers): continue
+            name=''
+            if team_i < len(cells):
+                links=[clean(a.get_text(' ',strip=True)) for a in tr.find_all('a',href=True)]
+                name=next((x for x in links if len(x)>2),cells[team_i])
+            if not name or re.fullmatch(r'[-+]?\d+',name): continue
+            vals=[]
             for c in cells:
                 m=re.fullmatch(r'[-+]?\d+',c)
-                nums.append(int(m.group()) if m else None)
-            rows.append({'team':name,'cells':cells,'numbers':nums})
-        if len(rows)>len(best): best=rows
-    return best
+                vals.append(int(m.group()) if m else None)
+            def num_at(i):
+                if i is None or i>=len(vals): return None
+                return vals[i]
+            # Normalize to the eight columns the site renders: PJ, PG, PE, PP, GF, GC, DG, Pts.
+            indices={
+                'played': next((i for i,h in enumerate(headers) if h in {'pj','partidos','partits','jugados'}),None),
+                'won': next((i for i,h in enumerate(headers) if h in {'pg','ganados','victorias','guanyats'}),None),
+                'drawn': next((i for i,h in enumerate(headers) if h in {'pe','empatados','empates','empatats'}),None),
+                'lost': next((i for i,h in enumerate(headers) if h in {'pp','perdidos','derrotas','perduts'}),None),
+                'gf': next((i for i,h in enumerate(headers) if h in {'gf','goles a favor','gols a favor'}),None),
+                'ga': next((i for i,h in enumerate(headers) if h in {'gc','goles en contra','gols en contra'}),None),
+                'gd': next((i for i,h in enumerate(headers) if h in {'dg','dif','diferencia','diferencia de goles'}),None),
+                'points': next((i for i,h in enumerate(headers) if h in {'pts','puntos','punts'}),None),
+            }
+            stats=[num_at(indices[k]) for k in ('played','won','drawn','lost','gf','ga','gd','points')]
+            rows.append({'team':name,'position':num_at(pos_i),'numbers':[num_at(pos_i)]+stats,'stats':stats,'cells':cells})
+        if rows:
+            # A valid league table should contain several club/team rows, not individual players.
+            candidates.append(rows)
+    return max(candidates,key=len) if candidates else []
 
 def extract_squad(soup):
-    best=[]
+    """Use only players with an appearance in the current group; deduplicate names.
+    elFutbol's squad page includes historical/zero-appearance profiles, so the full
+    profile count is not equivalent to the current active squad.
+    """
+    candidates=[]
     for table in soup.find_all('table'):
         headers=[norm(x.get_text(' ',strip=True)) for x in table.find_all('th')]
         blob=' '.join(headers)
-        if not headers or not any(x in blob for x in ['jugador','players','jugadors','nombre','nom']): continue
+        player_i=next((i for i,h in enumerate(headers) if h in {'jugador','players','jugadors','nombre','nom','player'}),None)
+        pj_i=next((i for i,h in enumerate(headers) if h in {'pj','partidos','partits','apariciones'}),None)
+        if player_i is None or pj_i is None: continue
         rows=[]
         for tr in table.find_all('tr'):
             if tr.find('th'): continue
             cells=row_cells(tr)
-            if not cells: continue
+            if len(cells)<=max(player_i,pj_i): continue
             links=[clean(a.get_text(' ',strip=True)) for a in tr.find_all('a',href=True)]
-            name=next((x for x in links if len(x)>2 and not re.search(r'\d{1,2}[-/]\d{1,2}',x)),cells[0])
-            if len(name)>2 and not any(x in norm(name) for x in ['plantilla','jugador','nombre']):
-                rows.append({'name':name,'stats':cells[1:]})
-        if len(rows)>len(best): best=rows
-    # fallback: player links in section following Plantilla heading
-    if not best:
-        for a in soup.find_all('a',href=True):
-            label=clean(a.get_text(' ',strip=True)); href=norm(a['href'])
-            if label and len(label)>4 and ('player' in href or 'jugador' in href or 'persona' in href):
-                if not any(norm(x.get('name',''))==norm(label) for x in best): best.append({'name':label,'stats':[]})
-    return best
+            name=next((x for x in links if len(x)>2 and not re.search(r'\d{1,2}[-/]\d{1,2}',x)),cells[player_i])
+            try: appearances=int(cells[pj_i])
+            except (ValueError,IndexError): continue
+            if appearances <= 0 or len(name)<3: continue
+            if norm(name) in {'jugador','players','jugadors','nombre','nom'}: continue
+            rows.append({'name':name,'appearances':appearances,'stats':cells[1:]})
+        if rows: candidates.append(rows)
+    if not candidates: return []
+    # Prefer the largest active-player table, but keep one row per normalized name.
+    source=max(candidates,key=len); dedup={}
+    for row in source:
+        key=norm(row['name'])
+        if key not in dedup or row.get('appearances',0)>dedup[key].get('appearances',0): dedup[key]=row
+    return list(dedup.values())
 
 def extract_standing_summary(soup):
+    """Read summary figures only from a tightly matched label/value pair."""
     text=clean(soup.get_text(' ',strip=True))
     out={}
-    patterns=[('position',r'(\d{1,2})\s*(?:°|º)\s*POSICI[ÓO]N'),('played',r'(\d{1,2})\s*PARTIDOS'),('points',r'(\d{1,3})\s*PUNTOS')]
+    patterns=[
+        ('position',r'(\d{1,2})\s*(?:°|º|ª)\s*POSICI[ÓO]N'),
+        ('played',r'(\d{1,2})\s*PARTIDOS'),
+        ('points',r'(\d{1,3})\s*PUNTOS'),
+    ]
     for key,pat in patterns:
         m=re.search(pat,text,re.I)
         if m: out[key]=int(m.group(1))
@@ -277,22 +350,27 @@ def main():
                 team['calendar']=matches
                 future=[m for m in matches if m['iso']>=today and not m.get('score')]
                 played=[m for m in matches if m.get('score') or m.get('result')]
-                team['upcoming']=future; team['next']=future[0] if future else None; team['next_match']=team['next']
-                if played:
-                    team['results']=sorted(played,key=lambda m:(m['iso'],m.get('time','')),reverse=True)
-                    team['last']=team['results'][0]; team['last_match']=team['last']
+                # When a fresh calendar was parsed, refresh these fields even when empty;
+                # this removes stale false scores/fixtures from earlier faulty parser runs.
+                team['upcoming']=future
+                team['next']=future[0] if future else None
+                team['next_match']=team['next']
+                team['results']=sorted(played,key=lambda m:(m['iso'],m.get('time','')),reverse=True)
+                team['last']=team['results'][0] if team['results'] else None
+                team['last_match']=team['last']
                 updated.append(f'partits {len(matches)}; resultats {len(played)}')
             if standings:
                 team['standings']=standings
                 # Derive the row for the team when present, without discarding existing fields otherwise.
                 own=next((r for r in standings if 'vilamajor' in norm(r.get('team',''))),None)
                 if own:
-                    nums=[n for n in own.get('numbers',[]) if n is not None]
                     old=team.get('standing') or {}
-                    if nums:
-                        team['standing']={**old,'position':nums[0] if len(nums)>0 else old.get('position')}
-                    for key in ('played','points'):
-                        if key in summary: team.setdefault('standing',{})[key]=summary[key]
+                    standing={**old}
+                    if own.get('position') is not None: standing['position']=own['position']
+                    stats=own.get('stats') or []
+                    if len(stats)>0 and stats[0] is not None: standing['played']=stats[0]
+                    if len(stats)>7 and stats[7] is not None: standing['points']=stats[7]
+                    team['standing']=standing
                 updated.append(f'classificació {len(standings)}')
             elif summary:
                 team.setdefault('standing',{}).update(summary); updated.append('resum classificació')
