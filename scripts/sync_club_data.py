@@ -99,6 +99,10 @@ def split_match_label(full, team):
     return None
 
 def related_pages(session, base_url, soup):
+    """Load all sport tabs for the exact team/competition, even when tabs are JS-driven.
+    elFutbol often keeps calendar/results/standings/squad as a query parameter and the
+    current page only exposes the active tab in its HTML. Do not rely on visible nav links.
+    """
     pages=[(base_url,soup)]
     seen={base_url}
     wanted={'partidos','partits','calendario','calendari','clasificacion','classificacio','plantilla','squad'}
@@ -112,7 +116,41 @@ def related_pages(session, base_url, soup):
             r=session.get(url,timeout=30); r.raise_for_status()
             if len(r.text)>1000: pages.append((r.url,BeautifulSoup(r.text,'html.parser')))
         except Exception as e: print(f'AVISO subpágina {label}: {e}')
-    return pages
+
+    # Explicitly request each tab while preserving comp/group/team identifiers.
+    # Try both common Spanish/Catalan labels and stable internal tab keys.
+    tab_values=('calendario','calendari','partidos','partits','resultados','resultats',
+                'clasificacion','classificacio','plantilla','squad')
+    try:
+        parsed=urlparse(base_url)
+        base_q=parse_qs(parsed.query)
+        for tab in tab_values:
+            q={k:list(v) for k,v in base_q.items()}
+            q['season']=['2627']
+            q['tab']=[tab]
+            candidate=urlunparse((parsed.scheme,parsed.netloc,parsed.path,parsed.params,
+                                  urlencode(q,doseq=True),parsed.fragment))
+            if candidate in seen: continue
+            seen.add(candidate)
+            try:
+                r=session.get(candidate,timeout=25); r.raise_for_status()
+                if len(r.text)>1000:
+                    # Keep a page only if it looks like the requested team page.
+                    page_soup=BeautifulSoup(r.text,'html.parser')
+                    page_text=norm(page_soup.get_text(' ',strip=True))
+                    if 'vilamajor' in page_text:
+                        pages.append((r.url,page_soup))
+            except Exception as e:
+                print(f'AVISO pestanya {tab}: {e}')
+    except Exception as e:
+        print(f'AVISO variants de pestanyes: {e}')
+    # A URL can be returned by redirects under a different query string; deduplicate final pages.
+    unique=[]; final_seen=set()
+    for url,page in pages:
+        key=(urlparse(url).path,urlparse(url).query)
+        if key not in final_seen:
+            final_seen.add(key); unique.append((url,page))
+    return unique
 
 def explicit_match_score(text):
     """Only parse compact scores when the source explicitly marks the match FT/final.
