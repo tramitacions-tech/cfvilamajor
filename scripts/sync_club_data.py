@@ -54,7 +54,7 @@ def get_page(session,url):
     errors=[]
     for candidate in page_variants(url):
         try:
-            r=session.get(candidate,timeout=35); r.raise_for_status()
+            r=session.get(candidate,timeout=15); r.raise_for_status()
             if len(r.text)>1000 and ('elfutbol' in r.url or 'vilamajor' in r.text.lower()): return r.url,r.text
             errors.append('respuesta sin contenido útil')
         except Exception as e: errors.append(str(e))
@@ -132,9 +132,9 @@ def related_pages(session, base_url, soup):
         if url in seen or urlparse(url).netloc not in ('elfutbol.co','www.elfutbol.co'): continue
         seen.add(url)
         try:
-            r=session.get(url,timeout=30); r.raise_for_status()
+            r=session.get(url,timeout=12); r.raise_for_status()
             if len(r.text)>1000: pages.append((r.url,BeautifulSoup(r.text,'html.parser')))
-        except Exception as e: print(f'AVISO subpágina {label}: {e}')
+        except Exception as e: print(f'AVISO subpágina {label}: {e}', flush=True)
 
     # Explicitly request each tab while preserving comp/group/team identifiers.
     # Try both common Spanish/Catalan labels and stable internal tab keys.
@@ -152,7 +152,7 @@ def related_pages(session, base_url, soup):
             if candidate in seen: continue
             seen.add(candidate)
             try:
-                r=session.get(candidate,timeout=25); r.raise_for_status()
+                r=session.get(candidate,timeout=12); r.raise_for_status()
                 if len(r.text)>1000:
                     # Keep a page only if it looks like the requested team page.
                     page_soup=BeautifulSoup(r.text,'html.parser')
@@ -160,9 +160,9 @@ def related_pages(session, base_url, soup):
                     if 'vilamajor' in page_text:
                         pages.append((r.url,page_soup))
             except Exception as e:
-                print(f'AVISO pestanya {tab}: {e}')
+                print(f'AVISO pestanya {tab}: {e}', flush=True)
     except Exception as e:
-        print(f'AVISO variants de pestanyes: {e}')
+        print(f'AVISO variants de pestanyes: {e}', flush=True)
     # A URL can be returned by redirects under a different query string; deduplicate final pages.
     unique=[]; final_seen=set()
     for url,page in pages:
@@ -390,6 +390,7 @@ def main():
         url=team.get('url')
         if not url: failures.append(team.get('_display') or team.get('name') or '?'); continue
         label=team.get('_display') or team.get('name') or url
+        print(f'INICIO {label}: consultando fuente deportiva', flush=True)
         try:
             final_url,html=get_page(session,url); soup=BeautifulSoup(html,'html.parser')
             pages=related_pages(session,final_url,soup)
@@ -438,17 +439,17 @@ def main():
             if squad:
                 team['squad']=squad; team['plantilla']=squad; updated.append(f'plantilla {len(squad)}')
             if not updated:
-                failures.append(label); print(f'AVISO {label}: no se ha reconocido ningún dato deportivo; se conserva lo anterior')
+                failures.append(label); print(f'AVISO {label}: no se ha reconocido ningún dato deportivo; se conserva lo anterior', flush=True)
             else:
                 success+=1; team['data_source']=final_url; team['data_updated_at']=datetime.now().astimezone().isoformat(timespec='seconds')
-                print(f'OK {label}: '+', '.join(updated))
+                print(f'OK {label}: '+', '.join(updated), flush=True)
         except Exception as e:
-            failures.append(label); print(f'AVISO {label}: {e}; se conservan los datos anteriores')
+            failures.append(label); print(f'AVISO {label}: {e}; se conservan los datos anteriores', flush=True)
     if success==0: raise SystemExit('No se pudo extraer ningún dato deportivo. No se publica una actualización falsa.')
     payload['updated_at']=datetime.now().astimezone().isoformat(timespec='seconds')
     payload['source']='elFutbol.co (partidos, clasificación y plantilla cuando están publicados)'
     with open(DATA_PATH,'w',encoding='utf-8') as f: json.dump(payload,f,ensure_ascii=False,indent=2)
-    print(f'Actualizado data/club.json: {success}/{len(teams)} equipos con al menos un bloque de datos reconocido; {len(failures)} con avisos; fecha {payload["updated_at"]}')
+    print(f'Actualizado data/club.json: {success}/{len(teams)} equipos con al menos un bloque de datos reconocido; {len(failures)} con avisos; fecha {payload["updated_at"]}', flush=True)
     # Exit nonzero when no team provided any recognized sports data, not merely because one field was unavailable.
 
 if __name__=='__main__': main()
