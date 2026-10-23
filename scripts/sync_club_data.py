@@ -57,12 +57,24 @@ def page_variants(url):
     except Exception: pass
     return list(dict.fromkeys(out))
 
+def preserve_competition_context(requested_url, response_url):
+    """Keep team competition/group context when the canonical redirect drops it."""
+    requested=urlparse(requested_url); response=urlparse(response_url)
+    query=parse_qs(response.query)
+    requested_query=parse_qs(requested.query)
+    for key in ('comp','group','season'):
+        if key not in query and key in requested_query:
+            query[key]=requested_query[key]
+    return urlunparse((response.scheme,response.netloc,response.path,response.params,
+                       urlencode(query,doseq=True),response.fragment))
+
 def get_page(session,url):
     errors=[]
     for candidate in page_variants(url):
         try:
             r=session.get(candidate,timeout=15); r.raise_for_status()
-            if len(r.text)>1000 and ('elfutbol' in r.url or 'vilamajor' in r.text.lower()): return r.url,r.text
+            if len(r.text)>1000 and ('elfutbol' in r.url or 'vilamajor' in r.text.lower()):
+                return preserve_competition_context(candidate,r.url),r.text
             errors.append('respuesta sin contenido útil')
         except Exception as e: errors.append(str(e))
     raise RuntimeError('; '.join(errors) or 'no se pudo descargar la página')
@@ -124,7 +136,7 @@ def split_match_label(full, team):
     if right: return (m.group(0), right, score, 'club-home')
     return None
 
-def related_pages(session, base_url, soup):
+def related_pages(session, base_url, soup, team_label='equipo'):
     """Load all sport tabs for the exact team/competition, even when tabs are JS-driven.
     elFutbol often keeps calendar/results/standings/squad as a query parameter and the
     current page only exposes the active tab in its HTML. Do not rely on visible nav links.
@@ -141,12 +153,12 @@ def related_pages(session, base_url, soup):
         try:
             r=session.get(url,timeout=12); r.raise_for_status()
             if len(r.text)>1000: pages.append((r.url,BeautifulSoup(r.text,'html.parser')))
-        except Exception as e: print(f'AVISO subpágina {label}: {e}', flush=True)
+        except Exception as e: print(f'AVISO {team_label}: {base_url} [sección {label}]: {e}', flush=True)
 
     # Explicitly request each tab while preserving comp/group/team identifiers.
     # Try both common Spanish/Catalan labels and stable internal tab keys.
     tab_values=('calendario','calendari','partidos','partits','resultados','resultats',
-                'clasificacion','classificacio','plantilla','squad')
+                'clasificacion','classificacio','clasif','plantilla','squad')
     try:
         parsed=urlparse(base_url)
         base_q=parse_qs(parsed.query)
@@ -167,7 +179,7 @@ def related_pages(session, base_url, soup):
                     if 'vilamajor' in page_text:
                         pages.append((r.url,page_soup))
             except Exception as e:
-                print(f'AVISO pestanya {tab}: {e}', flush=True)
+                print(f'AVISO {team_label}: {base_url} [sección tab={tab}]: {e}', flush=True)
     except Exception as e:
         print(f'AVISO variants de pestanyes: {e}', flush=True)
     # A URL can be returned by redirects under a different query string; deduplicate final pages.
@@ -177,6 +189,15 @@ def related_pages(session, base_url, soup):
         if key not in final_seen:
             final_seen.add(key); unique.append((url,page))
     return unique
+
+def source_final_rows(soup):
+    """Count final fixtures in the source DOM, even if goal parsing regresses."""
+    count=0
+    for row in soup.select('a[data-match-row="true"]'):
+        first=row.find('div',recursive=False)
+        status=clean(first.get_text(' ',strip=True)).split(' ')[0].upper() if first else ''
+        if status in {'FT','FINAL','FINALIZADO','FINALITZAT'}: count+=1
+    return count
 
 def explicit_match_score(text):
     """Only parse compact scores when the source explicitly marks the match FT/final.
@@ -205,8 +226,41 @@ def explicit_match_score(text):
 
 def extract_matches(soup, source_url, team=None):
     found=[]; seen=set()
+    # Current elFutbol pages render each fixture as one data-match-row anchor:
+    # status/date, two team-name spans and (for FT rows) two separate goal spans.
+    # The previous parsers expected either two team anchors or an inline score,
+    # neither of which exists in this real DOM.
+    for row in soup.select('a[data-match-row="true"]'):
+        status_box=row.find('div',recursive=False)
+        status=clean(status_box.get_text(' ',strip=True)).split(' ')[0].upper() if status_box else ''
+        full=clean(row.get_text(' ',strip=True))
+        iso=iso_date(full)
+        if not iso: continue
+        blocks=row.find_all('div',recursive=False)
+        if len(blocks)<2: continue
+        names=[]
+        for span in blocks[1].find_all('span'):
+            classes=span.get('class',[])
+            label=clean(span.get_text(' ',strip=True))
+            if 'truncate' in classes and label and label not in names:
+                names.append(label)
+        if len(names)<2 or not any('vilamajor' in norm(x) for x in names[:2]): continue
+        score=''
+        if status in {'FT','FINAL','FINALIZADO','FINALITZAT'} and len(blocks)>=3:
+            goals=[clean(s.get_text(' ',strip=True)) for s in blocks[2].find_all('span',recursive=False)]
+            if len(goals)==2 and all(re.fullmatch(r'\d{1,2}',g) for g in goals):
+                a,b=map(int,goals)
+                if a<=20 and b<=20: score=f'{a}-{b}'
+        tm=TIME_RE.search(full)
+        item={'date':date.fromisoformat(iso).strftime('%d-%m'),'iso':iso,
+              'time':f'{int(tm.group(1)):02d}:{tm.group(2)}' if tm else '',
+              'home':names[0],'away':names[1],'venue':None,'source':source_url}
+        if score: item.update(score=score,result=score)
+        found.append(item)
+
     # Prefer explicit match links; elFutbol exposes a linked label containing date, teams and sometimes score.
     for a in soup.find_all('a',href=True):
+        if a.get('data-match-row') == 'true': continue
         href=a['href']; txt=clean(a.get_text(' ',strip=True))
         if not txt or not re.search(r'\d{1,2}[-/]\d{1,2}',txt): continue
         if not any(k in norm(href+' '+txt) for k in ['partid','match','jornada','fixture','calendar','result','game','/match/','/partit']):
@@ -392,6 +446,14 @@ def extract_standings(soup):
                 'points': next((i for i,h in enumerate(headers) if h in {'pts','puntos','punts'}),None),
             }
             stats=[num_at(indices[k]) for k in ('played','won','drawn','lost','gf','ga','gd','points')]
+            # In the live compact table only PJ/DG/Pts headers are visible to
+            # the scraper, while each row still contains all ten cells in the
+            # standard Pos, Equipo, PJ, PG, PE, PP, GF, GC, DG, Pts order.
+            # Recover those columns only for that precise 10-cell layout.
+            if len(cells)==10 and team_i==1 and pos_i==0 and indices['won'] is None:
+                compact=[num_at(i) for i in range(2,10)]
+                if all(value is not None for value in compact) and compact[0]==compact[1]+compact[2]+compact[3]:
+                    stats=compact
             position=num_at(pos_i)
             # Reject malformed/player-stat rows and zero-position placeholders.
             if position is None or position < 1 or num_at(pj_i) is None or num_at(pts_i) is None:
@@ -449,6 +511,23 @@ def extract_standing_summary(soup):
         if m: out[key]=int(m.group(1))
     return out
 
+def merge_matches(matches):
+    """Deduplicate across tabs while retaining a score found on any copy."""
+    merged={}
+    for item in matches:
+        key=(item.get('iso'),norm(item.get('home')),norm(item.get('away')))
+        old=merged.get(key)
+        if old is None:
+            merged[key]=item
+            continue
+        for field in ('score','result','time'):
+            if item.get(field) and not old.get(field): old[field]=item[field]
+    return sorted(merged.values(),key=lambda x:(x.get('iso',''),x.get('time','')))
+
+def result_regression(previous_results, new_matches):
+    """Flag a refresh that would erase all previously valid scores."""
+    return bool(previous_results) and not any(m.get('score') or m.get('result') for m in new_matches)
+
 def main():
     if not os.path.exists(DATA_PATH): raise SystemExit('Falta data/club.json')
     with open(DATA_PATH,encoding='utf-8') as f: payload=json.load(f)
@@ -458,30 +537,42 @@ def main():
     today=date.today().isoformat(); success=0; failures=[]
     for team in teams:
         url=team.get('url')
-        if not url: failures.append(team.get('_display') or team.get('name') or '?'); continue
+        if not url:
+            label=team.get('_display') or team.get('name') or '?'
+            failures.append(label)
+            print(f'ERROR {label}: URL de equipo ausente; sección no consultada',flush=True)
+            continue
         label=team.get('_display') or team.get('name') or url
         print(f'INICIO {label}: consultando fuente deportiva', flush=True)
         try:
             final_url,html=get_page(session,url); soup=BeautifulSoup(html,'html.parser')
-            pages=related_pages(session,final_url,soup)
-            matches=[]; standings=[]; squad=[]; summary={}
+            pages=related_pages(session,final_url,soup,label)
+            matches=[]; standings=[]; squad=[]; summary={}; final_rows=0
             for page_url,page_soup in pages:
+                final_rows+=source_final_rows(page_soup)
                 matches.extend(extract_matches(page_soup,page_url,team))
                 found_standings=extract_standings(page_soup)
                 if len(found_standings)>len(standings): standings=found_standings
                 found_squad=extract_squad(page_soup)
                 if len(found_squad)>len(squad): squad=found_squad
                 summary.update(extract_standing_summary(page_soup))
-            # Deduplicate fixtures collected from multiple tabs.
-            unique={ (m.get('iso'),norm(m.get('home')),norm(m.get('away')),m.get('score','')):m for m in matches }
-            matches=sorted(unique.values(),key=lambda x:(x.get('iso',''),x.get('time','')))
+            # Deduplicate fixtures collected from multiple tabs and keep the best copy.
+            matches=merge_matches(matches)
+            if final_rows and not any(m.get('score') or m.get('result') for m in matches):
+                failures.append(label)
+                print(f'ERROR {label}: {final_url} [partidos/resultados]: la fuente contiene {final_rows} filas FT pero no se pudo extraer ningún marcador; se conserva el JSON anterior',flush=True)
+                continue
             # Save each data domain only when a real payload is found; don't erase prior values on parsing failures.
             updated=[]
             if matches:
                 # Mantener el calendario completo para la pestaña CALENDARI; separar resultados solo con marcador reconocido.
-                team['calendar']=matches
                 future=[m for m in matches if m['iso']>=today and not m.get('score')]
                 played=[m for m in matches if m.get('score') or m.get('result')]
+                if result_regression(team.get('results',[]),matches):
+                    failures.append(label)
+                    print(f'ERROR {label}: {url} [resultados/calendario]: la fuente devolvió partidos, pero se perderían los resultados válidos previos; se conserva el JSON anterior',flush=True)
+                    continue
+                team['calendar']=matches
                 # When a fresh calendar was parsed, refresh these fields even when empty;
                 # this removes stale false scores/fixtures from earlier faulty parser runs.
                 team['upcoming']=future
@@ -500,8 +591,9 @@ def main():
                     standing={**old}
                     if own.get('position') is not None: standing['position']=own['position']
                     stats=own.get('stats') or []
-                    if len(stats)>0 and stats[0] is not None: standing['played']=stats[0]
-                    if len(stats)>7 and stats[7] is not None: standing['points']=stats[7]
+                    for key,index in (('played',0),('won',1),('drawn',2),('lost',3),
+                                      ('goals_for',4),('goals_against',5),('goal_difference',6),('points',7)):
+                        if len(stats)>index and stats[index] is not None: standing[key]=stats[index]
                     team['standing']=standing
                 updated.append(f'classificació {len(standings)}')
             elif summary:
@@ -509,16 +601,26 @@ def main():
             if squad:
                 team['squad']=squad; team['plantilla']=squad; updated.append(f'plantilla {len(squad)}')
             if not updated:
-                failures.append(label); print(f'AVISO {label}: no se ha reconocido ningún dato deportivo; se conserva lo anterior', flush=True)
+                failures.append(label); print(f'ERROR {label}: {url} [partidos/clasificación/plantilla]: no se reconocieron datos deportivos; se conserva lo anterior', flush=True)
             else:
                 success+=1; team['data_source']=final_url; team['data_updated_at']=datetime.now().astimezone().isoformat(timespec='seconds')
                 print(f'OK {label}: '+', '.join(updated), flush=True)
         except Exception as e:
-            failures.append(label); print(f'AVISO {label}: {e}; se conservan los datos anteriores', flush=True)
+            failures.append(label); print(f'ERROR {label}: {url} [página relacionada]: {e}; se conservan los datos anteriores', flush=True)
     if success==0: raise SystemExit('No se pudo extraer ningún dato deportivo. No se publica una actualización falsa.')
+    if failures:
+        raise SystemExit(f'Sincronización incompleta: {len(failures)}/{len(teams)} equipos fallaron; no se modifica data/club.json.')
     payload['updated_at']=datetime.now().astimezone().isoformat(timespec='seconds')
     payload['source']='elFutbol.co (partidos, clasificación y plantilla cuando están publicados)'
-    with open(DATA_PATH,'w',encoding='utf-8') as f: json.dump(payload,f,ensure_ascii=False,indent=2)
+    # Validate the full payload and atomically replace the last valid snapshot.
+    if len(payload.get('teams',[])) != len(teams) or any(not t.get('name') or not t.get('url') for t in teams):
+        raise SystemExit('JSON inválido o incompleto; se conserva data/club.json anterior.')
+    temp_path=DATA_PATH+'.tmp'
+    with open(temp_path,'w',encoding='utf-8') as f:
+        json.dump(payload,f,ensure_ascii=False,indent=2)
+        f.write('\n')
+    with open(temp_path,encoding='utf-8') as f: json.load(f)
+    os.replace(temp_path,DATA_PATH)
     print(f'Actualizado data/club.json: {success}/{len(teams)} equipos con al menos un bloque de datos reconocido; {len(failures)} con avisos; fecha {payload["updated_at"]}', flush=True)
     # Exit nonzero when no team provided any recognized sports data, not merely because one field was unavailable.
 
