@@ -15,6 +15,14 @@ DATE_RE=re.compile(r'(?<!\d)(\d{1,2})[./-](\d{1,2})(?:[./-](\d{2,4}))?(?!\d)')
 TIME_RE=re.compile(r'(?<!\d)([01]?\d|2[0-3]):([0-5]\d)(?!\d)')
 SCORE_RE=re.compile(r'(?<!\d)(\d{1,2})\s*[-–:]\s*(\d{1,2})(?!\d)')
 
+# elFutbol gives these B teams dedicated canonical pages. The generic club-B
+# route can return standings while omitting fixtures and squad data.
+TEAM_URL_OVERRIDES={
+    'Cadet B':'https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b',
+    'Juvenil B':'https://elfutbol.co/es/team/vilamajor-cf-juvenil-b',
+    'Aleví B':'https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b',
+}
+
 def norm(s):
     s=unicodedata.normalize('NFKD',s or '').encode('ascii','ignore').decode().lower()
     return re.sub(r'\s+',' ',s).strip()
@@ -536,9 +544,11 @@ def main():
     session=requests.Session(); session.headers.update(HEADERS)
     today=date.today().isoformat(); success=0; failures=[]
     for team in teams:
-        url=team.get('url')
+        label=team.get('_display') or team.get('name') or '?'
+        url=TEAM_URL_OVERRIDES.get(label,team.get('url'))
+        if url and label in TEAM_URL_OVERRIDES:
+            team['url']=url
         if not url:
-            label=team.get('_display') or team.get('name') or '?'
             failures.append(label)
             print(f'ERROR {label}: URL de equipo ausente; sección no consultada',flush=True)
             continue
