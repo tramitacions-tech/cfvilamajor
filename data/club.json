@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T05:51:52+00:00",
+  "updated_at": "2026-10-24T11:09:09+00:00",
   "source": "elFutbol.co (partidos, clasificación y plantilla cuando están publicados)",
   "teams": [
     {
@@ -1425,7 +1425,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-a?comp=tercera-catalana&group=grup-5",
-      "data_updated_at": "2026-10-24T05:50:37+00:00",
+      "data_updated_at": "2026-10-24T11:08:12+00:00",
       "calendar": [
         {
           "date": "19-09",
@@ -2801,7 +2801,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?comp=cadet-segona-divisio-s16&group=grup-12",
-      "data_updated_at": "2026-10-24T05:50:44+00:00",
+      "data_updated_at": "2026-10-24T11:08:15+00:00",
       "calendar": [
         {
           "date": "04-10",
@@ -4002,7 +4002,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?comp=femeni-benjami&group=grup-2",
-      "data_updated_at": "2026-10-24T05:50:52+00:00",
+      "data_updated_at": "2026-10-24T11:08:17+00:00",
       "calendar": [
         {
           "date": "03-10",
@@ -5335,7 +5335,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?comp=infantil-segona-divisio-s13&group=grup-11",
-      "data_updated_at": "2026-10-24T05:51:00+00:00",
+      "data_updated_at": "2026-10-24T11:08:22+00:00",
       "calendar": [
         {
           "date": "02-07",
@@ -6783,7 +6783,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?comp=infantil-segona-divisio-s14&group=grup-12",
-      "data_updated_at": "2026-10-24T05:51:08+00:00",
+      "data_updated_at": "2026-10-24T11:08:25+00:00",
       "calendar": [
         {
           "date": "10-10",
@@ -8315,7 +8315,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?comp=juvenil-primera-divisio&group=grup-4",
-      "data_updated_at": "2026-10-24T05:51:18+00:00",
+      "data_updated_at": "2026-10-24T11:08:30+00:00",
       "calendar": [
         {
           "date": "27-09",
@@ -9572,7 +9572,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?comp=segona-divisio-alevi-s11&group=grup-8",
-      "data_updated_at": "2026-10-24T05:51:25+00:00",
+      "data_updated_at": "2026-10-24T11:08:32+00:00",
       "calendar": [
         {
           "date": "03-10",
@@ -10698,7 +10698,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?comp=segona-divisio-femeni-infantil&group=grup-4",
-      "data_updated_at": "2026-10-24T05:51:31+00:00",
+      "data_updated_at": "2026-10-24T11:08:35+00:00",
       "calendar": [
         {
           "date": "03-10",
@@ -11856,7 +11856,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?comp=tercera-divisio-alevi-s12&group=grup-12",
-      "data_updated_at": "2026-10-24T05:51:36+00:00",
+      "data_updated_at": "2026-10-24T11:08:37+00:00",
       "calendar": [
         {
           "date": "17-10",
@@ -13129,7 +13129,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?comp=tercera-divisio-benjami-s10&group=grup-8",
-      "data_updated_at": "2026-10-24T05:51:44+00:00",
+      "data_updated_at": "2026-10-24T11:08:41+00:00",
       "calendar": [
         {
           "date": "10-10",
@@ -14223,7 +14223,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?comp=tercera-divisio-benjami-s9&group=grup-6",
-      "data_updated_at": "2026-10-24T05:51:49+00:00",
+      "data_updated_at": "2026-10-24T11:08:44+00:00",
       "calendar": [
         {
           "date": "11-10",
@@ -14370,27 +14370,47 @@
       "name": "Vilamajor, C.F. B — Cadete Segunda División S16",
       "category": "Vilamajor, C.F. B — Cadete Segunda División S16 | elFutbol",
       "competition": "Vilamajor, C.F. B — Cadete Segunda División S16 | elFutbol",
-      "url": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=cadet-segona-divisio-s16&group=grup-11",
+      "url": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b",
       "next": {
+        "date": "24-10",
+        "iso": "2026-10-24",
+        "time": "18:00",
+        "home": "Escola Futbol Mataro C.E B",
+        "away": "Vilamajor, C.F. B",
+        "venue": null,
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+      },
+      "last": {
         "date": "17-10",
         "iso": "2026-10-17",
-        "time": "16:00",
+        "time": "",
         "home": "Vilamajor, C.F. B",
         "away": "Vilassar Dalt-Giatsu, C.E. C",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=cadet-segona-divisio-s16&group=grup-11"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b",
+        "score": "1-5",
+        "result": "1-5"
       },
-      "last": null,
       "next_match": {
+        "date": "24-10",
+        "iso": "2026-10-24",
+        "time": "18:00",
+        "home": "Escola Futbol Mataro C.E B",
+        "away": "Vilamajor, C.F. B",
+        "venue": null,
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+      },
+      "last_match": {
         "date": "17-10",
         "iso": "2026-10-17",
-        "time": "16:00",
+        "time": "",
         "home": "Vilamajor, C.F. B",
         "away": "Vilassar Dalt-Giatsu, C.E. C",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=cadet-segona-divisio-s16&group=grup-11"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b",
+        "score": "1-5",
+        "result": "1-5"
       },
-      "last_match": null,
       "standing": {
         "position": 12,
         "played": 1,
@@ -14404,16 +14424,165 @@
       },
       "upcoming": [
         {
+          "date": "24-10",
+          "iso": "2026-10-24",
+          "time": "18:00",
+          "home": "Escola Futbol Mataro C.E B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "01-11",
+          "iso": "2026-11-01",
+          "time": "15:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Sant Celoni, Futbol Club B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "07-11",
+          "iso": "2026-11-07",
+          "time": "16:15",
+          "home": "Vilanova Valles, C.F. A",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "15-11",
+          "iso": "2026-11-15",
+          "time": "15:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Calella, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "21-11",
+          "iso": "2026-11-21",
+          "time": "16:00",
+          "home": "Valles, C.at. B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "29-11",
+          "iso": "2026-11-29",
+          "time": "15:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "La Roca Penya Blanc Blava Club Futbol A",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "13-12",
+          "iso": "2026-12-13",
+          "time": "13:30",
+          "home": "Palautordera, C.F. A",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "20-12",
+          "iso": "2026-12-20",
+          "time": "15:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Argentona, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "17-01",
+          "iso": "2027-01-17",
+          "time": "15:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Fundacio Unió Esportiva Vilassar D",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "23-01",
+          "iso": "2027-01-23",
+          "time": "19:00",
+          "home": "Gualba, F.C. A",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "31-01",
+          "iso": "2027-01-31",
+          "time": "15:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Premia Dalt, C.D. C",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "14-02",
+          "iso": "2027-02-14",
+          "time": "18:00",
+          "home": "Vilassar Dalt-Giatsu, C.E. C",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "21-02",
+          "iso": "2027-02-21",
+          "time": "15:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Escola Futbol Mataro C.E B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "28-02",
+          "iso": "2027-02-28",
+          "time": "15:15",
+          "home": "Sant Celoni, Futbol Club B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "07-03",
+          "iso": "2027-03-07",
+          "time": "15:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Vilanova Valles, C.F. A",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        }
+      ],
+      "results": [
+        {
           "date": "17-10",
           "iso": "2026-10-17",
-          "time": "16:00",
+          "time": "",
           "home": "Vilamajor, C.F. B",
           "away": "Vilassar Dalt-Giatsu, C.E. C",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=cadet-segona-divisio-s16&group=grup-11"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b",
+          "score": "1-5",
+          "result": "1-5"
+        },
+        {
+          "date": "10-10",
+          "iso": "2026-10-10",
+          "time": "",
+          "home": "Premia Dalt, C.D. C",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b",
+          "score": "8-2",
+          "result": "8-2"
         }
       ],
-      "results": [],
       "_display": "Cadet B",
       "_category": "Cadete Segunda División S16",
       "standings": [
@@ -14901,52 +15070,657 @@
       ],
       "squad": [
         {
-          "name": "Más titularidades",
-          "stats": []
+          "name": "Caballero Muñoz, Guillem",
+          "appearances": 2,
+          "stats": [
+            "2",
+            "2",
+            "0",
+            "160'",
+            "0",
+            "1",
+            "0"
+          ]
         },
         {
-          "name": "Derechos del jugador",
-          "stats": []
+          "name": "Mauri Suñé, Albert",
+          "appearances": 2,
+          "stats": [
+            "2",
+            "1",
+            "1",
+            "120'",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "name": "Diaz Faro, Alex",
+          "appearances": 2,
+          "stats": [
+            "2",
+            "2",
+            "0",
+            "160'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Diouf Gueye, Makhtar Ndiaga",
+          "appearances": 2,
+          "stats": [
+            "2",
+            "1",
+            "1",
+            "120'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Galera Ruiz, Artur",
+          "appearances": 2,
+          "stats": [
+            "2",
+            "2",
+            "0",
+            "160'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Lluch De Prado, Adrià",
+          "appearances": 2,
+          "stats": [
+            "2",
+            "1",
+            "1",
+            "120'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Rodriguez Laya, Guillermo Jesús",
+          "appearances": 2,
+          "stats": [
+            "2",
+            "0",
+            "2",
+            "80'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Santamaria Heredia, Ivan",
+          "appearances": 2,
+          "stats": [
+            "2",
+            "2",
+            "0",
+            "160'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Sebastian Ortiz, Eloi",
+          "appearances": 2,
+          "stats": [
+            "2",
+            "1",
+            "1",
+            "120'",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "name": "Socies Reyes, Alex",
+          "appearances": 2,
+          "stats": [
+            "2",
+            "2",
+            "0",
+            "160'",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Tunkara Tunkara, Saibo",
+          "appearances": 2,
+          "stats": [
+            "2",
+            "2",
+            "0",
+            "160'",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Alonso Serrano, Alejandro",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "80'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Bescós Riera, Roc",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "80'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Murillo Lafuente, Biel",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "80'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Pujadas Ibañez, Marcel",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "80'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Samuel",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "80'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Van Waart Venegas, Uriel",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "0",
+            "1",
+            "40'",
+            "0",
+            "0",
+            "0"
+          ]
         }
       ],
       "plantilla": [
         {
-          "name": "Más titularidades",
-          "stats": []
+          "name": "Caballero Muñoz, Guillem",
+          "appearances": 2,
+          "stats": [
+            "2",
+            "2",
+            "0",
+            "160'",
+            "0",
+            "1",
+            "0"
+          ]
         },
         {
-          "name": "Derechos del jugador",
-          "stats": []
+          "name": "Mauri Suñé, Albert",
+          "appearances": 2,
+          "stats": [
+            "2",
+            "1",
+            "1",
+            "120'",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "name": "Diaz Faro, Alex",
+          "appearances": 2,
+          "stats": [
+            "2",
+            "2",
+            "0",
+            "160'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Diouf Gueye, Makhtar Ndiaga",
+          "appearances": 2,
+          "stats": [
+            "2",
+            "1",
+            "1",
+            "120'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Galera Ruiz, Artur",
+          "appearances": 2,
+          "stats": [
+            "2",
+            "2",
+            "0",
+            "160'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Lluch De Prado, Adrià",
+          "appearances": 2,
+          "stats": [
+            "2",
+            "1",
+            "1",
+            "120'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Rodriguez Laya, Guillermo Jesús",
+          "appearances": 2,
+          "stats": [
+            "2",
+            "0",
+            "2",
+            "80'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Santamaria Heredia, Ivan",
+          "appearances": 2,
+          "stats": [
+            "2",
+            "2",
+            "0",
+            "160'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Sebastian Ortiz, Eloi",
+          "appearances": 2,
+          "stats": [
+            "2",
+            "1",
+            "1",
+            "120'",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "name": "Socies Reyes, Alex",
+          "appearances": 2,
+          "stats": [
+            "2",
+            "2",
+            "0",
+            "160'",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Tunkara Tunkara, Saibo",
+          "appearances": 2,
+          "stats": [
+            "2",
+            "2",
+            "0",
+            "160'",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Alonso Serrano, Alejandro",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "80'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Bescós Riera, Roc",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "80'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Murillo Lafuente, Biel",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "80'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Pujadas Ibañez, Marcel",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "80'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Samuel",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "80'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Van Waart Venegas, Uriel",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "0",
+            "1",
+            "40'",
+            "0",
+            "0",
+            "0"
+          ]
         }
       ],
-      "data_source": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=cadet-segona-divisio-s16&group=grup-11",
-      "data_updated_at": "2026-10-24T05:51:50+00:00"
+      "data_source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b",
+      "data_updated_at": "2026-10-24T11:08:50+00:00",
+      "calendar": [
+        {
+          "date": "10-10",
+          "iso": "2026-10-10",
+          "time": "",
+          "home": "Premia Dalt, C.D. C",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b",
+          "score": "8-2",
+          "result": "8-2"
+        },
+        {
+          "date": "17-10",
+          "iso": "2026-10-17",
+          "time": "",
+          "home": "Vilamajor, C.F. B",
+          "away": "Vilassar Dalt-Giatsu, C.E. C",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b",
+          "score": "1-5",
+          "result": "1-5"
+        },
+        {
+          "date": "24-10",
+          "iso": "2026-10-24",
+          "time": "18:00",
+          "home": "Escola Futbol Mataro C.E B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "01-11",
+          "iso": "2026-11-01",
+          "time": "15:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Sant Celoni, Futbol Club B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "07-11",
+          "iso": "2026-11-07",
+          "time": "16:15",
+          "home": "Vilanova Valles, C.F. A",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "15-11",
+          "iso": "2026-11-15",
+          "time": "15:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Calella, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "21-11",
+          "iso": "2026-11-21",
+          "time": "16:00",
+          "home": "Valles, C.at. B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "29-11",
+          "iso": "2026-11-29",
+          "time": "15:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "La Roca Penya Blanc Blava Club Futbol A",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "13-12",
+          "iso": "2026-12-13",
+          "time": "13:30",
+          "home": "Palautordera, C.F. A",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "20-12",
+          "iso": "2026-12-20",
+          "time": "15:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Argentona, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "17-01",
+          "iso": "2027-01-17",
+          "time": "15:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Fundacio Unió Esportiva Vilassar D",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "23-01",
+          "iso": "2027-01-23",
+          "time": "19:00",
+          "home": "Gualba, F.C. A",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "31-01",
+          "iso": "2027-01-31",
+          "time": "15:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Premia Dalt, C.D. C",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "14-02",
+          "iso": "2027-02-14",
+          "time": "18:00",
+          "home": "Vilassar Dalt-Giatsu, C.E. C",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "21-02",
+          "iso": "2027-02-21",
+          "time": "15:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Escola Futbol Mataro C.E B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "28-02",
+          "iso": "2027-02-28",
+          "time": "15:15",
+          "home": "Sant Celoni, Futbol Club B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        },
+        {
+          "date": "07-03",
+          "iso": "2027-03-07",
+          "time": "15:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Vilanova Valles, C.F. A",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b"
+        }
+      ]
     },
     {
       "name": "Vilamajor, C.F. B — Juvenil Segunda División",
       "category": "Vilamajor, C.F. B — Juvenil Segunda División | elFutbol",
       "competition": "Vilamajor, C.F. B — Juvenil Segunda División | elFutbol",
-      "url": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=juvenil-segona-divisio&group=grup-20",
+      "url": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b",
       "next": {
+        "date": "24-10",
+        "iso": "2026-10-24",
+        "time": "11:00",
+        "home": "Pª Blaugrana De La Roca Del Vallès B",
+        "away": "Vilamajor, C.F. B",
+        "venue": null,
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+      },
+      "last": {
         "date": "17-10",
         "iso": "2026-10-17",
-        "time": "12:00",
+        "time": "",
         "home": "Vilamajor, C.F. B",
         "away": "Palautordera, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=juvenil-segona-divisio&group=grup-20"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b",
+        "score": "1-5",
+        "result": "1-5"
       },
-      "last": null,
       "next_match": {
+        "date": "24-10",
+        "iso": "2026-10-24",
+        "time": "11:00",
+        "home": "Pª Blaugrana De La Roca Del Vallès B",
+        "away": "Vilamajor, C.F. B",
+        "venue": null,
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+      },
+      "last_match": {
         "date": "17-10",
         "iso": "2026-10-17",
-        "time": "12:00",
+        "time": "",
         "home": "Vilamajor, C.F. B",
         "away": "Palautordera, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=juvenil-segona-divisio&group=grup-20"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b",
+        "score": "1-5",
+        "result": "1-5"
       },
-      "last_match": null,
       "standing": {
         "position": 8,
         "played": 1,
@@ -14960,16 +15734,183 @@
       },
       "upcoming": [
         {
+          "date": "24-10",
+          "iso": "2026-10-24",
+          "time": "11:00",
+          "home": "Pª Blaugrana De La Roca Del Vallès B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "31-10",
+          "iso": "2026-10-31",
+          "time": "13:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Ass.esp.f. Base Palau 2024, B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "07-11",
+          "iso": "2026-11-07",
+          "time": "18:30",
+          "home": "La Torreta, C.F. B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "14-11",
+          "iso": "2026-11-14",
+          "time": "13:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Ponent C.F. A",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "22-11",
+          "iso": "2026-11-22",
+          "time": "16:00",
+          "home": "Olimpic La Garriga, C.F. B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "28-11",
+          "iso": "2026-11-28",
+          "time": "13:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Sant Esteve, Futbol Club A",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "13-12",
+          "iso": "2026-12-13",
+          "time": "20:00",
+          "home": "Llerona, C.E. B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "19-12",
+          "iso": "2026-12-19",
+          "time": "13:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Vilanova Valles, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "09-01",
+          "iso": "2027-01-09",
+          "time": "18:00",
+          "home": "Llinars, C.E. A",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "17-01",
+          "iso": "2027-01-17",
+          "time": "19:30",
+          "home": "Sant Celoni, Futbol Club B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "23-01",
+          "iso": "2027-01-23",
+          "time": "13:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Granollers, E.C. D",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "30-01",
+          "iso": "2027-01-30",
+          "time": "19:45",
+          "home": "Cardedeu, F.C. B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "13-02",
+          "iso": "2027-02-13",
+          "time": "19:00",
+          "home": "Gualba, F.C. A",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "20-02",
+          "iso": "2027-02-20",
+          "time": "13:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Valles, C.at. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "27-02",
+          "iso": "2027-02-27",
+          "time": "18:00",
+          "home": "Palautordera, C.F. A",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "06-03",
+          "iso": "2027-03-06",
+          "time": "13:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Pª Blaugrana De La Roca Del Vallès B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "14-03",
+          "iso": "2027-03-14",
+          "time": "19:00",
+          "home": "Ass.esp.f. Base Palau 2024, B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        }
+      ],
+      "results": [
+        {
           "date": "17-10",
           "iso": "2026-10-17",
-          "time": "12:00",
+          "time": "",
           "home": "Vilamajor, C.F. B",
           "away": "Palautordera, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=juvenil-segona-divisio&group=grup-20"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b",
+          "score": "1-5",
+          "result": "1-5"
+        },
+        {
+          "date": "03-10",
+          "iso": "2026-10-03",
+          "time": "",
+          "home": "Vilamajor, C.F. B",
+          "away": "Gualba, F.C. A",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b",
+          "score": "3-3",
+          "result": "3-3"
         }
       ],
-      "results": [],
       "_display": "Juvenil B",
       "_category": "Juvenil Segunda División",
       "standings": [
@@ -15568,52 +16509,701 @@
       ],
       "squad": [
         {
-          "name": "Más titularidades",
-          "stats": []
+          "name": "Pernias Subirach, Eneko",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "90'",
+            "0",
+            "3",
+            "0"
+          ]
         },
         {
-          "name": "Derechos del jugador",
-          "stats": []
+          "name": "Aguilar Alegria, Cesar Jahir",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "90'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Amanzou El Chaouni Alia, Aiman",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "90'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Bayo, Abdoul Aziz",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "90'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Boixareu Tella, Joaquim",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "90'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Cabello Maya, Marc",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "0",
+            "1",
+            "45'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Climent Serna, Eneko",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "0",
+            "1",
+            "45'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Ferreyra Crugeiras, Ruben",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "0",
+            "1",
+            "45'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Flores Montero, Sergi",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "90'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Gamero Membrive, Genís",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "90'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Garrucho Del Barrio, Gerard",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "0",
+            "1",
+            "45'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Mayorga Martinez, Isaac",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "0",
+            "1",
+            "45'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Morales Delgado, Eric",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "0",
+            "1",
+            "45'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Parera Collell, Roger",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "0",
+            "1",
+            "45'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Planella Cobacho, Arnau",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "90'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Planella Cobacho, Axel",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "90'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Salvadores Cepero, Oriol",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "90'",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "name": "Tunkara Tunkara, Muhamaou",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "0",
+            "1",
+            "45'",
+            "0",
+            "0",
+            "0"
+          ]
         }
       ],
       "plantilla": [
         {
-          "name": "Más titularidades",
-          "stats": []
+          "name": "Pernias Subirach, Eneko",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "90'",
+            "0",
+            "3",
+            "0"
+          ]
         },
         {
-          "name": "Derechos del jugador",
-          "stats": []
+          "name": "Aguilar Alegria, Cesar Jahir",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "90'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Amanzou El Chaouni Alia, Aiman",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "90'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Bayo, Abdoul Aziz",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "90'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Boixareu Tella, Joaquim",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "90'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Cabello Maya, Marc",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "0",
+            "1",
+            "45'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Climent Serna, Eneko",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "0",
+            "1",
+            "45'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Ferreyra Crugeiras, Ruben",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "0",
+            "1",
+            "45'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Flores Montero, Sergi",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "90'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Gamero Membrive, Genís",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "90'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Garrucho Del Barrio, Gerard",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "0",
+            "1",
+            "45'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Mayorga Martinez, Isaac",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "0",
+            "1",
+            "45'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Morales Delgado, Eric",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "0",
+            "1",
+            "45'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Parera Collell, Roger",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "0",
+            "1",
+            "45'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Planella Cobacho, Arnau",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "90'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Planella Cobacho, Axel",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "90'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Salvadores Cepero, Oriol",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "90'",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "name": "Tunkara Tunkara, Muhamaou",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "0",
+            "1",
+            "45'",
+            "0",
+            "0",
+            "0"
+          ]
         }
       ],
-      "data_source": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=juvenil-segona-divisio&group=grup-20",
-      "data_updated_at": "2026-10-24T05:51:51+00:00"
+      "data_source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b",
+      "data_updated_at": "2026-10-24T11:08:59+00:00",
+      "calendar": [
+        {
+          "date": "03-10",
+          "iso": "2026-10-03",
+          "time": "",
+          "home": "Vilamajor, C.F. B",
+          "away": "Gualba, F.C. A",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b",
+          "score": "3-3",
+          "result": "3-3"
+        },
+        {
+          "date": "17-10",
+          "iso": "2026-10-17",
+          "time": "",
+          "home": "Vilamajor, C.F. B",
+          "away": "Palautordera, C.F. A",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b",
+          "score": "1-5",
+          "result": "1-5"
+        },
+        {
+          "date": "24-10",
+          "iso": "2026-10-24",
+          "time": "11:00",
+          "home": "Pª Blaugrana De La Roca Del Vallès B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "31-10",
+          "iso": "2026-10-31",
+          "time": "13:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Ass.esp.f. Base Palau 2024, B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "07-11",
+          "iso": "2026-11-07",
+          "time": "18:30",
+          "home": "La Torreta, C.F. B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "14-11",
+          "iso": "2026-11-14",
+          "time": "13:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Ponent C.F. A",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "22-11",
+          "iso": "2026-11-22",
+          "time": "16:00",
+          "home": "Olimpic La Garriga, C.F. B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "28-11",
+          "iso": "2026-11-28",
+          "time": "13:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Sant Esteve, Futbol Club A",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "13-12",
+          "iso": "2026-12-13",
+          "time": "20:00",
+          "home": "Llerona, C.E. B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "19-12",
+          "iso": "2026-12-19",
+          "time": "13:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Vilanova Valles, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "09-01",
+          "iso": "2027-01-09",
+          "time": "18:00",
+          "home": "Llinars, C.E. A",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "17-01",
+          "iso": "2027-01-17",
+          "time": "19:30",
+          "home": "Sant Celoni, Futbol Club B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "23-01",
+          "iso": "2027-01-23",
+          "time": "13:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Granollers, E.C. D",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "30-01",
+          "iso": "2027-01-30",
+          "time": "19:45",
+          "home": "Cardedeu, F.C. B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "13-02",
+          "iso": "2027-02-13",
+          "time": "19:00",
+          "home": "Gualba, F.C. A",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "20-02",
+          "iso": "2027-02-20",
+          "time": "13:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Valles, C.at. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "27-02",
+          "iso": "2027-02-27",
+          "time": "18:00",
+          "home": "Palautordera, C.F. A",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "06-03",
+          "iso": "2027-03-06",
+          "time": "13:00",
+          "home": "Vilamajor, C.F. B",
+          "away": "Pª Blaugrana De La Roca Del Vallès B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        },
+        {
+          "date": "14-03",
+          "iso": "2027-03-14",
+          "time": "19:00",
+          "home": "Ass.esp.f. Base Palau 2024, B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
+        }
+      ]
     },
     {
       "name": "Vilamajor, C.F. B — Tercera División Alevín S12",
       "category": "Vilamajor, C.F. B — Tercera División Alevín S12 | elFutbol",
       "competition": "Vilamajor, C.F. B — Tercera División Alevín S12 | elFutbol",
-      "url": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=tercera-divisio-alevi-s12&group=grup-13",
+      "url": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b",
       "next": {
+        "date": "31-10",
+        "iso": "2026-10-31",
+        "time": "11:45",
+        "home": "Montmelo Unio Esportiva, CF A",
+        "away": "Vilamajor, C.F. B",
+        "venue": null,
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+      },
+      "last": {
         "date": "17-10",
         "iso": "2026-10-17",
-        "time": "10:00",
+        "time": "",
         "home": "Vilamajor, C.F. B",
         "away": "Finsobe, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=tercera-divisio-alevi-s12&group=grup-13"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b",
+        "score": "1-9",
+        "result": "1-9"
       },
-      "last": null,
       "next_match": {
+        "date": "31-10",
+        "iso": "2026-10-31",
+        "time": "11:45",
+        "home": "Montmelo Unio Esportiva, CF A",
+        "away": "Vilamajor, C.F. B",
+        "venue": null,
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+      },
+      "last_match": {
         "date": "17-10",
         "iso": "2026-10-17",
-        "time": "10:00",
+        "time": "",
         "home": "Vilamajor, C.F. B",
         "away": "Finsobe, C.F. A",
         "venue": null,
-        "source": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=tercera-divisio-alevi-s12&group=grup-13"
+        "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b",
+        "score": "1-9",
+        "result": "1-9"
       },
-      "last_match": null,
       "standing": {
         "position": 11,
         "played": 1,
@@ -15627,16 +17217,165 @@
       },
       "upcoming": [
         {
+          "date": "31-10",
+          "iso": "2026-10-31",
+          "time": "11:45",
+          "home": "Montmelo Unio Esportiva, CF A",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "08-11",
+          "iso": "2026-11-08",
+          "time": "11:30",
+          "home": "Vilamajor, C.F. B",
+          "away": "Molletense, U.D. D",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "14-11",
+          "iso": "2026-11-14",
+          "time": "09:30",
+          "home": "Olimpic La Garriga, C.F. C",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "22-11",
+          "iso": "2026-11-22",
+          "time": "11:30",
+          "home": "Vilamajor, C.F. B",
+          "away": "Vilanova Valles, C.F. C",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "28-11",
+          "iso": "2026-11-28",
+          "time": "10:00",
+          "home": "Sant Esteve, Futbol Club B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "13-12",
+          "iso": "2026-12-13",
+          "time": "11:30",
+          "home": "Vilamajor, C.F. B",
+          "away": "La Llagosta, C.D. A",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "19-12",
+          "iso": "2026-12-19",
+          "time": "10:00",
+          "home": "Gualba, FC A",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "10-01",
+          "iso": "2027-01-10",
+          "time": "11:30",
+          "home": "Vilamajor, C.F. B",
+          "away": "Mollet U.E., CF. D",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "16-01",
+          "iso": "2027-01-16",
+          "time": "13:00",
+          "home": "Parets, C.F. D",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "24-01",
+          "iso": "2027-01-24",
+          "time": "11:30",
+          "home": "Vilamajor, C.F. B",
+          "away": "Lliça De Vall C.F. C",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "31-01",
+          "iso": "2027-01-31",
+          "time": "10:00",
+          "home": "Palau Solita I Plegamans, F.C. A",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "21-02",
+          "iso": "2027-02-21",
+          "time": "11:30",
+          "home": "Vilamajor, C.F. B",
+          "away": "Canovelles, U.E. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "28-02",
+          "iso": "2027-02-28",
+          "time": "11:15",
+          "home": "Finsobe, C.F. A",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "07-03",
+          "iso": "2027-03-07",
+          "time": "11:30",
+          "home": "Vilamajor, C.F. B",
+          "away": "Lliça D'Amunt, C.E. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "14-03",
+          "iso": "2027-03-14",
+          "time": "11:30",
+          "home": "Vilamajor, C.F. B",
+          "away": "Montmelo Unio Esportiva, CF A",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        }
+      ],
+      "results": [
+        {
           "date": "17-10",
           "iso": "2026-10-17",
-          "time": "10:00",
+          "time": "",
           "home": "Vilamajor, C.F. B",
           "away": "Finsobe, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=tercera-divisio-alevi-s12&group=grup-13"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b",
+          "score": "1-9",
+          "result": "1-9"
+        },
+        {
+          "date": "10-10",
+          "iso": "2026-10-10",
+          "time": "",
+          "home": "Canovelles, U.E. B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b",
+          "score": "5-3",
+          "result": "5-3"
         }
       ],
-      "results": [],
       "_display": "Aleví B",
       "_category": "Tercera División Alevín S12",
       "standings": [
@@ -16198,26 +17937,403 @@
       ],
       "squad": [
         {
-          "name": "Más titularidades",
-          "stats": []
+          "name": "Nogues Castillo, Quim",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "60'",
+            "0",
+            "2",
+            "0"
+          ]
         },
         {
-          "name": "Derechos del jugador",
-          "stats": []
+          "name": "Gimenez Guerrero, Axel",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "0",
+            "1",
+            "30'",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "name": "Canals Moya, Biel",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "0",
+            "1",
+            "30'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Chakrani Ben Ali, Kinan",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "60'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Lucas",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "60'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Macarron Sanchez, Isaac",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "60'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Nogués Castillo, Gerard",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "60'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Parrado Morral, Leo",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "60'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Sicilia Bolea, Hugo",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "60'",
+            "0",
+            "0",
+            "0"
+          ]
         }
       ],
       "plantilla": [
         {
-          "name": "Más titularidades",
-          "stats": []
+          "name": "Nogues Castillo, Quim",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "60'",
+            "0",
+            "2",
+            "0"
+          ]
         },
         {
-          "name": "Derechos del jugador",
-          "stats": []
+          "name": "Gimenez Guerrero, Axel",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "0",
+            "1",
+            "30'",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "name": "Canals Moya, Biel",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "0",
+            "1",
+            "30'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Chakrani Ben Ali, Kinan",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "60'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Lucas",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "60'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Macarron Sanchez, Isaac",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "60'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Nogués Castillo, Gerard",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "60'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Parrado Morral, Leo",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "60'",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "Sicilia Bolea, Hugo",
+          "appearances": 1,
+          "stats": [
+            "1",
+            "1",
+            "0",
+            "60'",
+            "0",
+            "0",
+            "0"
+          ]
         }
       ],
-      "data_source": "https://elfutbol.co/es/team/vilamajor-c-f-b?comp=tercera-divisio-alevi-s12&group=grup-13",
-      "data_updated_at": "2026-10-24T05:51:52+00:00"
+      "data_source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b",
+      "data_updated_at": "2026-10-24T11:09:09+00:00",
+      "calendar": [
+        {
+          "date": "10-10",
+          "iso": "2026-10-10",
+          "time": "",
+          "home": "Canovelles, U.E. B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b",
+          "score": "5-3",
+          "result": "5-3"
+        },
+        {
+          "date": "17-10",
+          "iso": "2026-10-17",
+          "time": "",
+          "home": "Vilamajor, C.F. B",
+          "away": "Finsobe, C.F. A",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b",
+          "score": "1-9",
+          "result": "1-9"
+        },
+        {
+          "date": "31-10",
+          "iso": "2026-10-31",
+          "time": "11:45",
+          "home": "Montmelo Unio Esportiva, CF A",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "08-11",
+          "iso": "2026-11-08",
+          "time": "11:30",
+          "home": "Vilamajor, C.F. B",
+          "away": "Molletense, U.D. D",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "14-11",
+          "iso": "2026-11-14",
+          "time": "09:30",
+          "home": "Olimpic La Garriga, C.F. C",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "22-11",
+          "iso": "2026-11-22",
+          "time": "11:30",
+          "home": "Vilamajor, C.F. B",
+          "away": "Vilanova Valles, C.F. C",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "28-11",
+          "iso": "2026-11-28",
+          "time": "10:00",
+          "home": "Sant Esteve, Futbol Club B",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "13-12",
+          "iso": "2026-12-13",
+          "time": "11:30",
+          "home": "Vilamajor, C.F. B",
+          "away": "La Llagosta, C.D. A",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "19-12",
+          "iso": "2026-12-19",
+          "time": "10:00",
+          "home": "Gualba, FC A",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "10-01",
+          "iso": "2027-01-10",
+          "time": "11:30",
+          "home": "Vilamajor, C.F. B",
+          "away": "Mollet U.E., CF. D",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "16-01",
+          "iso": "2027-01-16",
+          "time": "13:00",
+          "home": "Parets, C.F. D",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "24-01",
+          "iso": "2027-01-24",
+          "time": "11:30",
+          "home": "Vilamajor, C.F. B",
+          "away": "Lliça De Vall C.F. C",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "31-01",
+          "iso": "2027-01-31",
+          "time": "10:00",
+          "home": "Palau Solita I Plegamans, F.C. A",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "21-02",
+          "iso": "2027-02-21",
+          "time": "11:30",
+          "home": "Vilamajor, C.F. B",
+          "away": "Canovelles, U.E. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "28-02",
+          "iso": "2027-02-28",
+          "time": "11:15",
+          "home": "Finsobe, C.F. A",
+          "away": "Vilamajor, C.F. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "07-03",
+          "iso": "2027-03-07",
+          "time": "11:30",
+          "home": "Vilamajor, C.F. B",
+          "away": "Lliça D'Amunt, C.E. B",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        },
+        {
+          "date": "14-03",
+          "iso": "2027-03-14",
+          "time": "11:30",
+          "home": "Vilamajor, C.F. B",
+          "away": "Montmelo Unio Esportiva, CF A",
+          "venue": null,
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
+        }
+      ]
     }
   ]
 }
