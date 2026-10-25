@@ -76,6 +76,8 @@
  .our-team-card.amateur h3{font-size:46px}
 }
 
+</style><style>
+.player-reveal-trigger{width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 14px;border:1px solid #c9a45c55;background:linear-gradient(100deg,#c9a45c14,#090a0c);color:#fff;text-align:left;font:inherit;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}.player-reveal-trigger:hover,.player-reveal-trigger:focus-visible{background:#c9a45c24;border-color:var(--gold);transform:translateX(3px);outline:none}.player-reveal-trigger strong{font-size:13px}.player-reveal-trigger small{display:block;margin-top:4px;color:var(--muted);font-size:9px;letter-spacing:.12em}.player-reveal-trigger .reveal-number{color:var(--gold);font-size:22px;font-weight:900}.player-breakthrough{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 50% 48%,#122039 0%,#06080df5 60%,#020304 100%);opacity:0;visibility:hidden;pointer-events:none}.player-breakthrough.active{visibility:visible;pointer-events:auto;animation:breakthrough-screen 3.8s ease both}.breakthrough-flash{position:absolute;inset:0;background:#f9fbff;opacity:0;pointer-events:none}.player-breakthrough.active .breakthrough-flash{animation:breakthrough-flash .65s ease-out both}.breakthrough-cracks{position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(0 0 7px #c9a45caa);pointer-events:none}.breakthrough-cracks path{fill:none;stroke:#fff9e9;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1200;stroke-dashoffset:1200}.player-breakthrough.active .breakthrough-cracks path{animation:crack-draw .9s cubic-bezier(.2,.75,.25,1) both}.player-breakthrough.active .breakthrough-cracks path:nth-child(2n){animation-delay:.08s;stroke:#c9a45c}.breakthrough-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;padding:50px 20px 36px;text-align:center}.breakthrough-player{display:block;width:auto;height:min(74vh,760px);max-width:min(70vw,720px);object-fit:contain;filter:drop-shadow(0 16px 38px #000c) drop-shadow(0 0 22px #4399ff66);opacity:0;transform:translate3d(0,48vh,0) scale(.16) rotate(-7deg);transform-origin:50% 85%}.player-breakthrough.active .breakthrough-player{animation:player-burst 3.8s cubic-bezier(.18,.8,.2,1) both}.breakthrough-name{position:absolute;bottom:9vh;left:20px;right:20px;color:#fff;font-size:clamp(28px,6vw,76px);font-weight:900;letter-spacing:-.055em;line-height:.95;text-shadow:0 4px 22px #000}.breakthrough-name span{color:var(--gold)}.breakthrough-note{position:absolute;bottom:5.7vh;color:#c7c9ce;font-size:9px;letter-spacing:.2em;text-transform:uppercase}.breakthrough-close{position:absolute;z-index:4;top:22px;right:24px;width:44px;height:44px;border:1px solid #ffffff66;border-radius:50%;background:#08090bb8;color:#fff;font-size:25px;cursor:pointer}.breakthrough-close:hover{border-color:var(--gold);color:var(--gold)}@keyframes breakthrough-screen{0%{opacity:0}10%,79%{opacity:1}100%{opacity:0}}@keyframes breakthrough-flash{0%{opacity:0}12%{opacity:.75}35%,100%{opacity:0}}@keyframes crack-draw{to{stroke-dashoffset:0}}@keyframes player-burst{0%{opacity:0;transform:translate3d(0,48vh,0) scale(.16) rotate(-7deg)}13%{opacity:1;transform:translate3d(0,0,0) scale(1.08) rotate(1deg)}20%{transform:translate3d(0,0,0) scale(.97) rotate(0)}30%,73%{opacity:1;transform:translate3d(0,0,0) scale(1) rotate(0)}100%{opacity:0;transform:translate3d(0,-3vh,0) scale(1.12) rotate(0)}}@media(max-width:600px){.breakthrough-player{height:min(68vh,620px);max-width:88vw}.breakthrough-name{bottom:12vh}.breakthrough-note{bottom:8vh}}@media(prefers-reduced-motion:reduce){.player-breakthrough.active,.player-breakthrough.active .breakthrough-player,.player-breakthrough.active .breakthrough-flash,.player-breakthrough.active .breakthrough-cracks path{animation-duration:.6s}}
 </style></head><body>
 
 <nav class="nav" id="nav">
@@ -251,6 +253,13 @@
 <span>WEB &amp; DIGITAL · <a href="https://www.projecthouseagents.com/project-sport" target="_blank" rel="noopener noreferrer" aria-label="PROJECT SPORT — Web & Digital"><b>PROJECT SPORT</b></a></span>
 </footer>
 
+<div id="player-breakthrough" class="player-breakthrough" role="dialog" aria-modal="true" aria-label="Previsualització de l’efecte de Biel Palomes" aria-hidden="true">
+<div class="breakthrough-flash"></div>
+<svg class="breakthrough-cracks" viewBox="0 0 1000 800" preserveAspectRatio="none" aria-hidden="true"><path d="M500 400 425 330 390 250 330 210 295 115M425 330 355 340 300 305 205 300 120 250M425 330 380 405 315 445 275 520 210 590M425 330 470 245 460 175 505 105 520 35M500 400 565 330 625 275 690 260 770 180 870 145M565 330 645 350 700 325 795 345 900 300M500 400 580 410 640 465 710 490 770 575 865 625M500 400 535 485 520 560 555 635 540 735M500 400 430 455 415 525 355 585 330 680"/><path d="M390 250 355 185 315 160M300 305 245 350 160 360M315 445 245 460 190 500M460 175 420 115 405 55M625 275 660 205 715 165M700 325 755 280 825 270M640 465 685 540 740 565M520 560 475 615 470 690"/></svg>
+<button class="breakthrough-close" type="button" aria-label="Tancar previsualització">×</button>
+<div class="breakthrough-content"><img class="breakthrough-player" src="assets/biel-palomes-preview.png" alt="Retall de prova del jugador amb la pilota"/><div class="breakthrough-name">BIEL <span>PALOMES</span></div><div class="breakthrough-note">Previsualització · retall provisional</div></div>
+</div>
+
 <script>
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>50));
 </script>
@@ -403,12 +412,28 @@ teamGrid.addEventListener('click',e=>{
   }
   else {
     const players=data.squad||[];
-    panel.innerHTML=players.length?`<strong>PLANTILLA · ${players.length} JUGADORS/ES</strong><div style="margin-top:12px">${players.map((p,i)=>`<div style="padding:9px 0;border-bottom:1px solid #303236"><b>${safeText(p.name||('Jugador/a '+(i+1)))}</b></div>`).join('')}</div>`:'La plantilla no està publicada o no s’ha pogut recuperar de la font per a aquesta temporada.';
+    const isJuvenilA=data.teamname==='Juvenil A';
+    const isBiel=p=>/biel/.test(String(p?.name||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase())&&/palomes/.test(String(p?.name||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase());
+    const bielButton='<button class="player-reveal-trigger" type="button" data-player-reveal aria-label="Veure prova visual de Biel Palomes, jugador 19"><span><strong>Biel Palomes</strong><small>JUVENIL A · PROVA DE L’EFECTE VISUAL</small></span><span class="reveal-number">#19</span></button>';
+    const hasBiel=players.some(isBiel);
+    const playerRows=players.map((p,i)=>isJuvenilA&&isBiel(p)?bielButton:`<div style="padding:9px 0;border-bottom:1px solid #303236"><b>${safeText(p.name||('Jugador/a '+(i+1)))}</b></div>`).join('');
+    panel.innerHTML=players.length||isJuvenilA?`<strong>PLANTILLA · ${players.length+(isJuvenilA&&!hasBiel?1:0)} JUGADORS/ES</strong><div style="margin-top:12px">${playerRows}${isJuvenilA&&!hasBiel?bielButton:''}</div>`:'La plantilla no està publicada o no s’ha pogut recuperar de la font per a aquesta temporada.';
   }
  };
  teamDetail.querySelectorAll('[data-detail-tab]').forEach(x=>x.addEventListener('click',()=>renderDetail(x.dataset.detailTab)));
  teamDetail.scrollIntoView({behavior:'smooth',block:'start'});
 });
+
+const playerBreakthrough=document.getElementById('player-breakthrough');
+let playerRevealTimer;
+function closePlayerReveal(){if(!playerBreakthrough)return;clearTimeout(playerRevealTimer);playerBreakthrough.classList.remove('active');playerBreakthrough.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+document.addEventListener('click',e=>{
+ if(e.target.closest('[data-player-reveal]')){
+  clearTimeout(playerRevealTimer);playerBreakthrough.classList.remove('active');void playerBreakthrough.offsetWidth;playerBreakthrough.classList.add('active');playerBreakthrough.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;playerRevealTimer=setTimeout(closePlayerReveal,reducedMotion?700:3800);
+ }
+ if(e.target.closest('.breakthrough-close'))closePlayerReveal();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&playerBreakthrough.classList.contains('active'))closePlayerReveal()});
 
 
 
