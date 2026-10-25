@@ -34,6 +34,8 @@
 .our-team-card{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:210px;padding:23px;background:linear-gradient(145deg,#15181c,#090a0c);border:1px solid #2a2d32;border-radius:2px;cursor:pointer;overflow:hidden;text-align:left;color:var(--white);font-family:inherit;transition:.2s}
 .our-team-card:hover{border-color:var(--gold);transform:translateY(-3px)}
 .our-team-card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 90% 12%,#a7192228,transparent 42%);pointer-events:none}
+.our-team-card.juvenil-a{min-height:340px;background-image:url('assets/juvenil-a.jpg');background-size:cover;background-position:center 56%;border-color:#c9a45c88}
+.our-team-card.juvenil-a:before{background:linear-gradient(0deg,#070809f5 0%,#070809c9 34%,#07080935 74%,#07080912 100%)}
 .our-team-card>*{position:relative}
 .our-team-card .team-eyebrow{font-size:9px;color:var(--gold);font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin-bottom:10px}
 .our-team-card h3{font-size:20px;line-height:1.1;margin:0 0 10px}
@@ -368,8 +370,9 @@ function teamInfo(t){
 const teamsForGrid=clubTeams.slice(); // Mostrar todos los equipos oficiales de la temporada, sin excluir ni limitar ninguno.
 teamGrid.innerHTML=teamsForGrid.map((t,i)=>{
  const amateur=(t._category||'').includes('Tercera Catalana');
+ const juvenilA=t._display==='Juvenil A';
  const next=getFutureMatches(t)[0]||null;
- return `<button class="our-team-card ${amateur?'amateur':''}" type="button" data-team="${clubTeams.indexOf(t)}">
+ return `<button class="our-team-card ${amateur?'amateur':''} ${juvenilA?'juvenil-a':''}" type="button" data-team="${clubTeams.indexOf(t)}">
  ${amateur?'<div class="amateur-mark">A</div>':''}
  <span class="team-eyebrow">${amateur?'PRIMER EQUIP · AMATEUR':'LA NOSTRA GENT'}</span>
  <h3>${safeText(t._display||t._category)}</h3>
