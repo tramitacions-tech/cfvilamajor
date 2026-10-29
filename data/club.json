@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T06:00:47+00:00",
+  "updated_at": "2026-10-29T06:02:22+00:00",
   "source": "elFutbol.co (partidos, clasificación y plantilla cuando están publicados)",
   "teams": [
     {
@@ -1416,7 +1416,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-a?comp=tercera-catalana&group=grup-5",
-      "data_updated_at": "2026-10-28T05:58:30+00:00",
+      "data_updated_at": "2026-10-29T05:59:42+00:00",
       "calendar": [
         {
           "date": "19-09",
@@ -2774,7 +2774,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?comp=cadet-segona-divisio-s16&group=grup-12",
-      "data_updated_at": "2026-10-28T05:58:38+00:00",
+      "data_updated_at": "2026-10-29T05:59:52+00:00",
       "calendar": [
         {
           "date": "04-10",
@@ -3957,7 +3957,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?comp=femeni-benjami&group=grup-2",
-      "data_updated_at": "2026-10-28T05:58:46+00:00",
+      "data_updated_at": "2026-10-29T06:00:05+00:00",
       "calendar": [
         {
           "date": "03-10",
@@ -5272,7 +5272,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?comp=infantil-segona-divisio-s13&group=grup-11",
-      "data_updated_at": "2026-10-28T05:58:58+00:00",
+      "data_updated_at": "2026-10-29T06:00:22+00:00",
       "calendar": [
         {
           "date": "02-07",
@@ -6702,7 +6702,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?comp=infantil-segona-divisio-s14&group=grup-12",
-      "data_updated_at": "2026-10-28T05:59:09+00:00",
+      "data_updated_at": "2026-10-29T06:00:40+00:00",
       "calendar": [
         {
           "date": "10-10",
@@ -8216,7 +8216,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?comp=juvenil-primera-divisio&group=grup-4",
-      "data_updated_at": "2026-10-28T05:59:23+00:00",
+      "data_updated_at": "2026-10-29T06:00:59+00:00",
       "calendar": [
         {
           "date": "27-09",
@@ -9455,7 +9455,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?comp=segona-divisio-alevi-s11&group=grup-8",
-      "data_updated_at": "2026-10-28T05:59:31+00:00",
+      "data_updated_at": "2026-10-29T06:01:14+00:00",
       "calendar": [
         {
           "date": "03-10",
@@ -10563,7 +10563,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?comp=segona-divisio-femeni-infantil&group=grup-4",
-      "data_updated_at": "2026-10-28T05:59:39+00:00",
+      "data_updated_at": "2026-10-29T06:01:24+00:00",
       "calendar": [
         {
           "date": "03-10",
@@ -11703,7 +11703,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?comp=tercera-divisio-alevi-s12&group=grup-12",
-      "data_updated_at": "2026-10-28T05:59:47+00:00",
+      "data_updated_at": "2026-10-29T06:01:36+00:00",
       "calendar": [
         {
           "date": "17-10",
@@ -12958,7 +12958,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?comp=tercera-divisio-benjami-s10&group=grup-8",
-      "data_updated_at": "2026-10-28T05:59:57+00:00",
+      "data_updated_at": "2026-10-29T06:01:48+00:00",
       "calendar": [
         {
           "date": "10-10",
@@ -14043,7 +14043,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?comp=tercera-divisio-benjami-s9&group=grup-6",
-      "data_updated_at": "2026-10-28T06:00:08+00:00",
+      "data_updated_at": "2026-10-29T06:01:58+00:00",
       "calendar": [
         {
           "date": "11-10",
@@ -15326,7 +15326,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b",
-      "data_updated_at": "2026-10-28T06:00:17+00:00",
+      "data_updated_at": "2026-10-29T06:02:06+00:00",
       "calendar": [
         {
           "date": "10-10",
@@ -16773,7 +16773,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b",
-      "data_updated_at": "2026-10-28T06:00:39+00:00",
+      "data_updated_at": "2026-10-29T06:02:14+00:00",
       "calendar": [
         {
           "date": "03-10",
@@ -17958,7 +17958,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b",
-      "data_updated_at": "2026-10-28T06:00:47+00:00",
+      "data_updated_at": "2026-10-29T06:02:22+00:00",
       "calendar": [
         {
           "date": "10-10",
