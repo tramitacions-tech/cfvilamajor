@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T05:56:52+00:00",
+  "updated_at": "2026-11-01T06:04:34+00:00",
   "source": "elFutbol.co (partidos, clasificación y plantilla cuando están publicados)",
   "teams": [
     {
@@ -8,11 +8,11 @@
       "competition": "Vilamajor, C.F. A — Tercera Catalana | elFutbol",
       "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=tercera-catalana&group=grup-5",
       "next": {
-        "date": "31-10",
-        "iso": "2026-10-31",
-        "time": "17:30",
-        "home": "Vilamajor, C.F. A",
-        "away": "Llerona, C.E. A",
+        "date": "08-11",
+        "iso": "2026-11-08",
+        "time": "12:00",
+        "home": "La Torreta, C.F. A",
+        "away": "Vilamajor, C.F. A",
         "venue": null,
         "source": "https://elfutbol.co/es/team/vilamajor-cf-a?comp=tercera-catalana&group=grup-5"
       },
@@ -28,11 +28,11 @@
         "result": "0-0"
       },
       "next_match": {
-        "date": "31-10",
-        "iso": "2026-10-31",
-        "time": "17:30",
-        "home": "Vilamajor, C.F. A",
-        "away": "Llerona, C.E. A",
+        "date": "08-11",
+        "iso": "2026-11-08",
+        "time": "12:00",
+        "home": "La Torreta, C.F. A",
+        "away": "Vilamajor, C.F. A",
         "venue": null,
         "source": "https://elfutbol.co/es/team/vilamajor-cf-a?comp=tercera-catalana&group=grup-5"
       },
@@ -59,15 +59,6 @@
         "goal_difference": 2
       },
       "upcoming": [
-        {
-          "date": "31-10",
-          "iso": "2026-10-31",
-          "time": "17:30",
-          "home": "Vilamajor, C.F. A",
-          "away": "Llerona, C.E. A",
-          "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?comp=tercera-catalana&group=grup-5"
-        },
         {
           "date": "08-11",
           "iso": "2026-11-08",
@@ -1416,7 +1407,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-a?comp=tercera-catalana&group=grup-5",
-      "data_updated_at": "2026-10-31T05:56:18+00:00",
+      "data_updated_at": "2026-11-01T05:59:32+00:00",
       "calendar": [
         {
           "date": "19-09",
@@ -1480,7 +1471,7 @@
           "home": "Vilamajor, C.F. A",
           "away": "Llerona, C.E. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?comp=tercera-catalana&group=grup-5"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-a?comp=tercera-catalana&group=grup-5&season=2627&tab=calendario"
         },
         {
           "date": "08-11",
@@ -2774,7 +2765,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-a?comp=cadet-segona-divisio-s16&group=grup-12",
-      "data_updated_at": "2026-10-31T05:56:20+00:00",
+      "data_updated_at": "2026-11-01T05:59:42+00:00",
       "calendar": [
         {
           "date": "04-10",
@@ -2943,11 +2934,11 @@
       "competition": "Vilamajor, C.F. A — Femenino Benjamín | elFutbol",
       "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=femeni-benjami&group=grup-2",
       "next": {
-        "date": "31-10",
-        "iso": "2026-10-31",
-        "time": "11:30",
-        "home": "Pª Barc. Barcino, CE A",
-        "away": "Vilamajor, C.F. A",
+        "date": "07-11",
+        "iso": "2026-11-07",
+        "time": "10:00",
+        "home": "Vilamajor, C.F. A",
+        "away": "Santa Susanna Assoc. Esp. A",
         "venue": null,
         "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?comp=femeni-benjami&group=grup-2"
       },
@@ -2963,11 +2954,11 @@
         "result": "1-6"
       },
       "next_match": {
-        "date": "31-10",
-        "iso": "2026-10-31",
-        "time": "11:30",
-        "home": "Pª Barc. Barcino, CE A",
-        "away": "Vilamajor, C.F. A",
+        "date": "07-11",
+        "iso": "2026-11-07",
+        "time": "10:00",
+        "home": "Vilamajor, C.F. A",
+        "away": "Santa Susanna Assoc. Esp. A",
         "venue": null,
         "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?comp=femeni-benjami&group=grup-2"
       },
@@ -2994,15 +2985,6 @@
         "goal_difference": -7
       },
       "upcoming": [
-        {
-          "date": "31-10",
-          "iso": "2026-10-31",
-          "time": "11:30",
-          "home": "Pª Barc. Barcino, CE A",
-          "away": "Vilamajor, C.F. A",
-          "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?comp=femeni-benjami&group=grup-2"
-        },
         {
           "date": "07-11",
           "iso": "2026-11-07",
@@ -3957,7 +3939,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-benjamin-a?comp=femeni-benjami&group=grup-2",
-      "data_updated_at": "2026-10-31T05:56:23+00:00",
+      "data_updated_at": "2026-11-01T05:59:57+00:00",
       "calendar": [
         {
           "date": "03-10",
@@ -4144,11 +4126,11 @@
       "competition": "Vilamajor, C.F. A — Infantil Segunda División S13 | elFutbol",
       "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=infantil-segona-divisio-s13&group=grup-11",
       "next": {
-        "date": "31-10",
-        "iso": "2026-10-31",
-        "time": "13:30",
-        "home": "Palautordera, C.F. A",
-        "away": "Vilamajor, C.F. A",
+        "date": "08-11",
+        "iso": "2026-11-08",
+        "time": "13:00",
+        "home": "Vilamajor, C.F. A",
+        "away": "Tiana, C.C.E. C",
         "venue": null,
         "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?comp=infantil-segona-divisio-s13&group=grup-11"
       },
@@ -4164,11 +4146,11 @@
         "result": "0-4"
       },
       "next_match": {
-        "date": "31-10",
-        "iso": "2026-10-31",
-        "time": "13:30",
-        "home": "Palautordera, C.F. A",
-        "away": "Vilamajor, C.F. A",
+        "date": "08-11",
+        "iso": "2026-11-08",
+        "time": "13:00",
+        "home": "Vilamajor, C.F. A",
+        "away": "Tiana, C.C.E. C",
         "venue": null,
         "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?comp=infantil-segona-divisio-s13&group=grup-11"
       },
@@ -4195,15 +4177,6 @@
         "goal_difference": -1
       },
       "upcoming": [
-        {
-          "date": "31-10",
-          "iso": "2026-10-31",
-          "time": "13:30",
-          "home": "Palautordera, C.F. A",
-          "away": "Vilamajor, C.F. A",
-          "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?comp=infantil-segona-divisio-s13&group=grup-11"
-        },
         {
           "date": "08-11",
           "iso": "2026-11-08",
@@ -5272,12 +5245,12 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?comp=infantil-segona-divisio-s13&group=grup-11",
-      "data_updated_at": "2026-10-31T05:56:26+00:00",
+      "data_updated_at": "2026-11-01T06:00:33+00:00",
       "calendar": [
         {
           "date": "02-07",
           "iso": "2026-07-02",
-          "time": "13:30",
+          "time": "13:00",
           "home": "2026-27",
           "away": "2025-26",
           "venue": null,
@@ -5286,7 +5259,7 @@
         {
           "date": "02-07",
           "iso": "2026-07-02",
-          "time": "13:30",
+          "time": "13:00",
           "home": "Compacto",
           "away": "Detallado",
           "venue": null,
@@ -5332,7 +5305,7 @@
           "home": "Palautordera, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?comp=infantil-segona-divisio-s13&group=grup-11"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s13-a?comp=infantil-segona-divisio-s13&group=grup-11&season=2627&tab=calendario"
         },
         {
           "date": "08-11",
@@ -6702,7 +6675,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-infantil-s14-a?comp=infantil-segona-divisio-s14&group=grup-12",
-      "data_updated_at": "2026-10-31T05:56:32+00:00",
+      "data_updated_at": "2026-11-01T06:01:24+00:00",
       "calendar": [
         {
           "date": "10-10",
@@ -8216,7 +8189,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-a?comp=juvenil-primera-divisio&group=grup-4",
-      "data_updated_at": "2026-10-31T05:56:35+00:00",
+      "data_updated_at": "2026-11-01T06:02:02+00:00",
       "calendar": [
         {
           "date": "27-09",
@@ -8392,11 +8365,11 @@
       "competition": "Vilamajor, C.F. A — Segunda División Alevín S11 | elFutbol",
       "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=segona-divisio-alevi-s11&group=grup-8",
       "next": {
-        "date": "31-10",
-        "iso": "2026-10-31",
-        "time": "11:30",
-        "home": "Vilamajor, C.F. A",
-        "away": "Montmelo Unio Esportiva, CF A",
+        "date": "07-11",
+        "iso": "2026-11-07",
+        "time": "10:30",
+        "home": "Atlético Roureda, C.F. A",
+        "away": "Vilamajor, C.F. A",
         "venue": null,
         "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?comp=segona-divisio-alevi-s11&group=grup-8"
       },
@@ -8412,11 +8385,11 @@
         "result": "2-12"
       },
       "next_match": {
-        "date": "31-10",
-        "iso": "2026-10-31",
-        "time": "11:30",
-        "home": "Vilamajor, C.F. A",
-        "away": "Montmelo Unio Esportiva, CF A",
+        "date": "07-11",
+        "iso": "2026-11-07",
+        "time": "10:30",
+        "home": "Atlético Roureda, C.F. A",
+        "away": "Vilamajor, C.F. A",
         "venue": null,
         "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?comp=segona-divisio-alevi-s11&group=grup-8"
       },
@@ -8443,15 +8416,6 @@
         "goal_difference": -15
       },
       "upcoming": [
-        {
-          "date": "31-10",
-          "iso": "2026-10-31",
-          "time": "11:30",
-          "home": "Vilamajor, C.F. A",
-          "away": "Montmelo Unio Esportiva, CF A",
-          "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?comp=segona-divisio-alevi-s11&group=grup-8"
-        },
         {
           "date": "07-11",
           "iso": "2026-11-07",
@@ -9455,7 +9419,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s11-a?comp=segona-divisio-alevi-s11&group=grup-8",
-      "data_updated_at": "2026-10-31T05:56:37+00:00",
+      "data_updated_at": "2026-11-01T06:03:07+00:00",
       "calendar": [
         {
           "date": "03-10",
@@ -10563,7 +10527,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-femeni-infantil-a?comp=segona-divisio-femeni-infantil&group=grup-4",
-      "data_updated_at": "2026-10-31T05:56:39+00:00",
+      "data_updated_at": "2026-11-01T06:03:35+00:00",
       "calendar": [
         {
           "date": "03-10",
@@ -10723,11 +10687,11 @@
       "competition": "Vilamajor, C.F. A — Tercera División Alevín S12 | elFutbol",
       "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=tercera-divisio-alevi-s12&group=grup-12",
       "next": {
-        "date": "31-10",
-        "iso": "2026-10-31",
-        "time": "10:00",
-        "home": "Vilamajor, C.F. A",
-        "away": "Llinars, C.E. B",
+        "date": "07-11",
+        "iso": "2026-11-07",
+        "time": "09:00",
+        "home": "Llerona, C.E. A",
+        "away": "Vilamajor, C.F. A",
         "venue": null,
         "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?comp=tercera-divisio-alevi-s12&group=grup-12"
       },
@@ -10743,11 +10707,11 @@
         "result": "0-1"
       },
       "next_match": {
-        "date": "31-10",
-        "iso": "2026-10-31",
-        "time": "10:00",
-        "home": "Vilamajor, C.F. A",
-        "away": "Llinars, C.E. B",
+        "date": "07-11",
+        "iso": "2026-11-07",
+        "time": "09:00",
+        "home": "Llerona, C.E. A",
+        "away": "Vilamajor, C.F. A",
         "venue": null,
         "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?comp=tercera-divisio-alevi-s12&group=grup-12"
       },
@@ -10774,15 +10738,6 @@
         "goal_difference": 1
       },
       "upcoming": [
-        {
-          "date": "31-10",
-          "iso": "2026-10-31",
-          "time": "10:00",
-          "home": "Vilamajor, C.F. A",
-          "away": "Llinars, C.E. B",
-          "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?comp=tercera-divisio-alevi-s12&group=grup-12"
-        },
         {
           "date": "07-11",
           "iso": "2026-11-07",
@@ -11703,7 +11658,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?comp=tercera-divisio-alevi-s12&group=grup-12",
-      "data_updated_at": "2026-10-31T05:56:41+00:00",
+      "data_updated_at": "2026-11-01T06:03:45+00:00",
       "calendar": [
         {
           "date": "17-10",
@@ -11723,7 +11678,7 @@
           "home": "Vilamajor, C.F. A",
           "away": "Llinars, C.E. B",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?comp=tercera-divisio-alevi-s12&group=grup-12"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-a?comp=tercera-divisio-alevi-s12&group=grup-12&season=2627&tab=calendario"
         },
         {
           "date": "07-11",
@@ -11859,11 +11814,11 @@
       "competition": "Vilamajor, C.F. A — Tercera División Benjamín S10 | elFutbol",
       "url": "https://elfutbol.co/es/team/vilamajor-c-f-a?comp=tercera-divisio-benjami-s10&group=grup-8",
       "next": {
-        "date": "31-10",
-        "iso": "2026-10-31",
-        "time": "10:30",
-        "home": "La Torreta, C.F. A",
-        "away": "Vilamajor, C.F. A",
+        "date": "07-11",
+        "iso": "2026-11-07",
+        "time": "10:00",
+        "home": "Vilamajor, C.F. A",
+        "away": "Sant Esteve, Futbol Club A",
         "venue": null,
         "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?comp=tercera-divisio-benjami-s10&group=grup-8"
       },
@@ -11879,11 +11834,11 @@
         "result": "4-4"
       },
       "next_match": {
-        "date": "31-10",
-        "iso": "2026-10-31",
-        "time": "10:30",
-        "home": "La Torreta, C.F. A",
-        "away": "Vilamajor, C.F. A",
+        "date": "07-11",
+        "iso": "2026-11-07",
+        "time": "10:00",
+        "home": "Vilamajor, C.F. A",
+        "away": "Sant Esteve, Futbol Club A",
         "venue": null,
         "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?comp=tercera-divisio-benjami-s10&group=grup-8"
       },
@@ -11910,15 +11865,6 @@
         "goal_difference": -1
       },
       "upcoming": [
-        {
-          "date": "31-10",
-          "iso": "2026-10-31",
-          "time": "10:30",
-          "home": "La Torreta, C.F. A",
-          "away": "Vilamajor, C.F. A",
-          "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?comp=tercera-divisio-benjami-s10&group=grup-8"
-        },
         {
           "date": "07-11",
           "iso": "2026-11-07",
@@ -12066,7 +12012,7 @@
         {
           "date": "04-05",
           "iso": "2027-05-04",
-          "time": "10:30",
+          "time": "10:00",
           "home": "Compacto",
           "away": "Detallado",
           "venue": null,
@@ -12958,7 +12904,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?comp=tercera-divisio-benjami-s10&group=grup-8",
-      "data_updated_at": "2026-10-31T05:56:44+00:00",
+      "data_updated_at": "2026-11-01T06:03:57+00:00",
       "calendar": [
         {
           "date": "10-10",
@@ -12989,7 +12935,7 @@
           "home": "La Torreta, C.F. A",
           "away": "Vilamajor, C.F. A",
           "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?comp=tercera-divisio-benjami-s10&group=grup-8"
+          "source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s10-a?comp=tercera-divisio-benjami-s10&group=grup-8&season=2627&tab=calendario"
         },
         {
           "date": "07-11",
@@ -13138,7 +13084,7 @@
         {
           "date": "04-05",
           "iso": "2027-05-04",
-          "time": "10:30",
+          "time": "10:00",
           "home": "Compacto",
           "away": "Detallado",
           "venue": null,
@@ -14043,7 +13989,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-benjamin-s9-a?comp=tercera-divisio-benjami-s9&group=grup-6",
-      "data_updated_at": "2026-10-31T05:56:46+00:00",
+      "data_updated_at": "2026-11-01T06:04:11+00:00",
       "calendar": [
         {
           "date": "11-10",
@@ -15326,7 +15272,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-cadet-s16-b",
-      "data_updated_at": "2026-10-31T05:56:48+00:00",
+      "data_updated_at": "2026-11-01T06:04:19+00:00",
       "calendar": [
         {
           "date": "10-10",
@@ -15484,11 +15430,11 @@
       "competition": "Vilamajor, C.F. B — Juvenil Segunda División | elFutbol",
       "url": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b",
       "next": {
-        "date": "31-10",
-        "iso": "2026-10-31",
-        "time": "13:00",
-        "home": "Vilamajor, C.F. B",
-        "away": "Ass.esp.f. Base Palau 2024, B",
+        "date": "07-11",
+        "iso": "2026-11-07",
+        "time": "18:30",
+        "home": "La Torreta, C.F. B",
+        "away": "Vilamajor, C.F. B",
         "venue": null,
         "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
       },
@@ -15504,11 +15450,11 @@
         "result": "1-5"
       },
       "next_match": {
-        "date": "31-10",
-        "iso": "2026-10-31",
-        "time": "13:00",
-        "home": "Vilamajor, C.F. B",
-        "away": "Ass.esp.f. Base Palau 2024, B",
+        "date": "07-11",
+        "iso": "2026-11-07",
+        "time": "18:30",
+        "home": "La Torreta, C.F. B",
+        "away": "Vilamajor, C.F. B",
         "venue": null,
         "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
       },
@@ -15535,15 +15481,6 @@
         "goal_difference": 0
       },
       "upcoming": [
-        {
-          "date": "31-10",
-          "iso": "2026-10-31",
-          "time": "13:00",
-          "home": "Vilamajor, C.F. B",
-          "away": "Ass.esp.f. Base Palau 2024, B",
-          "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
-        },
         {
           "date": "07-11",
           "iso": "2026-11-07",
@@ -16773,7 +16710,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b",
-      "data_updated_at": "2026-10-31T05:56:50+00:00",
+      "data_updated_at": "2026-11-01T06:04:27+00:00",
       "calendar": [
         {
           "date": "03-10",
@@ -16796,15 +16733,6 @@
           "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b",
           "score": "1-5",
           "result": "1-5"
-        },
-        {
-          "date": "31-10",
-          "iso": "2026-10-31",
-          "time": "13:00",
-          "home": "Vilamajor, C.F. B",
-          "away": "Ass.esp.f. Base Palau 2024, B",
-          "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-juvenil-b"
         },
         {
           "date": "07-11",
@@ -16949,11 +16877,11 @@
       "competition": "Vilamajor, C.F. B — Tercera División Alevín S12 | elFutbol",
       "url": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b",
       "next": {
-        "date": "31-10",
-        "iso": "2026-10-31",
-        "time": "11:45",
-        "home": "Montmelo Unio Esportiva, CF A",
-        "away": "Vilamajor, C.F. B",
+        "date": "08-11",
+        "iso": "2026-11-08",
+        "time": "11:30",
+        "home": "Vilamajor, C.F. B",
+        "away": "Molletense, U.D. D",
         "venue": null,
         "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
       },
@@ -16969,11 +16897,11 @@
         "result": "1-9"
       },
       "next_match": {
-        "date": "31-10",
-        "iso": "2026-10-31",
-        "time": "11:45",
-        "home": "Montmelo Unio Esportiva, CF A",
-        "away": "Vilamajor, C.F. B",
+        "date": "08-11",
+        "iso": "2026-11-08",
+        "time": "11:30",
+        "home": "Vilamajor, C.F. B",
+        "away": "Molletense, U.D. D",
         "venue": null,
         "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
       },
@@ -17000,15 +16928,6 @@
         "goal_difference": -2
       },
       "upcoming": [
-        {
-          "date": "31-10",
-          "iso": "2026-10-31",
-          "time": "11:45",
-          "home": "Montmelo Unio Esportiva, CF A",
-          "away": "Vilamajor, C.F. B",
-          "venue": null,
-          "source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b"
-        },
         {
           "date": "08-11",
           "iso": "2026-11-08",
@@ -17958,7 +17877,7 @@
         }
       ],
       "data_source": "https://elfutbol.co/es/team/vilamajor-cf-alevi-s12-b",
-      "data_updated_at": "2026-10-31T05:56:52+00:00",
+      "data_updated_at": "2026-11-01T06:04:34+00:00",
       "calendar": [
         {
           "date": "10-10",
